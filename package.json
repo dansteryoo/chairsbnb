@@ -11,6 +11,7 @@
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
@@ -23,7 +24,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development"
+    "webpack": "webpack --mode=development",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
   },
   "repository": {
     "type": "git",
@@ -35,5 +41,6 @@
   "bugs": {
     "url": "https://github.com/dansteryoo/aa_final_project/issues"
   },
-  "homepage": "https://github.com/dansteryoo/aa_final_project#readme"
+  "homepage": "https://github.com/dansteryoo/aa_final_project#readme",
+  "devDependencies": {}
 }
