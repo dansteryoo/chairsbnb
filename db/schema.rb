@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_212833) do
     t.string "email", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "image_url", null: false
+    t.string "image_url"
     t.string "session_token", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", null: false

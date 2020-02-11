@@ -4,7 +4,8 @@ var path = require('path');
 module.exports = {
     entry: './frontend/index.jsx',
     output: {
-        filename: 'app/assets/javascripts',
+        path: path.join(__dirname, 'app', 'assets', 'javascripts'),
+        filename: 'bundle.js',
     },
     module: {
         rules: [
