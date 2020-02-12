@@ -23,15 +23,14 @@
  *
  */
 
-
 body {
-   margin: 0;
-   width: 100%;
-   font-family: 'MontrealRegular', sans-serif;
-   color: #767676;
- }
-
-.app-div {
+  margin: 0;
   width: 100%;
-  height: 100%;
-}
+  font-family: 'MontrealRegular', sans-serif;
+  color: #767676;
+  max-width: 100%;
+  height: 1000px;
+  background-image: url("chair-on-beach.jpg");
+  background-size: cover;
+  position: relative;
+ }

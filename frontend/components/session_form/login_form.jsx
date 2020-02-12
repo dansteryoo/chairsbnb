@@ -1,15 +1,11 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class LogInForm extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
             username: '',
-            password: '',
-            email: '',
-            firstName: '',
-            lastName: '',
-            imageUrl: ''
+            password: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +15,9 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
+            .then(() => {this.props.closeModal()});
+
+        this.setState({ password: '' });
     }
 
     update(f) {
@@ -29,10 +28,10 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="error-messages">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
-                        {error}
+                        <span>{error}</span>
                     </li>
                 ))}
             </ul>
@@ -41,17 +40,16 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form">
-                    Welcome to ChairsBnB!
-                        <br/>
-                    Please {this.props.formType} or {this.props.navLink}
+            <div className="form-container">
+                <form onSubmit={this.handleSubmit} className="form">
+                    <br/>
+                <span>Please Log In.</span>
                     {this.renderErrors()}
-                    <div className="login-form">
+                    <div className="form">
                         <br/>
                     <label>Username:
                         <input type="text"
-                                className="login-input"
+                                className="form-input"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                             />
@@ -59,12 +57,12 @@ class SessionForm extends React.Component {
                         <br/>
                     <label>Password:
                         <input type="password"
-                                className="login-input"
+                                className="form-input"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                             />
                     </label>
-                        <button className="form-button" type="submit" value={this.props.formType} />
+                        <button className="form-button" type="submit">Log In</button>
                     </div>
                 </form>
             </div>
@@ -72,4 +70,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default SessionForm;
+export default LogInForm;
