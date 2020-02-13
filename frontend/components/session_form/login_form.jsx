@@ -9,29 +9,36 @@ class LogInForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleModalClose = this.handleModalClose.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user)
-            .then(() => {this.props.closeModal()});
+            let user = Object.assign({}, this.state);
+            user.first_name = user.firstName
+            user.last_name = user.lastName
 
-        this.setState({ password: '' });
+        this.props.processForm(user)
+        // this.props.history.push("/");
+    }
+
+    handleModalClose(e) {
+        e.preventDefault();
+        this.props.closeModal();
     }
 
     update(f) {
         return e => this.setState({
-            [f]: e.currentTarget.value
+            [f]: e.target.value
         });
     }
 
     renderErrors() {
         return (
-            <ul className="error-messages">
+            <ul>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
-                        <span>{error}</span>
+                        {error}
                     </li>
                 ))}
             </ul>
@@ -62,7 +69,7 @@ class LogInForm extends React.Component {
                                 onChange={this.update('password')}
                             />
                     </label>
-                        <button className="form-button" type="submit">Log In</button>
+                        <button className="form-button" type="submit" value={this.props.formType}>Log In</button>
                     </div>
                 </form>
             </div>

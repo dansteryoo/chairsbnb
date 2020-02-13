@@ -12,11 +12,18 @@ const mapStateToProps = (state) => ({
         lastName: ''
     },
     formType: 'Sign Up',
-    errors: state.errors.session
+    errors: state.errors
 });
 
-const mapDispatchToProps = dispatch => ({
-    processForm: (user) => dispatch(signup(user))
+const mapDispatchToProps = (dispatch) => ({
+    processForm: (user) => dispatch(signup(user)),
+    closeModal: () => dispatch(closeModal()),
+    openModal: (formType) => dispatch(openModal(formType)),
+    switchForm: (
+        <button onClick={() => dispatch(openModal('Sign Up'))}>
+            Sign up
+         </button>
+    )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

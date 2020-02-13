@@ -10,16 +10,20 @@ class SignUpForm extends React.Component {
             firstName: '',
             lastName: ''
     };
-
+    
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        let user = Object.assign({}, this.state);
+            user.first_name = user.firstName
+            user.last_name = user.lastName
+            
         this.props.processForm(user)
-            .then(() => {this.props.closeModal()});
+        // this.props.history.push("/");
     }
+
 
     update(f) {
         return e => this.setState({
@@ -29,10 +33,10 @@ class SignUpForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="error-messages">
+            <ul>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
-                        <span>{error}</span>
+                        {error}
                     </li>
                 ))}
             </ul>
@@ -87,7 +91,7 @@ class SignUpForm extends React.Component {
                                 onChange={this.update('password')}
                             />
                     </label>
-                        <button className="form-button" type="submit">Sign Up</button>
+                        <button className="form-button" type="submit" value={this.props.formType}>Sign Up</button>
                     </div>
                 </form>
             </div>

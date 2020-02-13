@@ -23,7 +23,75 @@
  *
  */
 
+
+ html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: 'MontrealRegular', sans-serif;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+#root {
+    height: 100%;
+}
+
+.app-container {
+    height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border-radius: 4px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+}
+
+.splash-background {
   margin: 0;
   width: 100%;
   font-family: 'MontrealRegular', sans-serif;
@@ -33,4 +101,4 @@ body {
   background-image: url("chair-on-beach.jpg");
   background-size: cover;
   position: relative;
- }
+}

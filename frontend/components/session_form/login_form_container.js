@@ -1,7 +1,7 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/sessions_action';
 import LogInForm from './login_form';
-
 
 const mapStateToProps = (state) => ({
     contentForm: {
@@ -9,11 +9,21 @@ const mapStateToProps = (state) => ({
         password: ''
     }, 
     formType: 'Log In',
-    errors: state.errors.session
+    errors: state.errors
 });
 
-const mapDispatchToProps = dispatch => ({
-    processForm: (user) => dispatch(login(user))
+
+const mapDispatchToProps = (dispatch) => ({
+    processForm: (user) => dispatch(login(user)),
+    closeModal: () => dispatch(closeModal()),
+    openModal: (formType) => dispatch(openModal(formType)),
+    switchForm: (
+        <button onClick={() => dispatch(openModal('Log In'))}>
+            Sign up
+        </button>
+    )
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(LogInForm);
+

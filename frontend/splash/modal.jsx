@@ -1,7 +1,8 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../actions/modal_action';
-import LogInFormContainer from './forms/login_form_container';
-import SignUpFormContainer from './forms/signup_form_container';
+import LogInFormContainer from '../components/session_form/login_form_container';
+import SignUpFormContainer from '../components/session_form/signup_form_container';
 
 
 const Modal = ({ modal, closeModal }) => {
@@ -19,7 +20,6 @@ const Modal = ({ modal, closeModal }) => {
             return null;
     }
 
-
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -30,13 +30,13 @@ const Modal = ({ modal, closeModal }) => {
     );
 }
 
-
 const mapStateToProps = (state) => ({
-    modal: state.ui.modal
+    modal: state.modal
 });
 
 const mapDispatchToProps = (dispatch) => ({
     closeModal: () => dispatch(closeModal())
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
