@@ -4,9 +4,8 @@ class SignUpForm extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            username: '',
-            password: '',
             email: '',
+            password: '',
             firstName: '',
             lastName: ''
     };
@@ -21,9 +20,8 @@ class SignUpForm extends React.Component {
             user.last_name = user.lastName
             
         this.props.processForm(user)
-        // this.props.history.push("/");
+            .then(() => this.props.closeModal());
     }
-
 
     update(f) {
         return e => this.setState({
@@ -52,45 +50,33 @@ class SignUpForm extends React.Component {
                     {this.renderErrors()}
                     <div className="form">
                         <br />
-                    <label>First Name:
+                        <input type="email"
+                            className="form-input"
+                            value={this.state.email}
+                            placeholder={"Email Address"}
+                            onChange={this.update('email')}
+                        />
+                        <br />
                         <input type="text"
                                 className="form-input"
                                 value={this.state.firstName}
+                                placeholder={"First name"}
                                 onChange={this.update('firstName')}
                             />
-                    </label>
                         <br />
-                    <label>Last Name:
                         <input type="text"
                                 className="form-input"
                                 value={this.state.lastName}
+                                placeholder={"Last name"}
                                 onChange={this.update('lastName')}
                             />
-                    </label>
                         <br />
-                    <label>Email:
-                        <input type="email"
-                                className="form-input"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                            />
-                    </label>
-                        <br />
-                    <label>Username:
-                        <input type="text"
-                                className="form-input"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                            />
-                    </label>
-                        <br />
-                    <label>Password:
                         <input type="password"
                                 className="form-input"
                                 value={this.state.password}
+                                placeholder={"Create a password"}
                                 onChange={this.update('password')}
                             />
-                    </label>
                         <button className="form-button" type="submit" value={this.props.formType}>Sign Up</button>
                     </div>
                 </form>

@@ -6,7 +6,7 @@ import LogInForm from './login_form';
 
 const mapStateToProps = (state) => ({
     contentForm: {
-        username: '',
+        email: '',
         password: ''
     }, 
     formType: 'Log In',

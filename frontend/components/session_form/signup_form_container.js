@@ -7,9 +7,8 @@ import SignUpForm from './signup_form';
 
 const mapStateToProps = (state) => ({
     contentForm: {
-        username: '',
-        password: '',
         email: '',
+        password: '',
         firstName: '',
         lastName: ''
     },

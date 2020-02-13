@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Temp = () => {
+const Temp = ({ logout }) => {
     return (
-        <div>
-           <span>TEST PAGE</span> 
+        <div className="temp-container">
+            <button className="temp-logout-btn" onClick={() => logout()}>
+                <h1>
+                    Log Out
+                </h1>
+            </button>
         </div>
     )
 }

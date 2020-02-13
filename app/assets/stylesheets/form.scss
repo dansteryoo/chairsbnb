@@ -2,13 +2,16 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  position: absolute;
   background-color: #ffffff;
-  width: 60%;
-  height: 100%;
-  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
   overflow: visible;
-  margin: 10px 0;
+  margin: 0px auto;
 }
 
 .form {
@@ -16,15 +19,15 @@
   flex-direction: column;
   justify-content: center;
   width: 75%;
-  border: 1px solid #484848;
   border-radius: 10px;
 }
 
 .form-input {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-content:space-between;;
   border-radius: 4px;
-  height: 20px;
+  height: 25px;
   width: 50%;
   border: 1px solid lightgray;
   padding-left: 10px;
@@ -38,6 +41,7 @@
   background-color: #FF5A5F;
   text-align: center;
   color: white;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
 }
