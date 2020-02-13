@@ -1,23 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+// import Footer from './footer';
+import NavBarContainer from '../components/navbar/navbar_container';
 
-const Splash = ({ currentUser, logout, openModal }) => {
-
-    return (
-        currentUser ? (
-            <header>
-                <div className="splash-container">
-                    <button className="nav-signout" onClick={logout}>Sign Out</button>
-                </div>
-            </header>
-        ) : (
-                <header>
-                    <div className="modal-container">
-                        <button className="modal-login-btn" onClick={() => openModal('Log In')}>Log In</button>
-                        <button className="modal-login-btn" onClick={() => openModal('Sign Up')}>Sign Up</button>
-                    </div>
-                </header>
-        )
-    );
-}
+const Splash = () => (
+    <div className="splash-main">
+        <header className="splash-header">
+            <Link to="/" className="splash-header-home">
+                <h1>ChairsBnB</h1>
+            </Link>
+            <NavBarContainer />
+        </header>
+    </div>
+);
 
 export default Splash;

@@ -24,7 +24,7 @@
  */
 
 
- html, body, header, nav, h1, a,
+html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
@@ -49,7 +49,6 @@ html {
 body {
     height: 100%;
     width: 100%;
-    background: white;
 }
 
 #root {
@@ -78,27 +77,6 @@ img {
   height: auto;
 }
 
-input[type="password"],
-input[type="email"],
-input[type="text"],
-input[type="submit"],
-textarea, button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
 button, input[type="submit"] {
   cursor: pointer;
-}
-
-.splash-background {
-  margin: 0;
-  width: 100%;
-  font-family: 'MontrealRegular', sans-serif;
-  color: #767676;
-  max-width: 100%;
-  height: 1000px;
-  background-image: url("chair-on-beach.jpg");
-  background-size: cover;
-  position: relative;
 }

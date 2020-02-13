@@ -1,18 +1,30 @@
 
 .form-container {
   display: flex;
-  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 60%;
   height: 100%;
   flex-direction: column;
-  border-top: 1px solid lightgray;
   overflow: visible;
   margin: 10px 0;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  border: 1px solid #484848;
+  border-radius: 10px;
+}
+
 .form-input {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   border-radius: 4px;
+  height: 20px;
   width: 50%;
   border: 1px solid lightgray;
   padding-left: 10px;
@@ -28,10 +40,16 @@
   color: white;
   font-weight: 500;
   cursor: pointer;
-
 }
 
-.error-messages {
+.form-error {
     color: #FC642D;
     margin-top: 10px;
+}
+
+.close-x {
+  margin-top: 20px;
+  margin-right: 20px;
+  position: absolute;
+  cursor:  pointer;
 }

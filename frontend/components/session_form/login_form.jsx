@@ -19,7 +19,7 @@ class LogInForm extends React.Component {
             user.last_name = user.lastName
 
         this.props.processForm(user)
-        // this.props.history.push("/");
+        this.props.history.push("..");
     }
 
     handleModalClose(e) {
@@ -35,7 +35,7 @@ class LogInForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="form-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}

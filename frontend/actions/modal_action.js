@@ -9,5 +9,3 @@ export const openModal = (modal) => ({
 export const closeModal = () => ({
     type: CLOSE_MODAL
 });
-
-

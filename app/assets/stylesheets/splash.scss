@@ -1,0 +1,23 @@
+.splash-main {
+    background-image: url('chair-on-beach.jpg');
+    min-height: 970px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.splash-header {
+    display: flex;
+}
+
+.splash-header-home {
+    display: flex;
+    justify-content: row;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 10px;
+    margin-left: 25px;
+    margin-top: 25px;
+}

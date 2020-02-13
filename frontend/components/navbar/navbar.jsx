@@ -1,20 +1,20 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import LogInFormContainer from '../session_form/login_form_container'
-// import SignUpogInFormContainer from '../session_form/signup_form_container'
 
-class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-    };
-
-    render() {
-        return (
-            <div className="sessionLinks">
-            <span>NAVBAR</span>
-            </div>
-        )
-    }
+const NavBar = ({ openModal }) => {
+    return (
+        <nav className = "nav-container" >
+             <ul className="nav-links">
+                <li className="signup-li" onClick={() => openModal('Sign Up')}>
+                    Sign Up
+                </li>
+                <li className="login-li" onClick={() => openModal('Log In')}>
+                    Log In
+                </li>
+            </ul>
+        </nav>
+    )
 }
 
 export default NavBar;
+
+
