@@ -1,11 +1,12 @@
 .nav-container {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
     width: 100%;
     height: 25px;
-    background: transparent;
-    padding: 25px 0 0 0;
-    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+    margin-top: 29px;
+    // z-index: 10;
 }
 
 .nav-links {
