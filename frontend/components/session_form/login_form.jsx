@@ -12,6 +12,10 @@ class LogInForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.errors = []
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
             let user = Object.assign({}, this.state);
@@ -25,11 +29,15 @@ class LogInForm extends React.Component {
             .then(() => this.props.closeModal());
     }
 
-    update(f) {
-        return e => this.setState({
-            [f]: e.target.value
-        });
-    }
+    // handleErrors() {
+    //     let errors;
+    //     if (this.props.errors) {
+    //         return errors = this.props.errors;
+    //     } else {
+    //         return errors = {};
+    //     }
+    //     {this.renderErrors()}
+    // }
 
     renderErrors() {
         return (
@@ -37,10 +45,16 @@ class LogInForm extends React.Component {
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
-                </li>
+                    </li>
                 ))}
             </ul>
         );
+    }
+
+    update(f) {
+        return e => this.setState({
+            [f]: e.target.value
+        });
     }
 
     render() {
@@ -59,6 +73,7 @@ class LogInForm extends React.Component {
                     </div>
                 <div className="form-title">Log In</div>
                 <form onSubmit={this.handleSubmit} className="form">
+                    {this.renderErrors()}
                     <div className="form">
                         <br/>
                         <input type="text"
@@ -68,7 +83,6 @@ class LogInForm extends React.Component {
                                 onChange={this.update('email')}
                                 // required
                             />
-                        {this.renderErrors()}
                         <br/>
                         <input type="password"
                                 className="form-input"

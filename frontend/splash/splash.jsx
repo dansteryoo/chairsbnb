@@ -17,5 +17,3 @@ const Splash = () => (
 );
 
 export default Splash;
-
-// <img src={window.background} />

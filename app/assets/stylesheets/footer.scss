@@ -6,7 +6,7 @@
     width: 100%;
     height: 25px;
     background-color: transparent;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     z-index: 10;
     padding-left: 40px;
 }
@@ -14,17 +14,54 @@
 .footer-links {
     display: flex;
     justify-content: flex-start;
+    height: 50px;
 }
 
-.footer-links li {
-    color: #008489;
-    margin-right: 30px;
-    font-size: 14px;
+.footer-li-1 {
+    background: image-url('github.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
-    font-weight: 600;
+    height: 40px;
+    width: 40px;
+    position: center;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
-#footer-icon:hover {
+.footer-li-2 {
+    background: image-url('linkedin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 40px;
+    width: 40px;
+    position: center;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.footer-li-3 {
+    background: image-url('angellist.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+    position: center;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+// .footer-li-4 {
+//     color: #008489;
+//     margin-right: 30px;
+//     font-size: 14px;
+//     cursor: pointer;
+//     font-weight: 600;
+//     background: image-url('chair-on-beach.jpg');
+// }
+
+.footer-li-1:hover, .footer-li-2:hover, .footer-li-3:hover {
+
     border-bottom: 3px solid #008489;
 }

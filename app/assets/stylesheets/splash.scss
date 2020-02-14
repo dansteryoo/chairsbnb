@@ -1,28 +1,12 @@
 
 .splash-main {
-    background: image-url('chair-on-beach.jpg');
-    // background-repeat: no-repeat;
-    background-attachment: cover;
-    // background-position: center;
-    background-size: 100vw;
-    background-repeat: no-repeat;
+    background: image-url('chair-on-beach.png');
+    background-size: cover;
     min-height: 970px; ;
     width: 100vw;
     position: top;
-    object-fit: cover;
-    vertical-align: top;
     padding-right: 15px;
-
 }
-
-// .splash-main img {
-//     min-height: 970px; ;
-//     width: 100vw;
-//     position: top;
-//     object-fit: cover;
-//     vertical-align: top;
-//     margin: 0;
-// }
 
 .splash-header {
     position: absolute;

@@ -4,12 +4,14 @@ const Footer = () => {
     return (
         <nav className="footer-container" >
             <ul className="footer-links">
-                <li className="footer-li" id="footer-icon">
-                    <a href="linkedin.com">LinkedIn</a>
-                </li>
-                <li className="footer-li" id="footer-icon">
-                    <a href="github.com">GitHub</a>
-                </li>
+                <li className="footer-li-1">
+                    </li>
+                <li className="footer-li-2">
+                    </li>
+                <li className="footer-li-3">   
+                    </li>
+                <li className="footer-li-4">
+                    </li>
             </ul>
         </nav>
     )
