@@ -46,14 +46,14 @@ class SignUpForm extends React.Component {
             <div className="form-container">
                 <form onSubmit={this.handleSubmit} className="form">
                     <br />
-                <span>Please Sign Up.</span>
+                    <div className="form-title">Sign Up</div>
                     {this.renderErrors()}
                     <div className="form">
                         <br />
                         <input type="email"
                             className="form-input"
                             value={this.state.email}
-                            placeholder={"Email Address"}
+                            placeholder={"Email address"}
                             onChange={this.update('email')}
                         />
                         <br />

@@ -11,7 +11,7 @@ const Splash = () => (
             </Link>
             <NavBarContainer />
         </header>
-        <img scr = { window.background } />
+        <img src= {window.background} />
     </div>
 );
 

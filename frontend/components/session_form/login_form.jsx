@@ -42,7 +42,7 @@ class LogInForm extends React.Component {
             <div className="form-container">
                 <form onSubmit={this.handleSubmit} className="form">
                     <br/>
-                <span>Please Log In.</span>
+                    <div className="form-title">Log In</div>
                     {this.renderErrors()}
                     <div className="form">
                         <br/>
