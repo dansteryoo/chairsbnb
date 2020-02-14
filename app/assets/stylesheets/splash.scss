@@ -1,10 +1,11 @@
 
 .splash-main {
-    background-image: url("chair-on-beach.png");
+    background: image-url('chair-on-beach.jpg');
     // background-repeat: no-repeat;
-    // background-attachment: no-repeat;
+    background-attachment: cover;
     // background-position: center;
     background-size: 100vw;
+    background-repeat: no-repeat;
     min-height: 970px; ;
     width: 100vw;
     position: top;
