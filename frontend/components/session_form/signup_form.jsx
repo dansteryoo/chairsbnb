@@ -44,42 +44,54 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <div className="form-container">
+                <div className="form-closing-x" onClick={() => this.props.closeModal()}>&#10005;</div>
+                <br/>
+                <div className="form-title">Sign Up</div>
                 <form onSubmit={this.handleSubmit} className="form">
-                    <br />
-                    <div className="form-title">Sign Up</div>
-                    {this.renderErrors()}
                     <div className="form">
-                        <br />
+                        <br/>
                         <input type="email"
                             className="form-input"
                             value={this.state.email}
                             placeholder={"Email address"}
                             onChange={this.update('email')}
+                            // required
                         />
-                        <br />
+                        {this.renderErrors()}
+                        <br/>
                         <input type="text"
                                 className="form-input"
                                 value={this.state.firstName}
                                 placeholder={"First name"}
                                 onChange={this.update('firstName')}
+                                // required
                             />
-                        <br />
+                        <br/>
                         <input type="text"
                                 className="form-input"
                                 value={this.state.lastName}
                                 placeholder={"Last name"}
                                 onChange={this.update('lastName')}
+                                // required
                             />
-                        <br />
+                        <br/>
                         <input type="password"
                                 className="form-input"
                                 value={this.state.password}
                                 placeholder={"Create a password"}
                                 onChange={this.update('password')}
+                                // required
                             />
                         <button className="form-button" type="submit" value={this.props.formType}>Sign Up</button>
                     </div>
                 </form>
+            <br />
+            <div className="form-change-container">
+                Have an account?
+                    <button className="form-change-btn" onClick={() => this.props.openModal('Log In')}>
+                    Log In
+                    </button>
+            </div>
             </div>
         );
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import Footer from './footer';
 import NavBarContainer from '../components/navbar/navbar_container';
+import Footer from './footer';
 
 const Splash = () => (
     <div className="splash-main">
@@ -9,10 +10,12 @@ const Splash = () => (
             <Link to="/" className="splash-header-home">
                 <h1>ChairsBnB</h1>
             </Link>
-        <NavBarContainer />
         </div>
-        <img src={window.background} />
+        <NavBarContainer />
+        <Footer />
     </div>
 );
 
 export default Splash;
+
+// <img src={window.background} />

@@ -22,3 +22,16 @@ export const logout = () => (
         method: 'DELETE'
     })
 );
+
+export const logindemo = () => (
+    $.ajax({
+        method: "POST",
+        url: `/api/session`,
+        data: {
+            user: {
+                email: "dansteryoo@gmail.com",
+                password: "123456"
+            }
+        }
+    })
+);

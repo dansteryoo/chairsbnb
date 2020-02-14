@@ -1,27 +1,41 @@
-.splash-main {
-    width: 100%;
-}
 
-.splash-main img {
+.splash-main {
+    background-image: url("chair-on-beach.png");
+    // background-repeat: no-repeat;
+    // background-attachment: no-repeat;
+    // background-position: center;
+    background-size: 100vw;
     min-height: 970px; ;
     width: 100vw;
     position: top;
     object-fit: cover;
     vertical-align: top;
+    padding-right: 15px;
+
 }
+
+// .splash-main img {
+//     min-height: 970px; ;
+//     width: 100vw;
+//     position: top;
+//     object-fit: cover;
+//     vertical-align: top;
+//     margin: 0;
+// }
 
 .splash-header {
     position: absolute;
     display: flex;
     width: 100%;
     background-color: transparent;
-    z-index: 10;
+    padding-left: 14px;
 }
 
 .splash-header-home {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: transparent;
+    width: 500px;
     color: #ffffff;
     font-size: 10px;
     margin-left: 25px;

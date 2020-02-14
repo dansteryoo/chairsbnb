@@ -1,0 +1,30 @@
+.footer-container {
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    z-index: 10;
+    padding-left: 40px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-links li {
+    color: #008489;
+    margin-right: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#footer-icon:hover {
+    height: 40px;
+    border-bottom: 3px solid #008489;
+}

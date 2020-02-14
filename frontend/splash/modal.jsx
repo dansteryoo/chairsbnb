@@ -23,8 +23,7 @@ const Modal = ({ modal, closeModal }) => {
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <div className="modal-closing-x" onClick={closeModal}>&#10005;</div>
-                    {component}
+                {component}
             </div>
         </div>
     );
