@@ -48,6 +48,7 @@ class SignUpForm extends React.Component {
                 <br/>
                 <div className="form-title">Sign Up</div>
                 <form onSubmit={this.handleSubmit} className="form">
+                    {this.renderErrors()}
                     <div className="form">
                         <br/>
                         <input type="email"
@@ -57,7 +58,6 @@ class SignUpForm extends React.Component {
                             onChange={this.update('email')}
                             // required
                         />
-                        {this.renderErrors()}
                         <br/>
                         <input type="text"
                                 className="form-input"
