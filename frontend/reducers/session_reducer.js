@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, } from '../actions/sessions_action';
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, } from '../actions/session_actions';
 
 let _nullUser = Object.freeze({ id: null });
 

@@ -2,18 +2,22 @@
 .splash-main {
     background: image-url('chair-on-beach.png');
     background-size: cover;
-    min-height: 970px; ;
-    width: 100vw;
-    position: top;
-    padding-right: 15px;
+    height: 100vh;
+}
+
+.splash-placeholder {
+    content: image-url('splash_placeholder.png');
+    position: relative;
+    top: 150px;
+    left: 100px;
+    height: 450px; ;
+    width: 425px;
 }
 
 .splash-header {
     position: absolute;
     display: flex;
-    width: 100%;
     background-color: transparent;
-    padding-left: 14px;
 }
 
 .splash-header-home {

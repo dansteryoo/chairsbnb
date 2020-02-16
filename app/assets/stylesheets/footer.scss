@@ -14,7 +14,7 @@
 .footer-links {
     display: flex;
     justify-content: flex-start;
-    height: 50px;
+    // height: 100px;
 }
 
 .footer-li-1 {
@@ -36,7 +36,7 @@
     height: 40px;
     width: 40px;
     position: center;
-    margin-right: 25px;
+    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -44,9 +44,8 @@
     background: image-url('angellist.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
     height: 40px;
-    width: 40px;
+    width: 28px;
     position: center;
     margin-right: 30px;
     cursor: pointer;
@@ -62,6 +61,6 @@
 // }
 
 .footer-li-1:hover, .footer-li-2:hover, .footer-li-3:hover {
-
+    height: 60px;
     border-bottom: 3px solid #008489;
 }

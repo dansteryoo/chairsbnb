@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
-import { login, logindemo } from '../../actions/sessions_action';
-import { closeModal, openModal } from '../../actions/modal_action';
+import { login, logindemo } from '../../actions/session_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 import LogInForm from './login_form';
 
-const mapStateToProps = (state) => ({
-    contentForm: {
-        email: '',
-        password: ''
-    }, 
+const mapStateToProps = (state) => ({ 
     formType: 'Log In',
     errors: state.errors
 });

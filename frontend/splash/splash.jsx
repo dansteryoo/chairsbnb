@@ -12,6 +12,7 @@ const Splash = () => (
             </Link>
         </div>
         <NavBarContainer />
+        <div className="splash-placeholder"/>
         <Footer />
     </div>
 );

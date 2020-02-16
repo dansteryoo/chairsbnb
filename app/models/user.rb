@@ -6,6 +6,23 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
 
+    has_many :listings,
+        primary_key: :id,
+        foreign_key: :host_id,
+        class_name: :Listing
+
+    has_many :bookings,
+        primary_key: :id,
+        foreign_key: :guest_id,
+        class_name: :Booking
+
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Review
+
+    has_one_attached :image
+
     attr_reader :password
 
     def self.find_by_credentials(email, password)
@@ -24,7 +41,7 @@ class User < ApplicationRecord
     end
     
     def reset_session_token!
-        self.session_token = SecureRandom.urlsafe_base64
+        self.session_token = SecureRandom.urlsafe_base64(16)
         self.save!
         self.session_token
     end
@@ -32,6 +49,6 @@ class User < ApplicationRecord
  private
 
     def ensure_session_token
-        self.session_token ||= SecureRandom.urlsafe_base64
+        self.session_token ||= SecureRandom.urlsafe_base64(16)
     end
 end

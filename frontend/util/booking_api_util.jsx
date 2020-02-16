@@ -30,7 +30,7 @@ export const updateBooking = (booking) => (
     })
 );
 
-export const updateBooking = (bookingId) => (
+export const deleteBooking = (bookingId) => (
     $.ajax({
         url: `api/bookings/${bookingId}`,
         method: 'DELETE'

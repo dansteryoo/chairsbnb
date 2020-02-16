@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_action";
+import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
 
 const modalReducer = (oldState = null, action) => {

@@ -11,16 +11,46 @@ class SignUpForm extends React.Component {
     };
     
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
-        let user = Object.assign({}, this.state);
+        let user = Object.assign({}, this.state); 
             user.first_name = user.firstName
             user.last_name = user.lastName
-            
+
         this.props.processForm(user)
             .then(() => this.props.closeModal());
+    }
+
+    validateSubmit(e) {
+        e.preventDefault();
+        const err = this.state
+        const validEmail = (/\S+@\S+\.\S+/.test(this.state.email));
+
+        if (!validEmail) {
+            err['email'] = 'Email address is not valid.'
+        }
+
+        if (this.state.password.length < 6) {
+            err['password'] = 'Password must be at least 6 characters.'
+        }
+
+        if (this.state.firstName.length < 1) {
+            err['firstName'] = 'First name must be filled out.'
+        }
+
+        if (this.state.lastName.length < 1) {
+            err['lastName'] = 'Last name must be filled out.'
+        }
+
+        this.setState({ errors: err });
+
+        if (Object.values(err).every(v => v.length < 1)) {
+            this.handleSubmit();
+        }
     }
 
     update(f) {
@@ -33,9 +63,7 @@ class SignUpForm extends React.Component {
         return (
             <ul className="form-errors">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
+                    <li key={`error-${i}`}>{error}</li>
                 ))}
             </ul>
         );
@@ -46,7 +74,7 @@ class SignUpForm extends React.Component {
             <div className="form-container">
                 <div className="form-closing-x" onClick={() => this.props.closeModal()}>&#10005;</div>
                 <br/>
-                <div className="form-title">Sign Up</div>
+                <div className="form-title">Sign up with an email</div>
                 <form onSubmit={this.handleSubmit} className="form">
                     {this.renderErrors()}
                     <div className="form">
@@ -58,6 +86,7 @@ class SignUpForm extends React.Component {
                             onChange={this.update('email')}
                             // required
                         />
+                        <i id="form-icon-login" className="fas fa-envelope fa-lg"></i>
                         <br/>
                         <input type="text"
                                 className="form-input"
@@ -66,6 +95,7 @@ class SignUpForm extends React.Component {
                                 onChange={this.update('firstName')}
                                 // required
                             />
+                        <i id="form-icon-login" className="fas fa-user fa-lg"></i>
                         <br/>
                         <input type="text"
                                 className="form-input"
@@ -74,6 +104,7 @@ class SignUpForm extends React.Component {
                                 onChange={this.update('lastName')}
                                 // required
                             />
+                        <i id="form-icon-login" className="fas fa-user fa-lg"></i>
                         <br/>
                         <input type="password"
                                 className="form-input"
@@ -82,12 +113,13 @@ class SignUpForm extends React.Component {
                                 onChange={this.update('password')}
                                 // required
                             />
+                        <i id="form-icon-login" className="fas fa-lock fa-lg"></i>
                         <button className="form-button" type="submit" value={this.props.formType}>Sign Up</button>
                     </div>
                 </form>
             <br />
             <div className="form-change-container">
-                Have an account?
+                <p>Already have an Airbnb account?</p>
                     <button className="form-change-btn" onClick={() => this.props.openModal('Log In')}>
                     Log In
                     </button>

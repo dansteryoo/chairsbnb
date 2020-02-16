@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_225638) do
+ActiveRecord::Schema.define(version: 2020_02_15_204133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "listing_id", null: false
+    t.integer "guest_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_bookings_on_guest_id"
+    t.index ["listing_id"], name: "index_bookings_on_listing_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.integer "host_id", null: false
+    t.string "address", null: false
+    t.float "lat", null: false
+    t.float "long", null: false
+    t.float "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_listings_on_host_id"
+    t.index ["name"], name: "index_listings_on_name", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "listing_id", null: false
+    t.integer "author_id", null: false
+    t.integer "overall_rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_reviews_on_author_id"
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

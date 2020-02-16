@@ -12,10 +12,6 @@ class LogInForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.errors = []
-    // }
-
     handleSubmit(e) {
         e.preventDefault();
             let user = Object.assign({}, this.state);
@@ -29,26 +25,24 @@ class LogInForm extends React.Component {
             .then(() => this.props.closeModal());
     }
 
-    // handleErrors() {
-    //     let errors;
-    //     if (this.props.errors) {
-    //         return errors = this.props.errors;
-    //     } else {
-    //         return errors = {};
-    //     }
-    //     {this.renderErrors()}
-    // }
+    validateSubmit(e) {
+        e.preventDefault();
+        const err = this.state
+        const validEmail = (/\S+@\S+\.\S+/.test(this.state.email));
 
-    renderErrors() {
-        return (
-            <ul className="form-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (!validEmail) {
+            err['email'] = 'Email address is not valid.'
+        }
+
+        if (this.state.password.length < 6) {
+            err['password'] = 'Password must be at least 6 characters.'
+        }
+
+        this.setState({ errors: err });
+
+        if (Object.values(err).every(v => v.length < 1)) {
+            this.handleSubmit();
+        }
     }
 
     update(f) {
@@ -56,6 +50,17 @@ class LogInForm extends React.Component {
             [f]: e.target.value
         });
     }
+
+    renderErrors() {
+        return (
+            <ul className="form-errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>{error}</li>
+                ))}
+            </ul>
+        );
+    }
+
 
     render() {
         return (
@@ -71,7 +76,7 @@ class LogInForm extends React.Component {
                     <div className="form-or-separator">
                         <hr/>
                     </div>
-                <div className="form-title">Log In</div>
+                <div className="form-title">Log in to continue</div>
                 <form onSubmit={this.handleSubmit} className="form">
                     {this.renderErrors()}
                     <div className="form">
@@ -83,6 +88,7 @@ class LogInForm extends React.Component {
                                 onChange={this.update('email')}
                                 // required
                             />
+                        <i id="form-icon-login" className="fas fa-envelope fa-lg"></i>
                         <br/>
                         <input type="password"
                                 className="form-input"
@@ -91,12 +97,13 @@ class LogInForm extends React.Component {
                                 onChange={this.update('password')}
                                 // required
                             />
+                        <i id="form-icon-login" className="fas fa-lock fa-lg"></i>
                         <button className="form-button" type="submit" value={this.props.formType}>Log In</button>
                     </div>
                 </form>
                 <br/>
                 <div className="form-change-container">
-                    Don’t have an account?
+                    <p>Don’t have an account?</p>
                     <button className="form-change-btn" onClick={() => this.props.openModal('Sign Up')}>
                         Sign Up
                     </button>

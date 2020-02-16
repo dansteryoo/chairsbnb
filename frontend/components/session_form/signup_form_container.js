@@ -1,16 +1,10 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/sessions_action';
-import { closeModal, openModal } from '../../actions/modal_action';
+import { signup } from '../../actions/session_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 import SignUpForm from './signup_form';
 
 
 const mapStateToProps = (state) => ({
-    contentForm: {
-        email: '',
-        password: '',
-        firstName: '',
-        lastName: ''
-    },
     formType: 'Sign Up',
     errors: state.errors
 });
