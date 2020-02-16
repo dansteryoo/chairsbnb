@@ -27,26 +27,26 @@ export const fetchBookings = () => dispatch => (
     )
 );
 
-export const fetchBooking = (listingId) => dispatch => (
-    APIUtil.fetchBooking(listingId)
-        .then(listing => dispatch(receiveListing(listing))
-        )
+export const fetchBooking = (bookingId) => dispatch => (
+    APIUtil.fetchBooking(bookingId)
+        .then(booking => dispatch(receiveBooking(booking))
+    )
 );
 
-export const createBooking = (listingId) => dispatch => (
-    APIUtil.createBooking(listingId)
-        .then(listing => dispatch(receiveListing(listing))
-        )
+export const createBooking = (booking) => dispatch => (
+    APIUtil.createBooking(booking)
+        .then(booking => dispatch(receiveBooking(booking))
+    )
 );
 
-export const updateBooking = (listingId) => dispatch => (
-    APIUtil.updateBooking(listingId)
-        .then(listing => dispatch(receiveListing(listing))
-        )
+export const updateBooking = (booking) => dispatch => (
+    APIUtil.updateBooking(booking)
+        .then(booking => dispatch(receiveBooking(booking))
+    )
 );
 
-export const deleteBooking = (listingId) => dispatch => (
-    APIUtil.deleteBooking(listingId)
-        .then(listing => dispatch(receiveListing(listing))
-        )
+export const deleteBooking = (bookingId) => dispatch => (
+    APIUtil.deleteBooking(bookingId)
+        .then(() => dispatch(removeBooking(bookingId))
+    )
 );
