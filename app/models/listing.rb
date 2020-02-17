@@ -1,7 +1,8 @@
 class Listing < ApplicationRecord
 
-    validates :name, :description, :owner_id, :address, :lat, :lng, :price, presence: true
+    validates :name, :description, :host_id, :address, :lat, :long, :price, presence: true
 
+    
     belongs_to :host,
         primary_key: :id,
         foreign_key: :host_id,
@@ -20,12 +21,12 @@ class Listing < ApplicationRecord
     has_many_attached :images
 
 
-    def self.search_by_keyword(keyword)
-        match = "%#{keyword}%"
+    def self.search_by_keywords(keywords)
+        match = '%#{keywords}%'
         
-        search_result = Listing.where("name ILIKE ?", match)
-            .or(Listing.where("address ILIKE ?", match)
-            .or(Listing.where("description ILIKE ?", match))).includes(:bookings)
+        search_result = Listing.where('name ILIKE ?', match)
+            .or(Listing.where('address ILIKE ?', match)
+            .or(Listing.where('description ILIKE ?', match))).includes(:bookings)
 
         search_result
     end

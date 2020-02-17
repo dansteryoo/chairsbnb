@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/listing_api_util';
+import * as ListingsAPIUtil from '../util/listings_api_util';
 
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
@@ -16,19 +16,19 @@ const receiveListing = (listing) => ({
 
 
 export const fetchListings = () => dispatch => (
-    APIUtil.fetchListings()
+    ListingsAPIUtil.fetchListings()
         .then(listings => dispatch(receiveListings(listings))
-    )
+    )  
 );
 
 export const fetchListing = (listingId) => dispatch => (
-    APIUtil.fetchListing(listingId)
+    ListingsAPIUtil.fetchListing(listingId)
         .then(listing => dispatch(receiveListing(listing))
     )
 );
 
 export const fetchSearch = (keywords, startDate, endDate) => dispatch => (
-    APIUtil.fetchSearch(keywords, startDate, endDate)
+    ListingsAPIUtil.fetchSearch(keywords, startDate, endDate)
         .then(listings => dispatch(receiveListings(listings))
     )
 );

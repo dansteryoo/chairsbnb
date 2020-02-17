@@ -1,7 +1,7 @@
 class Api::ListingsController < ApplicationController
-
+    
     def index
-        @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
+        @listings = Listing.all
         render :index
     end
 
@@ -11,7 +11,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def search
-        search_result = Listing.search_by_keyword(params[:keywords])
+        search_result = Listing.search_by_keywords(params[:keywords])
 
         if params[:start_date] && params[:end_date] && (params[:start_date] != "") && (params[:end_date] != "")
             start_date = params[:start_date]

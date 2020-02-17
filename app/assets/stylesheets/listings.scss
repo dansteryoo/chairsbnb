@@ -1,3 +1,74 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.listings-index-container {
+    padding: 0 80px;
+    color: #222222;
+
+    border: 1px solid blue;
+}
+
+.listings-index-header {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 45px;
+
+    border: 1px solid green;
+}
+
+.listings-index-subheader {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+
+    border: 1px solid purple;
+}
+
+.listings-ul {
+    align-items: baseline;
+    align-content: flex-start;
+    flex-wrap: wrap;
+ 
+    border: 1px solid red;
+}
+
+.listing-li {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid black;
+}
+
+.listing-address {
+    color: #767676;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.listing-name {
+    // font-size: 14px;
+    // font-weight: 250;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.listing-price span {
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.listing-image {
+    width: 200px;
+    height: 150px;
+    border: 1px solid orange;
+}
+
+// .listing-image:hover {
+   
+// }
+

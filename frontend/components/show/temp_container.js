@@ -3,6 +3,10 @@ import { logout } from '../../actions/session_actions';
 import Temp from './temp';
 
 
+// const mapStateToProps = (state) => ({
+//     currentUser: state.users[state.session.id]
+// });
+
 const mapStateToProps = ({ session, users }) => ({
     currentUser: users[session.id]
 });

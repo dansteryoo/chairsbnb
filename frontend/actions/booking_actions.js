@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/booking_api_util';
+import * as BookingsAPIUtil from '../util/bookings_api_util';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
@@ -22,31 +22,31 @@ export const removeBooking = (bookingId) => ({
 
 
 export const fetchBookings = () => dispatch => (
-    APIUtil.fetchBookings()
+    BookingsAPIUtil.fetchBookings()
         .then(bookings => dispatch(receiveBookings(bookings))
     )
 );
 
 export const fetchBooking = (bookingId) => dispatch => (
-    APIUtil.fetchBooking(bookingId)
+    BookingsAPIUtil.fetchBooking(bookingId)
         .then(booking => dispatch(receiveBooking(booking))
     )
 );
 
 export const createBooking = (booking) => dispatch => (
-    APIUtil.createBooking(booking)
+    BookingsAPIUtil.createBooking(booking)
         .then(booking => dispatch(receiveBooking(booking))
     )
 );
 
 export const updateBooking = (booking) => dispatch => (
-    APIUtil.updateBooking(booking)
+    BookingsAPIUtil.updateBooking(booking)
         .then(booking => dispatch(receiveBooking(booking))
     )
 );
 
 export const deleteBooking = (bookingId) => dispatch => (
-    APIUtil.deleteBooking(bookingId)
+    BookingsAPIUtil.deleteBooking(bookingId)
         .then(() => dispatch(removeBooking(bookingId))
     )
 );

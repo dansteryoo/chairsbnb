@@ -18,6 +18,8 @@ class LogInForm extends React.Component {
 
         this.props.processForm(user)
             .then(() => this.props.closeModal());
+
+            
     }
 
     handleDemoUser() {

@@ -5,7 +5,7 @@ class Review < ApplicationRecord
 
     belongs_to :listing,
         primary_key: :id,
-        foreign_key: :listings_id,
+        foreign_key: :listing_id,
         class_name: :Listing
 
     belongs_to :author,

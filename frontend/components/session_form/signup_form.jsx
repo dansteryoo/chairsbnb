@@ -74,7 +74,7 @@ class SignUpForm extends React.Component {
             <div className="form-container">
                 <div className="form-closing-x" onClick={() => this.props.closeModal()}>&#10005;</div>
                 <br/>
-                <div className="form-title">Sign up with an email</div>
+                <div className="form-title">Sign up with email</div>
                 <form onSubmit={this.handleSubmit} className="form">
                     {this.renderErrors()}
                     <div className="form">
@@ -119,7 +119,7 @@ class SignUpForm extends React.Component {
                 </form>
             <br />
             <div className="form-change-container">
-                <p>Already have an Airbnb account?</p>
+                <p>Already have a ChairsBnB account?</p>
                     <button className="form-change-btn" onClick={() => this.props.openModal('Log In')}>
                     Log In
                     </button>

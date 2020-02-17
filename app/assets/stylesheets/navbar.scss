@@ -3,15 +3,23 @@
     display: flex;
     width: 100%;
     height: 25px;
-    display: flex;
-    justify-content: flex-end;
     background-color: transparent;
     margin-top: 29px;
+}
+
+.nav-home {
+    display: flex;
+    justify-content: left;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 10px;
+    margin-left: 40px;
 }
 
 .nav-links {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
     margin-right: 10px;
 }
 
@@ -27,3 +35,4 @@
     height: 40px;
     border-bottom: 3px solid #ffffff;
 }
+

@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
     validates :listing_id, :guest_id, :start_date, :end_date, presence: true 
     validate :does_not_overlap_approved_request
 
-
+    
     belongs_to :listing,
         primary_key: :id,
         foreign_key: :listing_id,
@@ -18,10 +18,10 @@ class Booking < ApplicationRecord
     end
 
     def in_bounds(bounds)
-        self.where("lat < ?", bounds[:northEast][:lat])
-            .where("lat > ?", bounds[:southWest][:lat])
-            .where("long > ?", bounds[:southWest][:long])
-            .where("long < ?", bounds[:northEast][:long])
+        self.where('lat < ?', bounds[:northEast][:lat])
+            .where('lat > ?', bounds[:southWest][:lat])
+            .where('long > ?', bounds[:southWest][:long])
+            .where('long < ?', bounds[:northEast][:long])
     end
 
     def available_booking(bounds, dates)
