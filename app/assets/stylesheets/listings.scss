@@ -4,29 +4,24 @@
 
 
 .listings-index-container {
-    padding: 0 80px;
     color: #222222;
-
-    border: 1px solid blue;
+    width: 100%;
+    height: 100%;
 }
 
 .listings-index-header {
     font-size: 22px;
     font-weight: 500;
-    margin-top: 45px;
-
-    border: 1px solid green;
 }
 
 .listings-index-subheader {
     font-size: 14px;
     font-weight: 300;
     margin-top: 5px;
-
-    border: 1px solid purple;
 }
 
 .listings-ul {
+    display: flex;
     align-items: baseline;
     align-content: flex-start;
     flex-wrap: wrap;

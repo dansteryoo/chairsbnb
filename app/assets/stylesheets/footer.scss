@@ -14,7 +14,7 @@
 .footer-links {
     display: flex;
     justify-content: flex-start;
-    // height: 100px;
+    height: 100px;
 }
 
 .footer-li-1 {
@@ -60,6 +60,7 @@
 // }
 
 .footer-li-1:hover, .footer-li-2:hover, .footer-li-3:hover {
-    height: 60px;
+    height: 72px;
+    border-radius: 1px;
     border-bottom: 3px solid #008489;
 }

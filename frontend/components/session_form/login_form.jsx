@@ -4,12 +4,16 @@ class LogInForm extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            email: '',
-            password: ''
-        };
+                email: '',
+                password: ''
+            }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
+    };
+
+    componentWillUnmount(){
+        this.state.errors = null;
     }
 
     handleSubmit(e) {
@@ -17,34 +21,12 @@ class LogInForm extends React.Component {
             let user = Object.assign({}, this.state);
 
         this.props.processForm(user)
-            .then(() => this.props.closeModal());
-
-            
+            .then(() => this.props.closeModal());  
     }
 
     handleDemoUser() {
         this.props.logindemo()
             .then(() => this.props.closeModal());
-    }
-
-    validateSubmit(e) {
-        e.preventDefault();
-        const err = this.state
-        const validEmail = (/\S+@\S+\.\S+/.test(this.state.email));
-
-        if (!validEmail) {
-            err['email'] = 'Email address is not valid.'
-        }
-
-        if (this.state.password.length < 6) {
-            err['password'] = 'Password must be at least 6 characters.'
-        }
-
-        this.setState({ errors: err });
-
-        if (Object.values(err).every(v => v.length < 1)) {
-            this.handleSubmit();
-        }
     }
 
     update(f) {
@@ -63,7 +45,6 @@ class LogInForm extends React.Component {
         );
     }
 
-
     render() {
         return (
             <div className="form-container">
@@ -79,7 +60,7 @@ class LogInForm extends React.Component {
                         <hr/>
                     </div>
                 <div className="form-title">Log in to continue</div>
-                <form onSubmit={this.handleSubmit} className="form">
+                <form onSubmit={this.handleSubmit} className="form" noValidate>
                     {this.renderErrors()}
                     <div className="form">
                         <br/>
@@ -88,7 +69,7 @@ class LogInForm extends React.Component {
                                 value={this.state.email}
                                 placeholder={"Email address"}
                                 onChange={this.update('email')}
-                                // required
+                                noValidate
                             />
                         <i id="form-icon-login" className="fas fa-envelope fa-lg"></i>
                         <br/>
@@ -97,7 +78,7 @@ class LogInForm extends React.Component {
                                 value={this.state.password}
                                 placeholder={"Password"}
                                 onChange={this.update('password')}
-                                // required
+                                noValidate
                             />
                         <i id="form-icon-login" className="fas fa-lock fa-lg"></i>
                         <button className="form-button" type="submit" value={this.props.formType}>Log In</button>

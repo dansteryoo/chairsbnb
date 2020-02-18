@@ -1,5 +1,6 @@
 import React from 'react';
 
+ 
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props); 
@@ -7,120 +8,139 @@ class SignUpForm extends React.Component {
             email: '',
             password: '',
             firstName: '',
-            lastName: ''
-    };
+            lastName: '',
+            formErrors: {
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: ''
+            }
+        };
     
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.handleChange = this.handleChange.bind(this);
     }
-
 
     handleSubmit(e) {
         e.preventDefault();
-        let user = Object.assign({}, this.state); 
+        let user = Object.assign({}, this.state);
             user.first_name = user.firstName
             user.last_name = user.lastName
 
         this.props.processForm(user)
             .then(() => this.props.closeModal());
-    }
+    };
 
-    validateSubmit(e) {
+    handleChange(e) {
         e.preventDefault();
-        const err = this.state
-        const validEmail = (/\S+@\S+\.\S+/.test(this.state.email));
 
-        if (!validEmail) {
-            err['email'] = 'Email address is not valid.'
+        // f = field, v = values, e = event
+        const { name, val } = e.target;
+        let formErrors = this.state.formErrors;
+
+        switch (name) {
+            case 'email':
+                formErrors.email = 
+                val.length < 1 ? 'Email address is not valid.' : '';
+                break;
+            case 'password':
+                formErrors.password = 
+                val.length < 6 ? 'Password must be at least 6 characters.' : '';
+                break;
+            case 'firstName':
+                formErrors.firstname = 
+                val.length < 1 ? 'First name must be filled out.' : '';
+                break;
+            case 'lastName':
+                formErrors.lastname = 
+                val.length < 1 ? 'Last name must be filled out.' : '';
+                break;
         }
 
-        if (this.state.password.length < 6) {
-            err['password'] = 'Password must be at least 6 characters.'
-        }
+        this.setState({ formErrors, [name]: val });
+    };
 
-        if (this.state.firstName.length < 1) {
-            err['firstName'] = 'First name must be filled out.'
-        }
+    // renderErrors() {
 
-        if (this.state.lastName.length < 1) {
-            err['lastName'] = 'Last name must be filled out.'
-        }
-
-        this.setState({ errors: err });
-
-        if (Object.values(err).every(v => v.length < 1)) {
-            this.handleSubmit();
-        }
-    }
-
-    update(f) {
-        return e => this.setState({
-            [f]: e.target.value
-        });
-    }
-
-    renderErrors() {
-        return (
-            <ul className="form-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>{error}</li>
-                ))}
-            </ul>
-        );
-    }
+    //     return (
+    //         <ul className='form-errors'>
+    //             {this.props.errors.map((error, i) => (
+    //                 <li key={`error-${i}`}>{error}</li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
     render() {
+        
+        const { formErrors } = this.state;
+
         return (
-            <div className="form-container">
-                <div className="form-closing-x" onClick={() => this.props.closeModal()}>&#10005;</div>
+            <div className='form-container'>
+                <div className='form-closing-x' onClick={() => this.props.closeModal()}>&#10005;</div>
                 <br/>
-                <div className="form-title">Sign up with email</div>
-                <form onSubmit={this.handleSubmit} className="form">
-                    {this.renderErrors()}
-                    <div className="form">
+                <div className='form-title'>Sign up with email</div>
+                <form onSubmit={this.handleSubmit} noValidate className='form'>
+                    <div className='form'>
                         <br/>
-                        <input type="email"
-                            className="form-input"
-                            value={this.state.email}
-                            placeholder={"Email address"}
-                            onChange={this.update('email')}
+                        <input type='text'
+                            className={formErrors.email.length > 0 ? 'error' : null}
+                            placeholder={'Email address'}
+                            onChange={this.handleChange}
+                            name='email'
+                            noValidate
                             // required
                         />
-                        <i id="form-icon-login" className="fas fa-envelope fa-lg"></i>
+                        {formErrors.email.length > 0 && (
+                            <span className='form-errors'>{formErrors.email}</span>
+                        )}
+                        <i id='form-icon-login' className='fas fa-envelope fa-lg'></i>
                         <br/>
-                        <input type="text"
-                                className="form-input"
-                                value={this.state.firstName}
-                                placeholder={"First name"}
-                                onChange={this.update('firstName')}
+                        <input type='text'
+                                className={formErrors.firstName.length > 0 ? 'error' : null}
+                                placeholder={'First name'}
+                                onChange={this.handleChange}
+                                name='firstName'
+                                noValidate
                                 // required
                             />
-                        <i id="form-icon-login" className="fas fa-user fa-lg"></i>
+                        {formErrors.firstName.length > 0 && (
+                            <span className='form-errors'>{formErrors.firstName}</span>
+                        )}
+                        <i id='form-icon-login' className='fas fa-user fa-lg'></i>
                         <br/>
-                        <input type="text"
-                                className="form-input"
-                                value={this.state.lastName}
-                                placeholder={"Last name"}
-                                onChange={this.update('lastName')}
+                        <input type='text'
+                                className={formErrors.lastName.length > 0 ? 'error' : null}
+                                placeholder={'Last name'}
+                                onChange={this.handleChange}
+                                name='lastName'
+                                noValidate
                                 // required
                             />
-                        <i id="form-icon-login" className="fas fa-user fa-lg"></i>
+                        {formErrors.lastName.length > 0 && (
+                            <span className='form-errors'>{formErrors.lastName}</span>
+                        )}
+                        <i id='form-icon-login' className='fas fa-user fa-lg'></i>
                         <br/>
-                        <input type="password"
-                                className="form-input"
-                                value={this.state.password}
-                                placeholder={"Create a password"}
-                                onChange={this.update('password')}
+                        <input type='password'
+                                className={formErrors.password.length > 0 ? 'error' : null}
+                                placeholder={'Create a password'}
+                                onChange={this.handleChange}
+                                name='password'
+                                noValidate
                                 // required
                             />
-                        <i id="form-icon-login" className="fas fa-lock fa-lg"></i>
-                        <button className="form-button" type="submit" value={this.props.formType}>Sign Up</button>
+                        {formErrors.password.length > 0 && (
+                            <span className='form-errors'>{formErrors.password}</span>
+                        )}
+                        <i id='form-icon-login' className='fas fa-lock fa-lg'></i>
+                        <button className='form-button' type='submit' value={this.props.formType}>Sign Up</button>
                     </div>
                 </form>
             <br />
-            <div className="form-change-container">
+            <div className='form-change-container'>
                 <p>Already have a ChairsBnB account?</p>
-                    <button className="form-change-btn" onClick={() => this.props.openModal('Log In')}>
+                    <button className='form-change-btn' onClick={() => this.props.openModal('Log In')}>
                     Log In
                     </button>
             </div>
@@ -130,3 +150,5 @@ class SignUpForm extends React.Component {
 }
 
 export default SignUpForm;
+
+
