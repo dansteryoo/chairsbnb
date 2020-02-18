@@ -1,19 +1,24 @@
+
+//------------------NavSplash
+
 .nav-container {
     position: fixed;
     display: flex;
     width: 100%;
     height: 25px;
     background-color: transparent;
-    margin-top: 29px;
+    color: #ffffff;
+    margin-top: 35px;
+    z-index: 10;
 }
 
 .nav-home {
     display: flex;
     justify-content: left;
     background-color: transparent;
-    color: #ffffff;
-    font-size: 10px;
-    margin-left: 40px;
+    font-size: 16px;
+    margin-left: 37px;
+    margin-top: -6px;
 }
 
 .nav-links {
@@ -27,12 +32,54 @@
     color: #ffffff;
     margin-right: 30px;
     font-size: 14px;
-    cursor: pointer;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .signup-li:hover, .login-li:hover {
-    height: 40px;
+    height: 48px;
+    border-radius: 1px;
     border-bottom: 3px solid #ffffff;
 }
 
+//------------------NavSearch
+
+.navsearch-container {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #D3D3D3;
+    color: #767676;
+    z-index: 10;
+}
+
+.navsearch-home {
+    display: flex;
+    background-color: transparent;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-top: 24px;
+}
+
+.navsearch-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 40px;
+    margin-top: 30px;
+    color: #484848;
+}
+
+.navsearch-links li {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navsearch-logout-btn:hover {
+    height: 48px;
+    border-radius: 1px;
+    border-bottom: 3px solid #484848;
+}

@@ -6,8 +6,8 @@ const ListingsIndexItem = ({ listing }) => {
     return (
         <div className="listing-li">
             <Link to={`/listings/${listing.id}`}>
-                <div className="listing-image"
-                    style={{ listingImage: `url(${listing.images[0]})` }}>
+                <div className="listing-image">
+                    
                     </div>
             </Link>
             <div className="listing-address">
@@ -24,3 +24,4 @@ const ListingsIndexItem = ({ listing }) => {
 }
 
 export default ListingsIndexItem;
+// style = {{ listingImage: `url(${listing.images[0]})` }}>
