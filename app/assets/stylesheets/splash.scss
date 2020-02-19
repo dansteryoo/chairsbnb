@@ -1,4 +1,8 @@
 
+.app-class {
+    height: 100%;
+}
+
 .splash-main {
     background: image-url('chair-on-beach.png');
     background-size: cover;
@@ -13,4 +17,146 @@
     left: 100px;
     height: 50%;
     width: 23%;
+}
+
+//---------------SplashForm
+
+.splash-form-container {
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    max-width: 440px;
+    height: fit-content;
+    top: 15%;
+    left: 5%;
+    padding: 12px 32px 28px;
+    overflow: visible;
+    font-size: 14px;
+    color: #484848;
+    line-height: 1.43;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+
+.splash-form-title {
+  display: flex;
+  justify-content: left;
+  font-size: 30px;
+  font-weight: 645;
+}
+
+.splash-form-label {
+    display: flex;
+    font-size: 12px;
+    font-weight: 645;
+    margin-bottom: 10px;
+    width: 94%;
+}
+
+.splash-form {
+  display: block;
+  background-color: transparent;
+  width: 100%;
+}
+
+.splash-form-input {
+    display: flex;
+    border-radius: 6px;
+    color: #484848;
+    font-size: 16px;
+    height: 25px;
+    width: 95%;
+    border: 1px solid #D3D3D3;
+    padding: 11px;
+}
+
+
+.splash-form-input::placeholder {
+    color: #939393;
+}
+
+.date-label-container, .date-input-container {
+    display: flex;
+    width: 100%;
+}
+
+.splash-form-checkin, .splash-form-checkout {
+    display: flex;
+    width: 100%;
+}
+
+.splash-form-input-date {
+    border-radius: 6px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    height: 25px;
+    width: 100%;
+    border: 1px solid #D3D3D3;
+    color: #939393;
+    padding: 11px;
+    margin: 0 1px 0 0;
+}
+
+.splash-form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #008489;
+}
+
+.splash-form-input:invalid {
+    outline: none;    
+    box-shadow: 0 0 0 1px #FF5A5F;
+}
+
+
+.splash-form-input-date:focus {
+    outline: none ;
+    box-shadow: 0 0 0 1px #008489;
+}
+
+.splash-form-input-date:invalid {
+    outline: none;
+    box-shadow: 0 0 0 1px #FF5A5F;
+}
+
+.splash-form-btn-container {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.splash-form-button {
+    width: 100px;
+    height: 50px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #FF5A5F;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.splash-form-errors {
+    color: #FF5A5F;
+}
+
+.splash-form-dropdown {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.guest-selector {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+select {
+    border-radius: 6px;
+    color: #939393;;
+    font-size: 16px;
+    height: 45px;
+    border: 1px solid #D3D3D3;
 }

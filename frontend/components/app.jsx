@@ -9,7 +9,7 @@ import ListingsIndexContainer from '../components/show/listings_index_container'
 
 
 const App = () => (
-    <div>
+    <div className='app-class'>
         <Modal />
         <AuthRoute exact path='/' component={SplashContainer} />
 

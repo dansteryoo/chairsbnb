@@ -3,19 +3,17 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   width: 500px;
-  height: 750px;
+  height: fit-content;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px 32px;
+  padding: 10px 32px 40px;
   overflow: visible;
   font-size: 14px;
   color: #484848;
   line-height: 1.43;
-  margin: 0;
-    -webkit-font-smoothing: antialiased;
   z-index: 1;
 }
 
@@ -40,11 +38,14 @@
   padding: 11px;
 }
 
+.form-input::placeholder {
+  color: #A0A0A0;
+}
+
 .form-input:focus {
   outline: none ;
   box-shadow: 0 0 0 1px #008489;
 }
-
 
 .form-input:invalid {
   outline: none;
@@ -71,7 +72,7 @@
   border-radius: 6px;
   background-color: #FF5A5F;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -87,7 +88,7 @@
   border-radius: 6px;
   background-color: #008489;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -116,7 +117,7 @@
     content: 'or';
     position: relative;
     top: -11px;
-    background: #ffffff;
+    background: #FFFFFF;
     color: #767676;
     padding-right: 15px;
     padding-left: 15px;
@@ -187,6 +188,16 @@ select {
   font-size: 16px;
   height: 45px;
   border: 1px solid #D3D3D3;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #008489;
+}
+
+select:invalid {
+    outline: none;    
+    box-shadow: 0 0 0 1px #FF5A5F;
 }
 
 .month-selector {
