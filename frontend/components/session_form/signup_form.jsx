@@ -127,7 +127,7 @@ class SignUp extends React.Component {
                         <div className='birthday-selector'>
                         <div className='bday-month'>
                                 <select className='month-selector' onChange={this.update('month')}>
-                                    <option value='' disabled='disabled' selected='selected'>Month</option>
+                                    <option value='' disabled='disabled'>Month</option>
                                 <option value='1'>January</option>
                                 <option value='2'>February</option>
                                 <option value='3'>March</option>
@@ -144,13 +144,13 @@ class SignUp extends React.Component {
                         </div>
                         <div className='bday-day'>
                                 <select className='day-selector' onChange={this.update('day')}>
-                                    <option value='' disabled='disabled' selected='selected'>Day</option>
+                                    <option value='' disabled='disabled'>Day</option>
                                 {days}
                             </select>
                         </div>
                         <div className='bday-year'>
                                 <select className='year-selector' onChange={this.update('year')}>
-                            <option value='' disabled='disabled' selected='selected'>Year</option>
+                            <option value='' disabled='disabled'>Year</option>
                                 {years}
                             </select>
                         </div>

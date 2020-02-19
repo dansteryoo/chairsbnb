@@ -1,7 +1,7 @@
 class Api::ListingsController < ApplicationController
     
     def index
-        @listings = Listing.with_attached_photos.all
+        @listings = Listing.all
         render :index
 
     end
@@ -48,7 +48,7 @@ class Api::ListingsController < ApplicationController
 private
 
     def listing_params
-        params.require(:listing).permit(:id, :name, :description, :host_id, :address, :lat, :long, :price, images: [])
+        params.require(:listing).permit(:id, :name, :description, :host_id, :address, :lat, :long, :price, photos: [])
     end
 
 end

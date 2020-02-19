@@ -3,6 +3,6 @@
     json.partial! '/api/listings/listing', listing: listing
         json.bookings listing.bookings.map { |booking| booking.id }
         json.reviews listing.reviews.map { |review| review.id }
-        json.images listing.images.map { |image| url_for(image) }
+        json.photos listing.photos.map { |photo| url_for(photo) }
   end
 end

@@ -3,11 +3,16 @@ import ListingsIndexItems from '../show/listing_index_items';
 import NavSearchContainer from '../navbar/navsearch_container';
 
 class ListingsIndex extends React.Component {
+    // constructor(props) {
+    //     super(props)
+    // }
+
     componentDidMount() {
         this.props.fetchListings();
     }
 
     render() {
+
         const { listings } = this.props;
 
         return (
@@ -19,8 +24,7 @@ class ListingsIndex extends React.Component {
                     <div className="listings-index-subheader">
                         <span>Book a seating arrangement led by local hosts on your next trip.</span>
                     </div>
-                <div className="listings-ul">
-                    <div> 
+                <ul className="listings-ul">
                         {
                             listings.map(listing => (
                                 <ListingsIndexItems
@@ -29,8 +33,7 @@ class ListingsIndex extends React.Component {
                                 />
                             ))
                         }
-                    </div>
-                </div>
+                </ul>
             </div>
         )
     }

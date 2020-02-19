@@ -5,62 +5,92 @@
 
 .listings-index-container {
     color: #222222;
-    width: 100%;
-    height: 100%;
+    min-width: 500px;
 }
 
 .listings-index-header {
     font-size: 22px;
     font-weight: 500;
+    padding-top: 110px;
+    margin-left: 40px;
 }
 
 .listings-index-subheader {
     font-size: 14px;
     font-weight: 300;
     margin-top: 5px;
+    margin-left: 40px;
 }
 
 .listings-ul {
+    height: auto;
+    min-width: 720px;
     display: flex;
-    align-items: baseline;
-    align-content: flex-start;
     flex-wrap: wrap;
- 
-    border: 1px solid red;
+    justify-content: left;
+    margin: 32px 0 150px 40px;
 }
 
 .listing-li {
-    width: 200px;
-    height: 150px;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    width: 320px;
+    min-width: 320px;
+    height: 306px;
     font-size: 14px;
     font-weight: 300;
-    border: 1px solid black;
+    justify-content: flex-start;
+    padding: 20px 0 20px 0;
+}
+
+.listing-info {
+    width: 100%;
 }
 
 .listing-address {
-    color: #767676;
-    margin-top: 8px;
-    font-size: 14px;
+    width: 100%; 
+    justify-content: flex-start;
+    margin-top: 16px;
 }
 
-.listing-name {
-    // font-size: 14px;
-    // font-weight: 250;
-    display: flex;
+.listing-name {    
+    width: 100%;
     justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 8px;
 }
+
+.listing-price {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.listing-address span {
+    color: #767676; 
+}
+
+// .listing-name span {
+
+// }
 
 .listing-price span {
     font-weight: 600;
-    margin-top: 5px;
 }
 
 .listing-image {
-    width: 200px;
-    height: 150px;
-    border: 1px solid orange;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.listing-image img{
+    width: 100%;
+    min-height: 200px;
+    max-width: 300px;
+    border-radius: 4px;
 }
 
 // .listing-image:hover {

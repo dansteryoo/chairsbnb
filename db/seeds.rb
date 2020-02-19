@@ -72,9 +72,9 @@ listing_01 = Listing.create(
     price: 99999.99
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_01.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_01.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 listing_02 = Listing.create(
@@ -88,9 +88,9 @@ listing_02 = Listing.create(
     price: 55000.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_02.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_02.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -105,9 +105,9 @@ listing_03 = Listing.create(
     price: 15000.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_03.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_03.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -122,9 +122,9 @@ listing_04 = Listing.create(
     price: 10000.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_04.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_04.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -139,9 +139,9 @@ listing_05 = Listing.create(
     price: 365.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_05.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_05.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -156,9 +156,9 @@ listing_06 = Listing.create(
     price: 465.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_06.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_06.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -173,9 +173,9 @@ listing_07 = Listing.create(
     price: 323.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_07.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_07.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -190,9 +190,9 @@ listing_08 = Listing.create(
     price: 218.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_08.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_08.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -207,9 +207,9 @@ listing_09 = Listing.create(
     price: 17.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_09.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_09.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -224,9 +224,9 @@ listing_10 = Listing.create(
     price: 28.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_10.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_10.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -241,9 +241,9 @@ listing_11 = Listing.create(
     price: 18.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_11.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_11.photos.attach(io: file, filename: "chair_PH.jpg")
 
 
 
@@ -258,7 +258,7 @@ listing_12 = Listing.create(
     price: 59.00
 )
 
-file = open("/Users/pd/aa_final_project/app/assets/images/chair_placeholder.jpg")
+file = open("/Users/pd/aa_final_project/app/assets/images/chair_PH.jpg")
 
-listing_12.images.attach(io: file, filename: "chair_placeholder.jpg")
+listing_12.photos.attach(io: file, filename: "chair_PH.jpg")
 

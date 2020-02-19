@@ -5,31 +5,31 @@ import ReviewFormContainer from './review_form_container';
 import { ProtectedRoute } from '../../util/route_util';
 import { ReviewLink } from '../../util/link_util';
 
-const BenchShow = ({ bench, benchId, fetchBench, reviews }) => {
-    const benches = {
-        [benchId]: bench
+const listingShow = ({ listing, listingId, fetchlisting, reviews }) => {
+    const listings = {
+        [listingId]: listing
     };
 
     return (
-        <div className="single-bench-show">
-            <div className="single-bench-map">
-                <Link to="/">Back to Benches Index</Link>
-                <BenchMap
-                    benches={benches}
-                    benchId={benchId}
-                    singleBench={true}
-                    fetchBench={fetchBench}
+        <div className="single-listing-show">
+            <div className="single-listing-map">
+                <Link to="/">Back to listings Index</Link>
+                <listingMap
+                    listings={listings}
+                    listingId={listingId}
+                    singlelisting={true}
+                    fetchlisting={fetchlisting}
                 />
             </div>
-            <div className="right-half bench-details">
-                <BenchDetail bench={bench} reviews={reviews} />
+            <div className="right-half listing-details">
+                <listingDetail listing={listing} reviews={reviews} />
                 <ReviewLink
                     component={ReviewFormContainer}
-                    to={`/benches/${benchId}/review`}
+                    to={`/listinges/${listingId}/review`}
                     label="Leave a Review"
                 />
                 <ProtectedRoute
-                    path="/benches/:benchId/review"
+                    path="/listinges/:listingId/review"
                     component={ReviewFormContainer}
                 />
             </div>
@@ -37,4 +37,4 @@ const BenchShow = ({ bench, benchId, fetchBench, reviews }) => {
     );
 };
 
-export default BenchShow;
+export default listingShow;

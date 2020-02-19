@@ -18,7 +18,7 @@ class Listing < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Review
 
-    has_many_attached :images
+    has_many_attached :photos
 
     def in_bounds(bounds)
         bounds = bounds.values

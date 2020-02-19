@@ -14,16 +14,3 @@ const mapDispatchToProps = (dispatch) => ({
     
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingsIndex);
-
-
-// // MyFormComponent#formSubmissionHandler
-// const { name, photos } = this.state;
-// const formData = new FormData();
-
-// formData.append("post[name]", name);
-
-// for (let i = 0; i < photos.length; i++) {
-//     formData.append("post[photos][]", photos[i]);
-// }
-
-// this.props.myThunkActionCreator(formData);

@@ -3,6 +3,6 @@
         json.partial! "api/bookings/booking", booking: @booking
         json.dates booking.dates
         json.locations booking.listing.address
-        json.images booking.listing.images.map { |image| url_for(image) }
+        json.photos booking.listing.photos.map { |photo| url_for(photo) }
     end
 end
