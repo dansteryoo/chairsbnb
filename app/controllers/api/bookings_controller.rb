@@ -1,6 +1,5 @@
 class Api::BookingsController < ApplicationController
 
-
     before_action :require_logged_in!
 
     def index
@@ -46,7 +45,7 @@ class Api::BookingsController < ApplicationController
 private
 
     def booking_params
-        params.require(:booking).permit(:listing_id, :guest_id, :start_date, :end_date)
+        params.require(:booking).permit(:listing_id, :guest_id, :start_date, :end_date, images: [])
     end
 
 end

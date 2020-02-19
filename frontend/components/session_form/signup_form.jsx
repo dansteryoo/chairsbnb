@@ -1,154 +1,175 @@
 import React from 'react';
 
- 
-class SignUpForm extends React.Component {
+class SignUp extends React.Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
             email: '',
             password: '',
             firstName: '',
             lastName: '',
-            formErrors: {
-                email: '',
-                password: '',
-                firstName: '',
-                lastName: ''
-            }
-        };
-    
+            month: '',
+            day: '',
+            year: ''
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+    };
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     handleSubmit(e) {
         e.preventDefault();
+
         let user = Object.assign({}, this.state);
-            user.first_name = user.firstName
-            user.last_name = user.lastName
+        user.first_name = user.firstName
+        user.last_name = user.lastName
 
         this.props.processForm(user)
             .then(() => this.props.closeModal());
     };
 
-    handleChange(e) {
-        e.preventDefault();
+    update(f) {
+        return e => this.setState({
+            [f]: e.target.value
+        });
+    }
 
-        // f = field, v = values, e = event
-        const { name, val } = e.target;
-        let formErrors = this.state.formErrors;
-
-        switch (name) {
-            case 'email':
-                formErrors.email = 
-                val.length < 1 ? 'Email address is not valid.' : '';
-                break;
-            case 'password':
-                formErrors.password = 
-                val.length < 6 ? 'Password must be at least 6 characters.' : '';
-                break;
-            case 'firstName':
-                formErrors.firstname = 
-                val.length < 1 ? 'First name must be filled out.' : '';
-                break;
-            case 'lastName':
-                formErrors.lastname = 
-                val.length < 1 ? 'Last name must be filled out.' : '';
-                break;
-        }
-
-        this.setState({ formErrors, [name]: val });
-    };
-
-    // renderErrors() {
-
-    //     return (
-    //         <ul className='form-errors'>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`error-${i}`}>{error}</li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    renderErrors() {
+        return (
+            <ul className='form-errors'>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>{error}</li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
-        
-        const { formErrors } = this.state;
+
+        const yearsArr = [];
+        const daysArr = [];
+        for (let i = 2020; i > 1900; i--) {
+            yearsArr.push(i);
+        }
+
+        for (let i = 1; i <= 31; i++) {
+            daysArr.push(i);
+        }
+
+        const years = yearsArr.map(year => {
+            return (<option key={year} value={year}>{year}</option>)
+        })
+
+        const days = daysArr.map(day => {
+            return (<option key={day} value={day}>{day}</option>)
+        })
 
         return (
             <div className='form-container'>
                 <div className='form-closing-x' onClick={() => this.props.closeModal()}>&#10005;</div>
-                <br/>
+                <br />
                 <div className='form-title'>Sign up with email</div>
-                <form onSubmit={this.handleSubmit} noValidate className='form'>
+                    <form onSubmit={this.handleSubmit} className='form'>
+                    <br />
+                    {this.renderErrors()}
+                    <br />
                     <div className='form'>
-                        <br/>
-                        <input type='text'
-                            className={formErrors.email.length > 0 ? 'error' : null}
+                        <input type='email'
+                            className='form-input'
+                            value={this.state.email}
                             placeholder={'Email address'}
-                            onChange={this.handleChange}
-                            name='email'
-                            noValidate
-                            // required
+                            onChange={this.update('email')}
+                            name='email' 
+                        // noValidate
+                        // required
                         />
-                        {formErrors.email.length > 0 && (
-                            <span className='form-errors'>{formErrors.email}</span>
-                        )}
                         <i id='form-icon-login' className='fas fa-envelope fa-lg'></i>
-                        <br/>
+                        <br />
                         <input type='text'
-                                className={formErrors.firstName.length > 0 ? 'error' : null}
-                                placeholder={'First name'}
-                                onChange={this.handleChange}
-                                name='firstName'
-                                noValidate
-                                // required
-                            />
-                        {formErrors.firstName.length > 0 && (
-                            <span className='form-errors'>{formErrors.firstName}</span>
-                        )}
+                            className='form-input'
+                            value={this.state.firstName}
+                            placeholder={'First name'}
+                            onChange={this.update('firstName')}
+                            name='firstName'
+                        // noValidate
+                        // required
+                        />
                         <i id='form-icon-login' className='fas fa-user fa-lg'></i>
-                        <br/>
+                        <br />
                         <input type='text'
-                                className={formErrors.lastName.length > 0 ? 'error' : null}
-                                placeholder={'Last name'}
-                                onChange={this.handleChange}
-                                name='lastName'
-                                noValidate
-                                // required
-                            />
-                        {formErrors.lastName.length > 0 && (
-                            <span className='form-errors'>{formErrors.lastName}</span>
-                        )}
+                            className='form-input'
+                            value={this.state.lastName}
+                            placeholder={'Last name'}
+                            onChange={this.update('lastName')}
+                            name='lastName'
+                        // noValidate
+                        // required
+                        />
                         <i id='form-icon-login' className='fas fa-user fa-lg'></i>
-                        <br/>
+                        <br />
                         <input type='password'
-                                className={formErrors.password.length > 0 ? 'error' : null}
-                                placeholder={'Create a password'}
-                                onChange={this.handleChange}
-                                name='password'
-                                noValidate
-                                // required
-                            />
-                        {formErrors.password.length > 0 && (
-                            <span className='form-errors'>{formErrors.password}</span>
-                        )}
+                            className='form-input'
+                            value={this.state.password}
+                            placeholder={'Create a password'}
+                            onChange={this.update('password')}
+                            name='password'
+                        // noValidate
+                        // required
+                        />
                         <i id='form-icon-login' className='fas fa-lock fa-lg'></i>
-                        <button className='form-button' type='submit' value={this.props.formType}>Sign Up</button>
+                        <br />
+                        <p className='birthday'>Birthday</p>
+                        <p className='birthday-text'>To sign up, you need to be at least 18. Other people who use ChairsBnB won’t see your birthday.</p>
+                            <br />
+                        <div className='birthday-selector'>
+                        <div className='bday-month'>
+                                <select className='month-selector' onChange={this.update('month')}>
+                                    <option value='' disabled='disabled' selected='selected'>Month</option>
+                                <option value='1'>January</option>
+                                <option value='2'>February</option>
+                                <option value='3'>March</option>
+                                <option value='4'>April</option>
+                                <option value='5'>May</option>
+                                <option value='6'>June</option>
+                                <option value='7'>July</option>
+                                <option value='8'>August</option>
+                                <option value='9'>September</option>
+                                <option value='10'>October</option>
+                                <option value='11'>November</option>
+                                <option value='12'>December</option>
+                            </select>
+                        </div>
+                        <div className='bday-day'>
+                                <select className='day-selector' onChange={this.update('day')}>
+                                    <option value='' disabled='disabled' selected='selected'>Day</option>
+                                {days}
+                            </select>
+                        </div>
+                        <div className='bday-year'>
+                                <select className='year-selector' onChange={this.update('year')}>
+                            <option value='' disabled='disabled' selected='selected'>Year</option>
+                                {years}
+                            </select>
+                        </div>
+                        </div>
+                            <button className='form-button' type='submit' value={this.props.formType}>Sign Up</button>
+                        </div>
+                    </form>
+                    <br />
+                    <div className='form-change-container'>
+                        <p>Already have a ChairsBnB account?</p>
+                        <button className='form-change-btn' onClick={() => this.props.openModal('Log In')}>
+                            Log In
+                        </button>
                     </div>
-                </form>
-            <br />
-            <div className='form-change-container'>
-                <p>Already have a ChairsBnB account?</p>
-                    <button className='form-change-btn' onClick={() => this.props.openModal('Log In')}>
-                    Log In
-                    </button>
-            </div>
-            </div>
+                </div>
+
         );
     }
 }
 
-export default SignUpForm;
-
+export default SignUp;
 

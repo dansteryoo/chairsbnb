@@ -1,12 +1,13 @@
 class Api::ListingsController < ApplicationController
     
     def index
-        @listings = Listing.all
+        @listings = Listing.with_attached_photos.all
         render :index
+
     end
 
     def show
-        @listing = Listing.find(params[:id])
+        @listing = Listing.with_attached_photos.find(params[:id])
         render :show
     end
 
@@ -25,16 +26,29 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
+        @listing = Listing.new(listing_params)
+
+        if @listing.save
+            render :show
+        else
+            render json: @listing.errors.full_messages, status: 400
+        end
+    end
+
+    def destroy
+        @listing = Listing.find(params[:id])
+       
+        if @listing.delete
+            render :show
+        else
+            render json: ['Unable to delete listing.'], status: 400
+        end
     end
     
 private
 
     def listing_params
         params.require(:listing).permit(:id, :name, :description, :host_id, :address, :lat, :long, :price, images: [])
-    end
-
-    def bounds
-        params[:bounds]
     end
 
 end

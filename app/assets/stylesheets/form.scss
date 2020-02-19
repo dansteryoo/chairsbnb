@@ -5,7 +5,7 @@
   position: absolute;
   background-color: #ffffff;
   width: 500px;
-  height: 600px;
+  height: 750px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -25,27 +25,7 @@
   width: 100%;
 }
 
-// .form-input {
-//   display: flex;
-//   justify-content: center;
-//   align-content:space-between;;
-//   border-radius: 6px;
-//   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-//   color: #484848;
-//   font-size: 16px;
-//   line-height: 18px;
-//   height: 25px;
-//   width: 95%;
-//   border: 1px solid #D3D3D3;
-//   padding: 11px;
-// }
-
-.form-input:focus {
-  outline: none ;
-  box-shadow: 0 0 0 1px #008489;
-}
-
-input {
+.form-input {
   display: flex;
   justify-content: center;
   align-content:space-between;;
@@ -60,10 +40,17 @@ input {
   padding: 11px;
 }
 
-input.error  {
+.form-input:focus {
+  outline: none ;
+  box-shadow: 0 0 0 1px #008489;
+}
+
+
+.form-input:invalid {
   outline: none;
   box-shadow: 0 0 0 1px #FF5A5F;
 }
+
 
 .form-title {
   display: flex;
@@ -135,6 +122,7 @@ input.error  {
     padding-left: 15px;
 }
 
+
 .form-change-container {
   display: flex;
   flex-direction: wrap;
@@ -154,9 +142,9 @@ input.error  {
   cursor: pointer;
 }
 
+
 .form-errors {
   color: #FF5A5F;
-  margin-top: 10px;
 }
 
 #form-icon-login {
@@ -176,3 +164,40 @@ input.error  {
   margin: -31px;
   z-index: 10;
 }
+
+.birthday {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.birthday-selector {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bday-day {
+  margin: 0 25px 0 25px;
+
+}
+
+select {
+  border-radius: 6px;
+  color: #484848;
+  font-size: 16px;
+  height: 45px;
+  border: 1px solid #D3D3D3;
+}
+
+.month-selector {
+  width: 170px;
+}
+
+.day-selector {
+  width: 100px;
+}
+
+.year-selector {
+  width: 170px;
+}
+
