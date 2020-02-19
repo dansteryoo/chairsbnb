@@ -13,26 +13,17 @@ class Booking < ApplicationRecord
         foreign_key: :guest_id,
         class_name: :User
 
-    def dates
-        (start_date..end_date).to_a
-    end
-
-    def in_bounds(bounds)
-        self.where('lat < ?', bounds[:northEast][:lat])
-            .where('lat > ?', bounds[:southWest][:lat])
-            .where('long > ?', bounds[:southWest][:long])
-            .where('long < ?', bounds[:northEast][:long])
-    end
-
-    def available_booking(bounds, dates)
-        overlap = self
-            .where.not(id: self.id)
+    def available_booking?
+        if self.start_date && self.end_date
+        
+        booking_request = Booking
             .where(listing_id: self.listing_id)
-            .where('start_date BETWEEN :start_date AND :end_date
-                OR end_date BETWEEN :start_date AND :end_date', 
-                dates[:start_date], dates[:end_date])
+            .where.not('end_date <= ? OR start_date >= ?', self.start_date, self.end_date)
+        
+            return true if booking_request.empty?
+        end
 
-        self.in_bounds(bounds).where.not(id: overlap)
-    end  
+        return false
+    end
 
 end

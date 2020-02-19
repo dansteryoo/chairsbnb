@@ -20,8 +20,20 @@ class Listing < ApplicationRecord
 
     has_many_attached :images
 
+    def in_bounds(bounds)
+        bounds = bounds.values
+            if self.lat.between?(
+                bounds[1]['lat'].to_f, 
+                bounds[0]['lat'].to_f) && self.long.between?(
+                    bounds[1]['long'].to_f, bounds[0]['long'].to_f)
+            
+                return true 
+            end
 
-    def self.search_by_keywords(keywords)
+        return false
+    end
+
+    def search_by_keywords(keywords)
         match = '%#{keywords}%'
         
         search_result = Listing.where('name ILIKE ?', match)
@@ -31,7 +43,7 @@ class Listing < ApplicationRecord
         search_result
     end
 
-    def self.search_by_dates(search_result, start_date, end_date)
+    def search_by_dates(search_result, start_date, end_date)
         start_date = Date.parse(start_date)
         end_date = Date.parse(end_date)
         search_dates = (start_date..end_date).to_a

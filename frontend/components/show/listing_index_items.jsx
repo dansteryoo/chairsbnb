@@ -25,3 +25,11 @@ const ListingsIndexItem = ({ listing }) => {
 
 export default ListingsIndexItem;
 // style = {{ listingImage: `url(${listing.images[0]})` }}>
+
+// MyFormComponent#render
+// <input
+//     type="file"
+//     onChange={e => this.setState({ photos: e.target.files })}
+//     multiple
+// />
+
