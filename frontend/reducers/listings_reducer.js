@@ -10,7 +10,6 @@ const listingsReducer = (oldState = {}, action) => {
             return action.listings;
 
         case RECEIVE_LISTING:
-            debugger
             newState[action.listing.id] = action.listing
             return newState
 

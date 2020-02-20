@@ -53,7 +53,7 @@ class SplashForm extends React.Component {
                         </label>
                         <input type='text'
                             className='splash-form-input'
-                            value={this.state.location}
+                            value='{this.state.location}'
                             placeholder={'Anywhere'}
                         // required
                         />
@@ -69,7 +69,7 @@ class SplashForm extends React.Component {
                             <div className='splash-form-checkin'>
                         <input type='date'
                             className='splash-form-input-date'
-                            value={this.state.startDate}
+                            value='{this.state.startDate}'
                             placeholder={'mm/dd/yyyy'}
                         // required   
                         />
@@ -77,7 +77,7 @@ class SplashForm extends React.Component {
                             <div className='splash-form-checkout'>
                         <input type='date'
                             className='splash-form-input-date'
-                            value={this.state.endDate}
+                            value='{this.state.endDate}'
                             placeholder={'mm/dd/yyyy'}
                         // required   
                         />
