@@ -7,7 +7,8 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        @listing = Listing.with_attached_photos.find(params[:id])
+        debugger
+        @listing = Listing.find(params[:id])
         render :show
     end
 
@@ -48,7 +49,7 @@ class Api::ListingsController < ApplicationController
 private
 
     def listing_params
-        params.require(:listing).permit(:id, :name, :description, :host_id, :address, :lat, :long, :price, photos: [])
+        params.require(:listing).permit(:id, :name, :description, :host_id, :address, :lat, :long, :price, images: [])
     end
 
 end

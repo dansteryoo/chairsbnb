@@ -7,12 +7,13 @@ export const fetchListings = () => (
     })
 );
 
-export const fetchListing = (listingId) => (
-    $.ajax({
+export const fetchListing = (listingId) => {
+    debugger
+    return $.ajax({
         url: `/api/listings/${listingId}`,
         method: 'GET'
     })
-);
+};
 
 export const fetchSearch = (keywords, startDate, endDate) => (
     $.ajax({

@@ -3,9 +3,9 @@ import ListingsIndexItems from '../show/listing_index_items';
 import NavSearchContainer from '../navbar/navsearch_container';
 
 class ListingsIndex extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
+    constructor(props) {
+        super(props)
+    }
 
     componentDidMount() {
         this.props.fetchListings();

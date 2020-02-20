@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ListingsIndexItems = ({ listing }) => {
-
     return (
         <li className='listing-li'>
             <Link to={`/listings/${listing.id}`}>
             <div className='listing-image'> 
-                <img src={listing.photos[0]}/>
+                <img src={listing.images[0]}/>
             </div>
        
             </Link>

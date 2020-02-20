@@ -9,10 +9,13 @@ const receiveListings = (listings) => ({
     listings
 });
 
-const receiveListing = (listing) => ({
-    type: RECEIVE_LISTING,
-    listing
-});
+const receiveListing = (listing) => {
+    debugger
+    return {
+        type: RECEIVE_LISTING,
+        listing
+    }
+};
 
 
 export const fetchListings = () => dispatch => (
@@ -21,11 +24,13 @@ export const fetchListings = () => dispatch => (
     )  
 );
 
-export const fetchListing = (listingId) => dispatch => (
-    ListingsAPIUtil.fetchListing(listingId)
+export const fetchListing = (listingId) => dispatch => {
+    debugger
+    return ListingsAPIUtil.fetchListing(listingId)
         .then(listing => dispatch(receiveListing(listing))
     )
-);
+};
+
 
 export const fetchSearch = (keywords, startDate, endDate) => dispatch => (
     ListingsAPIUtil.fetchSearch(keywords, startDate, endDate)
