@@ -53,7 +53,7 @@ class SplashForm extends React.Component {
                         </label>
                         <input type='text'
                             className='splash-form-input'
-                            value='{this.state.location}'
+                            value={this.state.location}
                             placeholder={'Anywhere'}
                         // required
                         />
