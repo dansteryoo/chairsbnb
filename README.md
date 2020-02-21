@@ -41,11 +41,11 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 - Intro to modal forms. 
   Styling and functionality. 
 
-![Image of Signup](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-signup.png)
+![Image of Signup](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-signin.png)
 
   Blurb about signups. 
 
-![Image of Login](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-login.png)
+![Image of Login](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-logout.png)
 
   Blurb about logins. 
 
