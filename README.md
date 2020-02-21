@@ -41,11 +41,11 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 - Intro to modal forms. 
   Styling and functionality. 
 
-![Image of Signup](https://githubreadme.s3.amazonaws.com/screenshot-signup.png)
+![Image of Signup](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-signup.png)
 
   Blurb about signups. 
 
-![Image of Login](https://githubreadme.s3.amazonaws.com/screenshot-login.png)
+![Image of Login](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-login.png)
 
   Blurb about logins. 
 
@@ -53,7 +53,7 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 
 - Intro to listings. 
 
-![Image of Listings](https://githubreadme.s3.amazonaws.com/screenshot-listings.png)
+![Image of Listings](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-listings.png)
 
   Styling. 
   Resizing based on screen resolution. 
