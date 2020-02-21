@@ -50,22 +50,26 @@ class ListingShow extends React.Component {
                     </div>
 
                     <div className='show-image-sub-container'>
-                        <div className='show-image-2-container'>
-                            <div className='show-image-2' />
+
+                        <div className='show-image-top-container'>
+                            <div className='show-image-2-container'>
+                                <div className='show-image-2'></div>
+                            </div>
+
+                            <div className='show-image-3-container'>
+                                <div className='show-image-3'></div>
+                            </div>
                         </div>
 
-                        <div className='show-image-3-container'>
-                            <div className='show-image-3' />
-                        </div>
+                        <div className='show-image-bottom-container'>
+                            <div className='show-image-4-container'>
+                                <div className='show-image-4'></div>
+                            </div>
 
-                        <div className='show-image-4-container'>
-                            <div className='show-image-4' />
+                            <div className='show-image-5-container'>
+                                <div className='show-image-5'></div>
+                            </div>
                         </div>
-
-                        <div className='show-image-5-container'>
-                            <div className='show-image-5' />
-                        </div>
-
                     </div>
                 </div>
 

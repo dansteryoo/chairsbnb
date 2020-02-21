@@ -55,6 +55,7 @@ class SplashForm extends React.Component {
                             className='splash-form-input'
                             value={this.state.location}
                             placeholder={'Anywhere'}
+                            onChange={this.update('location')}
                         // required
                         />
                         
@@ -69,16 +70,18 @@ class SplashForm extends React.Component {
                             <div className='splash-form-checkin'>
                         <input type='date'
                             className='splash-form-input-date'
-                            value='{this.state.startDate}'
+                            value={this.state.startDate}
                             placeholder={'mm/dd/yyyy'}
+                            onChange={this.update('startDate')}
                         // required   
                         />
                             </div>
                             <div className='splash-form-checkout'>
                         <input type='date'
                             className='splash-form-input-date'
-                            value='{this.state.endDate}'
+                            value={this.state.endDate}
                             placeholder={'mm/dd/yyyy'}
+                            onChange={this.update('endDate')}
                         // required   
                         />
                             </div>
@@ -87,7 +90,7 @@ class SplashForm extends React.Component {
                         <label className='splash-form-label'>GUEST
                         </label>
                         <div className='splash-form-dropdown'>
-                             <select className='guest-selector'>
+                            <select className='guest-selector' onChange={this.update('guest')}>
                                 <option value disabled>Guest</option>
                                 <option value='1'>1</option>
                             </select>

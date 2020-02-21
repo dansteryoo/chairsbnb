@@ -93,59 +93,85 @@
 
 //----------------ListingShow Top
 
+
 .show-images-container {
+    height: auto;
+    min-width: 720px;
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 80px;
 }
 
 .show-image-main-container {
-    display: flex;
-    width: 50%;
+    box-sizing: border-box;
+    width: 45%;
     transition: all .5s;
-    background-position: center;
-    background-color: transparent;
     overflow: hidden;
-    border: 1px solid red;
+    border: 1px solid #484848;
 }
 
 .show-image-sub-container {
+    box-sizing: border-box;
     display: flex;
+    width: 55%;
+    transition: all .5s;
+    overflow: hidden;
+    border: 1px solid #484848;
+}
+
+.show-image-top-container {
+    display: flex;
+    justify-content: flex-start;
+}
+.show-image-bottom-container {
+    padding-top: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.show-image-2-container,
+.show-image-3-container,
+.show-image-4-container,
+.show-image-5-container {
     width: 50%;
     transition: all .5s;
-    background-position: center;
-    background-color: transparent;
     overflow: hidden;
-    border: 1px solid blue;
 }
 
 .show-image-2 {
-    content: image-url('show_image4.jpeg');
-    width: 100px;
+    content: image-url('show_image2.jpeg');
+    max-height: 300px;
+    border: 1px solid #484848;
 }
 
 .show-image-3 {
-    content: image-url('show_image4.jpg');
-    width: 100px;
+    content: image-url('show_image3.jpg');
+    max-height: 300px;
+    border: 1px solid #484848;
 }
 
 .show-image-4 {
     content: image-url('show_image4.jpg');
-    width: 100px;
+    max-height: 300px;
+    border: 1px solid #484848;
 }
 
 .show-image-5 {
-    content: image-url('show_image3jpg');
-    width: 100px;
+    content: image-url('show_image5.jpg');
+    max-height: 300px;
+    border: 1px solid #484848;
 }
 
 .show-image-main:hover,
 .show-image-2-container:hover,
 .show-image-3-container:hover,
 .show-image-4-container:hover,
-.show-image-5-container:hover,
-.show-image-6-container:hover {
+.show-image-5-container:hover {
     transform: scale(1.1);
     overflow: hidden;
 }
+
 
 
 //----------------ListingShow Bottom
