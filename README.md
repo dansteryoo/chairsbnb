@@ -3,29 +3,29 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 
 ### Table of content
 
-##### 1. Live Demo
-Visit: https://chairsbnb.herokuapp.com
-##### 2. Project Stack 
+#### 1. Live Demo
+###### Visit: https://chairsbnb.herokuapp.com
+#### 2. Project Stack 
 
-Javascript
-React
-Redux
-Ruby
-Rails
-PostgreSQL
+###### Javascript
+###### React
+###### Redux
+###### Ruby
+###### Rails
+###### PostgreSQL
 
-##### 3. Features
-User Auth
-  Modal Forms
-  Listings
+#### 3. Features
+###### User Auth
+###### Modal Forms
+###### Listings
   
-##### 4. Technical Challenges
-##### 5. Future Features
-Show
-Bookings
-Search
-Google Maps API
-Profile Page
+#### 4. Technical Challenges
+#### 5. Future Features
+###### Show Page (in progress)
+###### Bookings
+###### Search
+###### Google Maps API
+###### Profile Page
 
 # User Auth
 
