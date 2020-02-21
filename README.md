@@ -27,8 +27,6 @@ Search
 Google Maps API
 Profile Page
 
-***
-
 # User Auth
 
 ![Image of Splash](https://githubreadme.s3.amazonaws.com/screenshot-splash.png)
@@ -39,8 +37,6 @@ Profile Page
 1. Actual numbers don't matter, just that it's a number
 ⋅⋅1. Ordered sub-list
 4. And another item.
-
-***
 
 # Modal Forms
 
@@ -55,8 +51,6 @@ Profile Page
 ⋅⋅1. Ordered sub-list
 4. And another item.
 
-***
-
 # Listings
 
 ![Image of Listings](https://githubreadme.s3.amazonaws.com/screenshot-listings.png)
@@ -68,8 +62,5 @@ Profile Page
 ⋅⋅1. Ordered sub-list
 4. And another item.
 
-***
-
 # Technical Challenges
 
-***
