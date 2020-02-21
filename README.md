@@ -52,3 +52,9 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 4. And another item.
 
 ***
+
+#### Challenges
+
+***
+
+#### Future Additions
