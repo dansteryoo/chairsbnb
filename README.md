@@ -27,6 +27,8 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 * Google Maps API
 * Profile Page
 
+***
+
 # User Auth
 
 - Intro to user auth.
