@@ -1,24 +1,39 @@
-# README
+# ChairsBnB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Table of content
 
-Things you may want to cover:
+##### Splash
 
-* Ruby version
+![alt text](https://github.com/dansteryoo/aa_final_project/app/assets/images/screenshot-splash.png
 
-* System dependencies
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
 
-* Configuration
+##### Auth
 
-* Database creation
+![alt text](https://github.com/dansteryoo/aa_final_project/app/assets/images/screenshot-signin.png
 
-* Database initialization
+![alt text](https://github.com/dansteryoo/aa_final_project/app/assets/images/screenshot-login.png
 
-* How to run the test suite
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+##### Listings
 
-* ...
+![alt text](https://github.com/dansteryoo/aa_final_project/app/assets/images/screenshot-listings.png
+
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
