@@ -27,39 +27,41 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 
 # User Auth
 
-Intro to user auth.
-Authentication.
-Authorization. 
+- Intro to user auth.
+  Authentication.
+  Authorization. 
 
 ![Image of Splash](https://githubreadme.s3.amazonaws.com/screenshot-splash.png)
 
-Splash blurb styling. 
-Search form. 
+  Splash blurb styling. 
+  Search form. 
 
 # Modal Forms
 
-Intro to modal forms. 
-Styling and functionality. 
+- Intro to modal forms. 
+  Styling and functionality. 
 
 ![Image of Signup](https://githubreadme.s3.amazonaws.com/screenshot-signup.png)
 
-Blurb about signups. 
+  Blurb about signups. 
 
 ![Image of Login](https://githubreadme.s3.amazonaws.com/screenshot-login.png)
 
-Blurb about logins. 
+  Blurb about logins. 
 
 # Listings
 
-Intro to modal forms. 
+- Intro to listings. 
 
 ![Image of Listings](https://githubreadme.s3.amazonaws.com/screenshot-listings.png)
 
-Styling. 
-Resizing based on screen resolution. 
-Photos indexed to show page. 
+  Styling. 
+  Resizing based on screen resolution. 
+  Photos indexed to show page. 
 
 # Technical Challenges
+
+- Intro to technical challenges. 
 
 state management
 routers with react 
