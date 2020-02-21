@@ -1,5 +1,5 @@
 # ChairsBnB
-ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You can sign up for an account, or log in through the demo user to view and search unique seats around the world. 
+_**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bookings.**_ You can sign up for an account, or log in through the demo user to view and search _**unique seats around the world.**_ 
 
 ![Image of Splash](https://githubreadme.s3.amazonaws.com/screenshot-splash.png)
 
