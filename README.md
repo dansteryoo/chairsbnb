@@ -3,8 +3,7 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 
 ### Table of content
 
-##### 1. Demo
-          - https://chairsbnb.herokuapp.com
+##### 1. Demo - https://chairsbnb.herokuapp.com
 ##### 2. Splash
 ##### 3. Auth
 ##### 4. Listings
