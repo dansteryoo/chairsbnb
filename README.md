@@ -1,6 +1,8 @@
 # ChairsBnB
 ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You can sign up for an account, or log in through the demo user to view and search unique seats around the world. 
 
+![Image of Splash](https://githubreadme.s3.amazonaws.com/screenshot-splash.png)
+
 ### Table of content
 
 #### 1. Live Demo
@@ -28,13 +30,9 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 # User Auth
 
 - Intro to user auth.
-  Authentication.
-  Authorization. 
-
-![Image of Splash](https://githubreadme.s3.amazonaws.com/screenshot-splash.png)
-
-  Splash blurb styling. 
-  Search form. 
+  - Authentication.
+  - Authorization.
+  - Code. 
 
 # Modal Forms
 
