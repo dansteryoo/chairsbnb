@@ -8,7 +8,7 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 
 #### 2. Project Stack 
 * Frontend: React, Redux
-* Backend: Ruby on Rails, PostgreSQL
+* Backend: Ruby on Rails, PostgreSQL, jBuilder
 * Other: AWS, Heroku
 
 #### 3. Features
