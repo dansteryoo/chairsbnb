@@ -22,11 +22,11 @@ class SplashForm extends React.Component {
 
     // }
 
-    // update(f) {
-    //     return e => this.setState({
-    //         [f]: e.target.value
-    //     });
-    // }
+    update(f) {
+        return e => this.setState({
+            [f]: e.target.value
+        });
+    }
 
     // renderErrors() {
     //     return (
