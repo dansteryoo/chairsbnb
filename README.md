@@ -26,9 +26,9 @@ ChairsBnB is a fun clone of Airbnb, with a twist on single seating bookings. You
 
 ##### Auth
 
-![Image of SignUp](https://githubreadme.s3.amazonaws.com/screenshot-signup.png)
+![Image of Signup](https://githubreadme.s3.amazonaws.com/screenshot-signup.png)
 
-![Image of LogIn](https://githubreadme.s3.amazonaws.com/screenshot-login.png)
+![Image of Login](https://githubreadme.s3.amazonaws.com/screenshot-login.png)
 
 1. First ordered list item
 2. Another item
