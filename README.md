@@ -53,8 +53,8 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 
 - Intro to technical challenges. 
 
-  --State management
-  --Routers with react 
-  --Connection to jbuilder
-  --Photo attachments through aws
-  --Heroku push bugs
+  -State management
+  -Routers with react 
+  -Connection to jbuilder
+  -Photo attachments through aws
+  -Heroku push bugs
