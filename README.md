@@ -14,8 +14,7 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 * Other: AWS, Heroku
 
 #### 3. Features
-* User Auth
-* Modal Forms
+* User Auth & Modal Forms
 * Listings
   
 #### 4. Technical Challenges
@@ -29,17 +28,9 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 
 ***
 
-# User Auth
+# User Auth & Modal Forms
 
-- Intro to user auth.
-  - Authentication.
-  - Authorization.
-  - Code. 
-
-# Modal Forms
-
-- Intro to modal forms. 
-  Styling and functionality. 
+- Styling and functionality. 
 
 ![Image of Signup](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-signin.png)
 
@@ -51,20 +42,19 @@ _**ChairsBnB**_ is a fun clone of *Airbnb*, with a twist on _**single seating bo
 
 # Listings
 
-- Intro to listings. 
+- Styling and functionality.  
 
 ![Image of Listings](https://github.com/dansteryoo/aa_final_project/blob/master/app/assets/images/screenshot-listings.png)
 
-  Styling. 
-  Resizing based on screen resolution. 
+  Responsive styling and sizing. 
   Photos indexed to show page. 
 
 # Technical Challenges
 
 - Intro to technical challenges. 
 
-state management
-routers with react 
-connection to jbuilder
-photo attachments through aws
-heroku push bugs
+-- State management
+-- Routers with react 
+-- Connection to jbuilder
+-- Photo attachments through aws
+-- Heroku push bugs
