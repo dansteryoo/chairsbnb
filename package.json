@@ -34,14 +34,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dansteryoo/aa_final_project.git"
+    "url": "git+https://github.com/dansteryoo/chairsbnb.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dansteryoo/aa_final_project/issues"
+    "url": "https://github.com/dansteryoo/chairsbnb/issues"
   },
-  "homepage": "https://github.com/dansteryoo/aa_final_project#readme",
+  "homepage": "https://github.com/dansteryoo/chairsbnb#readme",
   "devDependencies": {}
 }
