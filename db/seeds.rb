@@ -63,7 +63,7 @@ harry = User.create(email: "wxyz123@gmail.com",
 
 listing_01 = Listing.create(
     name: "The Throne of Saint Peter.", 
-    description: "[description here", 
+    description: "[description here]", 
     host_id: "1", 
     address: "Vatican City", 
     # address: "Apostolic Palace 00120 Vatican City",
@@ -72,116 +72,66 @@ listing_01 = Listing.create(
     price: 99999.99
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_peter.jpg")
 
-listing_01.images.attach(io: file, filename: "chair_PH.jpg")
+listing_01.images.attach(io: file, filename: "show_peter.jpg")
+
 
 
 listing_02 = Listing.create(
-    name: "Egg Chair.", 
-    description: "[description here", 
-    host_id: "1", 
-    address: "New York, NY", 
-    # address: "504 Battery Place New York, NY 10004", 
-    lat: "40.695833", 
-    long: "-74.013611", 
-    price: 55000.00
-)
-
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
-
-listing_02.images.attach(io: file, filename: "chair_PH.jpg")
-
-
-
-listing_03 = Listing.create(
-    name: "The Captain's Seat.",
-    description: "[description here", 
-    host_id: "1", 
-    address: "Ticonderoga, NY", 
-    # address: "112 Montcalm Street Ticonderoga, NY 12883", 
-    lat: "43.847900", 
-    long: "-73.424100", 
-    price: 15000.00
-)
-
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
-
-listing_03.images.attach(io: file, filename: "chair_PH.jpg")
-
-
-
-listing_04 = Listing.create(
-    name: "The Throne of King's Landing.", 
-    description: "[description here", 
-    host_id: "1", 
-    address: "Dubrovnik, Croatia", 
-    # address: "Brsalje ul. bb, 20000, Dubrovnik, Croatia", 
-    lat: "42.64807", 
-    long: "18.09216", 
-    price: 10000.00
-)
-
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
-
-listing_04.images.attach(io: file, filename: "chair_PH.jpg")
-
-
-
-listing_05 = Listing.create(
-    name: "Seat on the Beach.", 
-    description: "[description here", 
-    host_id: "2", 
-    address: "Miami Beach, FL", 
-    # address: "South Beach Miami Beach, FL 33139", 
-    lat: "-80.1340772", 
-    long: "25.7826123", 
-    price: 365.00
-)
-
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
-
-listing_05.images.attach(io: file, filename: "chair_PH.jpg")
-
-
-
-listing_06 = Listing.create(
-    name: "The Moscow Mule.", 
-    description: "[description here", 
+    name: "The Imperial Russian Throne.", 
+    description: "[description here]", 
     host_id: "2", 
     address: "Moscow, Russia", 
     # address: "The Moscow Kremlin Moscow, Russia, 103073", 
     lat: "55.751667", 
     long: "37.617778", 
-    price: 465.00
+    price: 46500.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_russia.jpg")
 
-listing_06.images.attach(io: file, filename: "chair_PH.jpg")
+listing_02.images.attach(io: file, filename: "show_russia.jpg")
 
 
 
-listing_07 = Listing.create(
-    name: "The Cosmopolitan.", 
-    description: "[description here", 
-    host_id: "2", 
-    address: "New York, NY", 
-    # address: "157 W 57th Street New York, NY 10019", 
-    lat: "40.765201", 
-    long: "-73.979166", 
-    price: 323.00
+listing_03 = Listing.create(
+    name: "The Captain's Seat.",
+    description: "[description here]", 
+    host_id: "1", 
+    address: "Ticonderoga, NY", 
+    # address: "112 Montcalm Street Ticonderoga, NY 12883", 
+    lat: "43.847900", 
+    long: "-73.424100", 
+    price: 35000.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_captain.jpg")
 
-listing_07.images.attach(io: file, filename: "chair_PH.jpg")
+listing_03.images.attach(io: file, filename: "show_captain.jpg")
 
 
 
-listing_08 = Listing.create(
-    name: "The Margarita.", 
-    description: "[description here", 
+listing_04 = Listing.create(
+    name: "The Throne of King's Landing.", 
+    description: "[description here]", 
+    host_id: "1", 
+    address: "Dubrovnik, Croatia", 
+    # address: "Brsalje ul. bb, 20000, Dubrovnik, Croatia", 
+    lat: "42.64807", 
+    long: "18.09216", 
+    price: 15000.00
+)
+
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_got.jpg")
+
+listing_04.images.attach(io: file, filename: "show_got.jpg")
+
+
+
+listing_05 = Listing.create(
+    name: "Margarita.", 
+    description: "[description here]", 
     host_id: "2", 
     address: "Mexico City, Mexico", 
     # address: "Av. Paseo de la Reforma, Juárez, Cuauhtémoc, 06500 Ciudad de México, CDMX, Mexico", 
@@ -190,15 +140,66 @@ listing_08 = Listing.create(
     price: 218.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_mexico.jpg")
 
-listing_08.images.attach(io: file, filename: "chair_PH.jpg")
+listing_05.images.attach(io: file, filename: "show_mexico.jpg")
+
+
+
+listing_06 = Listing.create(
+    name: "Seat on the Beach.", 
+    description: "[description here]", 
+    host_id: "2", 
+    address: "Miami Beach, FL", 
+    # address: "South Beach Miami Beach, FL 33139", 
+    lat: "-80.1340772", 
+    long: "25.7826123", 
+    price: 365.00
+)
+
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_miami.jpg")
+
+listing_06.images.attach(io: file, filename: "show_miami.jpg")
+
+
+
+listing_07 = Listing.create(
+    name: "Mai Tai.", 
+    description: "[description here]", 
+    host_id: "2", 
+    address: "Honolulu, HI", 
+    # address: "2552 Kalakaua Avenue, Honolulu, Hawaii 96815",
+    lat: "21.30694", 
+    long: "-157.85833", 
+    price: 465.00
+)
+
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_hawaii.jpg")
+
+listing_07.images.attach(io: file, filename: "show_hawaii.jpg")
+
+
+
+listing_08 = Listing.create(
+    name: "Cosmopolitan.", 
+    description: "[description here]", 
+    host_id: "2", 
+    address: "New York, NY", 
+    # address: "157 W 57th Street New York, NY 10019", 
+    lat: "40.765201", 
+    long: "-73.979166", 
+    price: 323.00
+)
+
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_nyc.jpg")
+
+listing_08.images.attach(io: file, filename: "show_nyc.jpg")
 
 
 
 listing_09 = Listing.create(
     name: "Average Chair.", 
-    description: "[description here", 
+    description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
     # address: "90 5th Avenue New York, NY 10011", 
@@ -207,15 +208,15 @@ listing_09 = Listing.create(
     price: 17.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa1.jpg")
 
-listing_09.images.attach(io: file, filename: "chair_PH.jpg")
+listing_09.images.attach(io: file, filename: "show_aa1.jpg")
 
 
 
 listing_10 = Listing.create(
     name: "Normal Chair.", 
-    description: "[description here", 
+    description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
     # address: "90 5th Avenue New York, NY 10011",  
@@ -224,15 +225,15 @@ listing_10 = Listing.create(
     price: 28.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa2.jpg")
 
-listing_10.images.attach(io: file, filename: "chair_PH.jpg")
+listing_10.images.attach(io: file, filename: "show_aa2.jpg")
 
 
 
 listing_11 = Listing.create(
     name: "Regular Chair.", 
-    description: "[description here", 
+    description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
     # address: "90 5th Avenue New York, NY 10011",  
@@ -241,15 +242,15 @@ listing_11 = Listing.create(
     price: 18.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa3.jpg")
 
-listing_11.images.attach(io: file, filename: "chair_PH.jpg")
+listing_11.images.attach(io: file, filename: "show_aa3.jpg")
 
 
 
 listing_12 = Listing.create(
     name: "The Best Chair.", 
-    description: "[description here", 
+    description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
     # address: "90 5th Avenue New York, NY 10011",  
@@ -258,7 +259,7 @@ listing_12 = Listing.create(
     price: 59.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/2uQapfk19tbpYwRshRDBphDU")
+file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa4.jpg")
 
-listing_12.images.attach(io: file, filename: "chair_PH.jpg")
+listing_12.images.attach(io: file, filename: "show_aa4.jpg")
 

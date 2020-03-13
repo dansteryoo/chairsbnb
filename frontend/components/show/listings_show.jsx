@@ -43,34 +43,22 @@ class ListingShow extends React.Component {
 
                 <div className='show-images-container'>
 
-                    <div className='show-image-main-container'>
-                        <div className='show-image-main'>
-                            <img src={listing.images[0]} />
-                        </div>
+                    <div className='show-image-main'>
+                        <img src={listing.images[0]} />
+                    </div>
+                    <div className='show-image image-1'>
+                        <div className='each-show img-1'></div>
+                    </div>
+                    <div className='show-image image-2'>
+                        <div className='each-show img-2'></div>
+                    </div>
+                    <div className='show-image image-3'>
+                        <div className='each-show img-3'></div>
+                    </div>
+                    <div className='show-image image-4'>
+                        <div className='each-show img-4'></div>
                     </div>
 
-                    <div className='show-image-sub-container'>
-
-                        <div className='show-image-top-container'>
-                            <div className='show-image-2-container'>
-                                <div className='show-image-2'></div>
-                            </div>
-
-                            <div className='show-image-3-container'>
-                                <div className='show-image-3'></div>
-                            </div>
-                        </div>
-
-                        <div className='show-image-bottom-container'>
-                            <div className='show-image-4-container'>
-                                <div className='show-image-4'></div>
-                            </div>
-
-                            <div className='show-image-5-container'>
-                                <div className='show-image-5'></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
