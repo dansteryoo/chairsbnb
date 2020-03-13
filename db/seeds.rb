@@ -72,7 +72,7 @@ listing_01 = Listing.create(
     price: 99999.99
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_peter.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/9GTQ2HngViXJBwMhfioRDPS4")
 
 listing_01.images.attach(io: file, filename: "show_peter.jpg")
 
@@ -89,7 +89,7 @@ listing_02 = Listing.create(
     price: 46500.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_russia.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/kTskE1vrgMidFJ5sRyTyxfCz")
 
 listing_02.images.attach(io: file, filename: "show_russia.jpg")
 
@@ -106,7 +106,7 @@ listing_03 = Listing.create(
     price: 35000.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_captain.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/iZd9i8nHR78kEihrdfYwk1Kc")
 
 listing_03.images.attach(io: file, filename: "show_captain.jpg")
 
@@ -123,7 +123,7 @@ listing_04 = Listing.create(
     price: 15000.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_got.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/7rtzdTADkXFR8SzETB13ukm9")
 
 listing_04.images.attach(io: file, filename: "show_got.jpg")
 
@@ -140,7 +140,7 @@ listing_05 = Listing.create(
     price: 218.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_mexico.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/48poHNhCzc65gwzcQU1HJeBW")
 
 listing_05.images.attach(io: file, filename: "show_mexico.jpg")
 
@@ -157,7 +157,7 @@ listing_06 = Listing.create(
     price: 365.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_miami.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/fY7fzFcgSTCoSPBhNshQXGKd")
 
 listing_06.images.attach(io: file, filename: "show_miami.jpg")
 
@@ -174,7 +174,7 @@ listing_07 = Listing.create(
     price: 465.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_hawaii.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/BQqd22jyNfRAyCjkwzGuHL7v")
 
 listing_07.images.attach(io: file, filename: "show_hawaii.jpg")
 
@@ -191,7 +191,7 @@ listing_08 = Listing.create(
     price: 323.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_nyc.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/YFne7AudH2Mjx3byjZyUZii9")
 
 listing_08.images.attach(io: file, filename: "show_nyc.jpg")
 
@@ -208,7 +208,7 @@ listing_09 = Listing.create(
     price: 17.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa1.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/ZjqD74FWQPt9CTVgXFLKUVw2")
 
 listing_09.images.attach(io: file, filename: "show_aa1.jpg")
 
@@ -225,7 +225,7 @@ listing_10 = Listing.create(
     price: 28.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa2.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/8DRoRvZ4gSF6m3g7sxhSXNS4")
 
 listing_10.images.attach(io: file, filename: "show_aa2.jpg")
 
@@ -242,7 +242,7 @@ listing_11 = Listing.create(
     price: 18.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa3.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/Knc9Wv9fTcy5QxLLjcv86nzS")
 
 listing_11.images.attach(io: file, filename: "show_aa3.jpg")
 
@@ -259,7 +259,7 @@ listing_12 = Listing.create(
     price: 59.00
 )
 
-file = open("/Users/pd/chairsbnb/app/assets/images/show_seats/show_aa4.jpg")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/bNMANdNVHzdwt1NK6fN6rqif")
 
 listing_12.images.attach(io: file, filename: "show_aa4.jpg")
 
