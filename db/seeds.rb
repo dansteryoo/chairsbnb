@@ -157,7 +157,7 @@ listing_06 = Listing.create(
     price: 365.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/fY7fzFcgSTCoSPBhNshQXGKd")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/B9uibZWSsV3A2ytySoG9CWC4")
 
 listing_06.images.attach(io: file, filename: "show_miami.jpg")
 
@@ -174,7 +174,7 @@ listing_07 = Listing.create(
     price: 465.00
 )
 
-file = open("https://app-chairsbnb-dev.s3.amazonaws.com/BQqd22jyNfRAyCjkwzGuHL7v")
+file = open("https://app-chairsbnb-dev.s3.amazonaws.com/fY7fzFcgSTCoSPBhNshQXGKd")
 
 listing_07.images.attach(io: file, filename: "show_hawaii.jpg")
 
