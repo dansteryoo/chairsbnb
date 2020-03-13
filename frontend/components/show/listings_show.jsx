@@ -39,12 +39,14 @@ class ListingShow extends React.Component {
         let { listing } = this.props
 
         return (
-            <div className='show-main'>
+
+
+    <div className='show-main'>
 
                 <div className='show-images-container'>
 
                     <div className='show-image-main'>
-                        <img src={listing.images[0]} />
+                        <img src={listing.images[0]}></img>
                     </div>
                     <div className='show-image image-1'>
                         <div className='each-show img-1'></div>
@@ -61,75 +63,77 @@ class ListingShow extends React.Component {
 
                 </div>
 
+        <div className='show-container'>
 
-                <div className='show-container'>
-                    <div className='show-left-side'>
-                        <div className='show-name'>
-                            <span>{listing.name}</span>
-                        </div>
+            <div className='show-left-side'>
 
-                        <div className='show-address'>
-                            <span>{listing.address}</span>
-                        </div>
+                    <div className='show-name'>
+                        <span>{listing.name}</span>
+                    </div>
 
-                        <hr className='show-hr-below-address' />
-                        
-                        <div className='show-description'>
-                            <span>{listing.description}</span>
-                        </div>
+                    <div className='show-address'>
+                        <span>{listing.address}</span>
+                    </div>
 
-                        <hr className='show-hr-below-address' />
-                        
-                        <div className='show-calendar-container'>
-                            CALENDAR CONTAINER
-                            <div className='show-availability-div'>
-                                Availability
-                            </div>
-                            <div>
-                                RANGE
-                            </div>
-                            CLEAR
-                        </div>
-                    
+                    <hr className='show-hr-below-address' />
+                            
+                    <div className='show-description'>
+                        <span>{listing.description}</span>
+                    </div>
+
+                    <hr className='show-hr-below-address' />
+                            
+                <div className='show-calendar-container'>
+                        CALENDAR CONTAINER
+                    <div className='show-availability-div'>
+                            Availability
                     </div>
                     <div>
+                            RANGE
+                    </div>
+                    <div>
+                            CLEAR
+                    </div>
+                        
+                </div>
 
-                        <div className='show-booking-box'>
-                                BOOKING BOX
-                            <div className='show-price-container'>
-                                <span>${listing.price}</span> / night
-                            </div>
+                <div className='show-booking-box'>
+
+                        BOOKING BOX
+                        <div className='show-price-container'>
+                            <span>${listing.price}</span> / night
+                        </div>
                             <hr className='show-box-hr' />
 
-
-                            <form>
-                                <div className='show-form-container'>
-                                SHOW FORM CONTAINER
-                                    <div className='show-search-box-label'>
-                                        <span>Dates</span>
-                                    </div>
-                                </div>
-                                DATE RANGE
-                                <div className='show-search-box-label'>
-                                   <span>Guest</span>
-                            </div>
-
-   
-                                <button
-                                    className='show-box-booking-btn'
-                                    type='submit'
-                                    value='Reserve' />
-                            </form>
-                            <div className='show-box-bottom-text'>
-                                BOTTOM MESSAGE
+                    <form>
+                        <div className='show-form-container'>
+                            SHOW FORM CONTAINER
+                        <div className='show-search-box-label'>
+                            <span>Dates</span>
                         </div>
+                            
+                            DATE RANGE
+                        <div className='show-search-box-label'>
+                            <span>Guest</span>
                         </div>
-                    </div>
+                    
+                            <button
+                                className='show-box-booking-btn'
+                                type='submit'
+                                value='Reserve' />
+                        </div>
+                    </form>
+
+                        <div className='show-box-bottom-text'>
+                            BOTTOM MESSAGE
+                        </div>
+
                 </div>
 
 
-
             </div>
+        </div>
+    </div>
         )
     }
 }

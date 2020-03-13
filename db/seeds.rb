@@ -79,7 +79,7 @@ listing_01.images.attach(io: file, filename: "show_peter.jpg")
 
 
 listing_02 = Listing.create(
-    name: "The Imperial Russian Throne.", 
+    name: "The Imperial Russian Throne", 
     description: "[description here]", 
     host_id: "2", 
     address: "Moscow, Russia", 
@@ -96,7 +96,7 @@ listing_02.images.attach(io: file, filename: "show_russia.jpg")
 
 
 listing_03 = Listing.create(
-    name: "The Captain's Seat.",
+    name: "The Captain's Seat",
     description: "[description here]", 
     host_id: "1", 
     address: "Ticonderoga, NY", 
@@ -113,7 +113,7 @@ listing_03.images.attach(io: file, filename: "show_captain.jpg")
 
 
 listing_04 = Listing.create(
-    name: "The Throne of King's Landing.", 
+    name: "The Throne of King's Landing", 
     description: "[description here]", 
     host_id: "1", 
     address: "Dubrovnik, Croatia", 
@@ -130,7 +130,7 @@ listing_04.images.attach(io: file, filename: "show_got.jpg")
 
 
 listing_05 = Listing.create(
-    name: "Margarita.", 
+    name: "Margarita", 
     description: "[description here]", 
     host_id: "2", 
     address: "Mexico City, Mexico", 
@@ -147,7 +147,7 @@ listing_05.images.attach(io: file, filename: "show_mexico.jpg")
 
 
 listing_06 = Listing.create(
-    name: "Seat on the Beach.", 
+    name: "Seat on the Beach", 
     description: "[description here]", 
     host_id: "2", 
     address: "Miami Beach, FL", 
@@ -164,7 +164,7 @@ listing_06.images.attach(io: file, filename: "show_miami.jpg")
 
 
 listing_07 = Listing.create(
-    name: "Mai Tai.", 
+    name: "Mai Tai", 
     description: "[description here]", 
     host_id: "2", 
     address: "Honolulu, HI", 
@@ -181,7 +181,7 @@ listing_07.images.attach(io: file, filename: "show_hawaii.jpg")
 
 
 listing_08 = Listing.create(
-    name: "Cosmopolitan.", 
+    name: "Cosmopolitan", 
     description: "[description here]", 
     host_id: "2", 
     address: "New York, NY", 
@@ -198,7 +198,7 @@ listing_08.images.attach(io: file, filename: "show_nyc.jpg")
 
 
 listing_09 = Listing.create(
-    name: "Average Chair.", 
+    name: "Average Chair", 
     description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
@@ -215,7 +215,7 @@ listing_09.images.attach(io: file, filename: "show_aa1.jpg")
 
 
 listing_10 = Listing.create(
-    name: "Normal Chair.", 
+    name: "Normal Chair", 
     description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
@@ -232,7 +232,7 @@ listing_10.images.attach(io: file, filename: "show_aa2.jpg")
 
 
 listing_11 = Listing.create(
-    name: "Regular Chair.", 
+    name: "Regular Chair", 
     description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
@@ -249,7 +249,7 @@ listing_11.images.attach(io: file, filename: "show_aa3.jpg")
 
 
 listing_12 = Listing.create(
-    name: "The Best Chair.", 
+    name: "The Best Chair", 
     description: "[description here]", 
     host_id: "3", 
     address: "New York, NY", 
