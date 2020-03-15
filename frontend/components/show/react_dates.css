@@ -1,13 +1,3 @@
-.CalendarDay__default:hover {
-  background: #CCEEEB !important;
-  color: #008489 !important;
-} 
-
-.CalendarDay__selected:hover {
-  background: #EDF6F6 !important;
-  color: #008489 !important;
-}
-
 .CalendarDay__selected,
 .CalendarDay__selected_span {
   background: #008489 !important;
@@ -16,7 +6,6 @@
 
 .CalendarDay__hovered_span:hover,
 .CalendarDay__hovered_span {
-  background: #CCEEEB;
   color: #FFFFFF;;
 } 
 
@@ -51,4 +40,14 @@
 
 .DayPicker_weekHeaders {
     font-weight: 300;
+}
+
+.date-range-picker {
+  margin-bottom: 10px;
+}
+
+.show-clear-button {
+  font-size: 16px;
+  font-weight: 400;;
+  color: #008489;
 }

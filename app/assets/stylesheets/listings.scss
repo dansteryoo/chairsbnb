@@ -251,6 +251,14 @@
     width: 100%; 
     padding: 20px 0;
     border-bottom: 1px solid #D3D3D3;
+        p {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        span {
+            font-weight: 300;
+            line-height: 24px;
+        }
     }
 
     .show-box-bottom-text {
@@ -266,8 +274,7 @@
 
 .show-availability-div {
     border-bottom: 1px solid #D3D3D3;
-    font-size: 16px;
-    padding-top: 20px;
+    padding: 20px 0;
     span {
         font-weight: 600;
     }
@@ -283,7 +290,7 @@
 .show-right-side {
   grid-column-start: 3;
   width: 100%;
-  padding: 20px 0 0;
+  padding-top: 10px;
 
     .show-booking-box {
         grid-column-start: 3;

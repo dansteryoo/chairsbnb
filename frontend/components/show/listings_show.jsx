@@ -16,22 +16,18 @@ class ListingShow extends React.Component {
             endDate: null,
             focusedInput: null,
             bookingDates: []
+            
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onFocusChange = this.onFocusChange.bind(this)
         this.onDatesChange = this.onDatesChange.bind(this)
-        // this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
-        // document.addEventListener('mousedown', this.handleClick, false)
     }
 
-    componentWillUnmount() {
-        // document.removeEventListener('mousedown', this.handleClick, false)
-    }
 
     onDatesChange({ startDate, endDate }) {
         this.setState({ startDate, endDate });
@@ -60,9 +56,19 @@ class ListingShow extends React.Component {
 
         let { listing } = this.props
 
+        const clearDates = (
+                <div
+                    className="clear-dates-btn"
+                    onClick={() => this.setState({
+                        startDate: null,
+                        endDate: null,
+                        focusedInput: null,
+                    })} >
+                    Clear dates
+                </div>
+        )
+   
         return (
-
-
     
     <div className='show-main'>
 
@@ -74,16 +80,16 @@ class ListingShow extends React.Component {
                         <img src={listing.images[0]}></img>
                     </div>
                     <div className='show-image image-1'>
-                        <div className='each-show img-1'></div>
+                        <img src={listing.images[1]}></img>
                     </div>
                     <div className='show-image image-2'>
-                        <div className='each-show img-2'></div>
+                        <img src={listing.images[2]}></img>
                     </div>
                     <div className='show-image image-3'>
-                        <div className='each-show img-3'></div>
+                        <img src={listing.images[3]}></img>
                     </div>
                     <div className='show-image image-4'>
-                        <div className='each-show img-4'></div>
+                        <img src={listing.images[4]}></img>
                     </div>
 
                 </div>
@@ -101,6 +107,7 @@ class ListingShow extends React.Component {
                         <span>{listing.address}</span>
                     </div>
                     <div className='show-description'>
+                        <p>Description</p>
                         <span>{listing.description}</span>
                     </div>
                             
@@ -123,7 +130,13 @@ class ListingShow extends React.Component {
                                 noBorder={true}
                             />
                         </div>
-                            clearDates
+                            
+                        <button className='show-clear-button'
+                                onClick={() => this.setState({
+                            startDate: null,
+                            endDate: null,
+                            focusedInput: null
+                            })}> Clear dates</button>
                         </div>
                     </div>         
                 </div>
@@ -131,7 +144,7 @@ class ListingShow extends React.Component {
                         {/* BOTTOM MESSAGE */}
 
                 <div className='show-box-bottom-text'>
-                            Botoom
+                            Bottom
                 </div>
 
             </div>
@@ -161,7 +174,9 @@ class ListingShow extends React.Component {
                                     <p className='show-form-label'>
                                         Dates
                                     </p>
+
                                     {/* BOOKING CALENDAR */}
+
                                 <div className='date-range-picker'>
                                     <DateRangePicker
                                         startDate={this.state.startDate}
@@ -198,7 +213,12 @@ class ListingShow extends React.Component {
                             <div className='show-form-bottom'>
                                 You won't be charged
                         </div>
-                        <div id='clear-dates'>clearDates</div>
+                            <button className='show-clear-button'
+                                onClick={() => this.setState({
+                                    startDate: null,
+                                    endDate: null,
+                                    focusedInput: null
+                                })}> Clear dates</button>
                 </div>
             </div>
 
