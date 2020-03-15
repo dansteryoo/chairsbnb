@@ -20,28 +20,37 @@ class ListingShow extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onFocusChange = this.onFocusChange.bind(this)
+        this.onDatesChange = this.onDatesChange.bind(this)
+        // this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
+        // document.addEventListener('mousedown', this.handleClick, false)
+    }
+
+    componentWillUnmount() {
+        // document.removeEventListener('mousedown', this.handleClick, false)
+    }
+
+    onDatesChange({ startDate, endDate }) {
+        this.setState({ startDate, endDate });
     }
 
     onFocusChange(focusedInput) {
-        this.setState({
-            focusedInput: !focusedInput ? START_DATE : focusedInput,
-        });
+        this.setState({ focusedInput });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        let { currentUser } = this.props;
-            booking.start_date = booking.startDate
-            booking.end_date = booking.endDate
+        // let { currentUser } = this.props;
+        //     booking.start_date = booking.startDate
+        //     booking.end_date = booking.endDate
 
-        let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
+        // let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
 
-            this.props.createBooking(newBooking);
-        };
+        //     this.props.createBooking(newBooking);
+    }
 
     render() {
 
@@ -103,9 +112,11 @@ class ListingShow extends React.Component {
                         <div>
                             <DayPickerRangeController
                                 startDate={this.state.startDate}
+                                startDateId="mm/dd/yyyy"
                                 endDate={this.state.endDate}
-                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                                endDateId="mm/dd/yyyy"
                                 focusedInput={this.state.focusedInput}
+                                onDatesChange={this.onDatesChange}
                                 onFocusChange={this.onFocusChange}
                                 numberOfMonths={2}
                                 hideKeyboardShortcutsPanel={true}
@@ -157,8 +168,8 @@ class ListingShow extends React.Component {
                                         startDateId="mm/dd/yyyy"
                                         endDate={this.state.endDate}
                                         endDateId="mm/dd/yyyy"
-                                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                                         focusedInput={this.state.focusedInput}
+                                        onDatesChange={this.onDatesChange}
                                         onFocusChange={this.onFocusChange}
                                         numberOfMonths={1}
                                         hideKeyboardShortcutsPanel={true}
