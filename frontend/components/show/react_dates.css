@@ -1,0 +1,80 @@
+.CalendarDay__default:hover {
+  background: #CCEEEB;
+  color: #008489;
+  border: none;
+}
+.CalendarDay__selected_span {
+  background: #008489; 
+  color: #ffffff; 
+  border: none;
+}
+
+.CalendarDay__selected {
+  color: #008489;
+  border: none;
+}
+
+.CalendarDay__selected:hover {
+  background: #EDF6F6;
+  color: #008489;
+}
+
+.CalendarDay__hovered_span:hover,
+.CalendarDay__hovered_span {
+  background: #008489;
+  color: #FFFFFF;
+}
+
+.CalendarMonthGrid {
+    border: none;
+}
+
+.CalendarDay {
+    font-size: 13px;
+    font-weight: 600;
+    background: #EDF6F6;
+    color: #008489;
+    border: 2px solid #FFFFFF;
+    border-radius: 7px;
+}
+
+.DateInput {
+    width: 100%;
+}
+
+.DateInput_input {
+    font-size: 16px;
+    font-weight: 300;
+    width: 158px;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+}
+
+.DateInput_input__selected {
+    background-color: #CCEEEB;
+    padding: 10px;
+}
+
+.DateInput_input__focused {
+    background: #99EDE7;
+}
+
+.DateRangePickerInput__withBorder {
+    border-radius: none;
+    border: none;
+    width: 100%;
+    display: flex;
+}
+
+.DateRangePickerInput_arrow_svg {
+    padding: 12px 6px;
+}
+
+.DayPicker_weekHeaders {
+    font-weight: 300;
+    margin-bottom: 2px;
+}
+
+.date-range-picker {
+    margin: 0 0 15px;
+}

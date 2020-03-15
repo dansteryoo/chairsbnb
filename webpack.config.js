@@ -1,11 +1,10 @@
-// webpack.config.js
 var path = require('path');
 
 module.exports = {
     entry: './frontend/index.jsx',
     output: {
         path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-        filename: 'bundle.js',
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -18,11 +17,18 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
+            }, 
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '*']
+        extensions: ['.js', '.jsx', '*'],
+        modules: [
+            'node_modules'
+        ]
     }
 };

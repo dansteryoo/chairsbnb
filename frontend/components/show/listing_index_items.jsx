@@ -13,6 +13,9 @@ const ListingsIndexItems = ({ listing }) => {
             <div className='listing-info'>
                 <div className='listing-address'>
                     <span>{listing.address}</span>
+                        <span className="listing-rating">
+                            <img className="rating-star" src={window.rating_star} />
+                        5.00</span>
                 </div>
             
                 <div className='listing-name'>

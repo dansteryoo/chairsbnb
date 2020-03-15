@@ -1,34 +1,47 @@
 import React from 'react';
+import { DateRangePicker, DayPickerRangeController } from 'react-dates';
+import { START_DATE, END_DATE } from 'react-dates/src/constants';
+import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
+import moment from 'moment';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+import './react_dates.css';
 
 class ListingShow extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     startDate: '',
-        //     endDate: '',
-        //     bookingDates: []
-        // };
+        this.state = {
+            startDate: null,
+            endDate: null,
+            focusedInput: null,
+            bookingDates: []
+        };
 
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.onFocusChange = this.onFocusChange.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
     }
 
+    onFocusChange(focusedInput) {
+        this.setState({
+            focusedInput: !focusedInput ? START_DATE : focusedInput,
+        });
+    }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-        // let { currentUser } = this.props;
-            // booking.start_date = booking.startDate
-            // booking.end_date = booking.endDate
+    handleSubmit(e) {
+        e.preventDefault();
+        let { currentUser } = this.props;
+            booking.start_date = booking.startDate
+            booking.end_date = booking.endDate
 
-        // let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
+        let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
 
-        //     this.props.createBooking(newBooking);
-        // };
+            this.props.createBooking(newBooking);
+        };
 
     render() {
 
@@ -41,7 +54,10 @@ class ListingShow extends React.Component {
         return (
 
 
+    
     <div className='show-main'>
+
+                {/* TOP SHOW IMAGES */}
 
                 <div className='show-images-container'>
 
@@ -65,73 +81,116 @@ class ListingShow extends React.Component {
 
         <div className='show-container'>
 
+                    {/* LEFT SIDE CONTAINER */}
+
             <div className='show-left-side'>
 
                     <div className='show-name'>
                         <span>{listing.name}</span>
                     </div>
-
                     <div className='show-address'>
                         <span>{listing.address}</span>
                     </div>
-
-                    <hr className='show-hr-below-address' />
-                            
                     <div className='show-description'>
                         <span>{listing.description}</span>
                     </div>
-
-                    <hr className='show-hr-below-address' />
                             
                 <div className='show-calendar-container'>
-                        CALENDAR CONTAINER
                     <div className='show-availability-div'>
-                            Availability
-                    </div>
-                    <div>
-                            RANGE
-                    </div>
-                    <div>
-                            CLEAR
-                    </div>
-                        
+                            <span>Availability</span>
+                            <p>Enter your seat dates for accurate pricing and availability</p>
+                        <div>
+                        <div>
+                            <DayPickerRangeController
+                                startDate={this.state.startDate}
+                                endDate={this.state.endDate}
+                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                                focusedInput={this.state.focusedInput}
+                                onFocusChange={this.onFocusChange}
+                                numberOfMonths={2}
+                                hideKeyboardShortcutsPanel={true}
+                                noBorder={true}
+                            />
+                        </div>
+                            clearDates
+                        </div>
+                    </div>         
                 </div>
+
+                        {/* BOTTOM MESSAGE */}
+
+                <div className='show-box-bottom-text'>
+                            Botoom
+                </div>
+
+            </div>
+
+                    {/* RIGHT SIDE CONTAINER */}
+
+            <div className='show-right-side'>
 
                 <div className='show-booking-box'>
 
-                        BOOKING BOX
-                        <div className='show-price-container'>
-                            <span>${listing.price}</span> / night
-                        </div>
-                            <hr className='show-box-hr' />
-
-                    <form>
-                        <div className='show-form-container'>
-                            SHOW FORM CONTAINER
-                        <div className='show-search-box-label'>
-                            <span>Dates</span>
-                        </div>
-                            
-                            DATE RANGE
-                        <div className='show-search-box-label'>
-                            <span>Guest</span>
-                        </div>
-                    
-                            <button
-                                className='show-box-booking-btn'
-                                type='submit'
-                                value='Reserve' />
-                        </div>
-                    </form>
-
-                        <div className='show-box-bottom-text'>
-                            BOTTOM MESSAGE
-                        </div>
-
+                <div className='show-price-container'>
+                    <span>${listing.price}</span> per night
+                    <p className='show-price-rating'>
+                    <img className='show-price-rating-star' src={window.show_star} />
+                        5.00 
+                        <span className='show-price-reviews'>
+                            (396 reviews)
+                        </span>
+                    </p>  
                 </div>
 
+                            {/* RIGHT SIDE CHECKIN-CHECKOUT DATES */}
 
+                            <form className='show-form'>
+
+                                <div className='show-form-container'>
+                                    <p className='show-form-label'>
+                                        Dates
+                                    </p>
+                                    {/* BOOKING CALENDAR */}
+                                <div className='date-range-picker'>
+                                    <DateRangePicker
+                                        startDate={this.state.startDate}
+                                        startDateId="mm/dd/yyyy"
+                                        endDate={this.state.endDate}
+                                        endDateId="mm/dd/yyyy"
+                                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                                        focusedInput={this.state.focusedInput}
+                                        onFocusChange={this.onFocusChange}
+                                        numberOfMonths={1}
+                                        hideKeyboardShortcutsPanel={true}
+                                        startDatePlaceholderText="Check-in"
+                                        endDatePlaceholderText="Checkout"
+                                    />
+                                </div>
+                                <label className='show-form-label'>Guest
+                                </label>
+                                    <div className='show-form-dropdown'>
+                                    <select className='show-form-guest-selector'>
+                                        <option value disabled>Guest</option>
+                                        <option value='1'>1 guest</option>
+                                    </select>
+                                </div>
+                                <button
+                                    className='show-form-btn'
+                                    type='submit'
+                                    value='Reserve'>
+                                    Reserve
+                                </button>
+                                </div>
+                            </form>
+
+
+                            <div className='show-form-bottom'>
+                                You won't be charged
+                        </div>
+                        <div id='clear-dates'>clearDates</div>
+                </div>
             </div>
+
         </div>
     </div>
         )

@@ -3,6 +3,7 @@ import React from 'react';
 class SplashForm extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
             location: '',
             startDate: '',

@@ -67,9 +67,20 @@
 }
 
 .listing-address {
-    width: 100%; 
-    justify-content: flex-start;
+    width: 100%;
+    max-width: 299px;
     margin-top: 16px;
+
+    .listing-rating {
+        justify-content: flex-end;
+        color: #000000;
+        float: right;
+        img {
+            width: 12px; 
+            margin-right: 4px;
+            margin-bottom: -1px;
+        }
+    }
 }
 
 .listing-name {    
@@ -107,7 +118,7 @@
     border-radius: 4px;
 }
 
-//----------------ListingShow Top
+//----------------Show Page Top
 
 
 .show-images-container {
@@ -117,6 +128,11 @@
     min-width: 1280px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+}
+
+.show-images-container:hover div {
+    filter: brightness(.7);
 }
 
 .show-image-main {
@@ -188,16 +204,15 @@
 .img-4:hover {
     transform: scale(1.1);
     overflow: hidden;
+    filter: brightness(1.4) !important;
 }
 
-//----------------ListingShow Bottom
+//----------------Show Page Left
 
 .show-container {
     display: grid;
     grid-template-columns: auto 600px 400px auto;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "1 | 2 | 3 | 4";
     min-width: 1280px;
     border-top: 1px solid #484848;
     color: #484848;
@@ -206,16 +221,9 @@
     column-gap: 30px;
 }
 
-.left-side {
-  grid-column-start: 1;
-}
-.right-side {
-  grid-column-start: 4;
-}
-
 .show-left-side {
   grid-column-start: 2;
-  width: 100%;
+  width: 620px;
 
     .show-name {
     font-size: 32px;
@@ -225,7 +233,8 @@
     .show-address {
     width: 100%; 
     justify-content: flex-start;
-    margin-top: 4px;
+    padding: 6px 0 20px;
+    border-bottom: 1px solid #D3D3D3;
         span {
         font-weight: 300;
         }
@@ -240,48 +249,121 @@
     }
     .show-description {
     width: 100%; 
-    justify-content: flex-start;
-    margin-top: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #D3D3D3;
     }
 
-    .show-hr-below-address {
-    // border-top: 1px solid #767676;
-    height: 0px;
-    border-left: none;
-    }
-}
-
-
-.show-calendar-container {
-    border: solid 1px red;
-}
-
-.show-availability-div {
-    border: solid 1px orange;
-}
-
-.show-booking-box {
-    border: solid 1px blue;
-}
-
-.show-form-container {
-    border: solid 1px black;
-}
-
-
-.show-box-booking-btn {
-    border: solid 1px pink;
-}
-
-.show-box-bottom-text {
+    .show-box-bottom-text {
     margin-top: 13px;
     text-align: center;
     padding-bottom: 100px;
+    }
 }
 
-.show-box-hr {
-    border-top: 1px solid rgb(235, 235, 235);
-    height: 0px;
-    border-left: none;
-    margin: 25px 0 15px 0;
+
+//----------------Show Page Calendar
+
+.show-calendar-container {
+
 }
+
+.show-availability-div {
+    border-bottom: 1px solid #D3D3D3;
+    font-size: 16px;
+    padding-top: 20px;
+    span {
+        font-weight: 600;
+    }
+    p {
+        font-weight: 300;
+        padding: 20px 0;
+    }
+}
+
+
+//----------------Show Page Left
+
+.show-right-side {
+  grid-column-start: 3;
+  width: 100%;
+  padding: 20px 0 0 65px;
+
+    .show-booking-box {
+        grid-column-start: 3;
+        width: 100%;
+        padding: 24px;
+        border: solid 1px #D3D3D3;
+    }
+    .show-price-container {
+        font-size: 13px;
+        font-weight: 500;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #D3D3D3;
+        span {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .show-price-rating {
+        justify-content: flex-end;
+        margin-top: 6px;
+        font-size: 12px;
+            img {
+                width: 12px; 
+                margin-right: 2px;
+                margin-bottom: -1px;
+                }
+        }  
+        .show-price-reviews {
+        color: #767676;
+        font-size: 13px;
+        font-weight: 400;
+        padding-left: 2px;
+        }
+    }
+
+
+//----------------Show Form
+
+    .show-form {
+        .show-form-container {
+            padding-top: 20px;
+        }
+        .show-form-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .show-form-dropdown { 
+            select {
+                width: 100%;
+                color: #767676;
+                font-size: 16px;
+                background-color: #ffffff;
+                border-radius: 4px;
+            }
+            select:focus {
+                box-shadow: 0 0 0 1px #669ff9;
+                outline: 5px auto -webkit-focus-ring-color;
+            }
+        }
+        .show-form-btn {
+            width: 100%;
+            height: 50px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            background-color: #FF5A5F;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .show-form-bottom {            
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+}
+
+//----------------Date Picker

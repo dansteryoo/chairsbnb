@@ -22,9 +22,9 @@
  * Hof [dark gray] #484848
  * Foggy [light gray] #767676
  * Very Light [grey] #D3D3D3
- *
+ * Light Teal [calender-date :hover] #CCEEEB
+ * Teal [date-picker :focused] #99EDE7
  */
- 
 
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
@@ -52,7 +52,6 @@ body {
     height: 100%;
     width: 100%;
 }
-
 
 #root {
     height: 100%;
