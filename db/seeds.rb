@@ -78,13 +78,6 @@ listing_01 = Listing.create(
     price: 99999.99
 )
 
-listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/9GTQ2HngViXJBwMhfioRDPS4"), filename: "show_peter.jpg")
-listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter1.jpg"), filename: "peter1.jpg")
-listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter2.jpg"), filename: "peter2.jpg")
-listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter3.jpg"), filename: "peter3.jpg")
-listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter4.jpg"), filename: "peter4.jpg")
-
-
 
 listing_02 = Listing.create(
     name: "The Imperial Russian Throne", 
@@ -103,13 +96,6 @@ listing_02 = Listing.create(
     price: 46500.00
 )
 
-listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/kTskE1vrgMidFJ5sRyTyxfCz"), filename: "show_russia.jpg")
-listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia1.jpg"), filename: "russia1.jpg")
-listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia2.jpg"), filename: "russia2.jpg")
-listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia3.jpg"), filename: "russia3.jpg")
-listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia4.jpg"), filename: "russia4.jpg")
-
-
 
 listing_03 = Listing.create(
     name: "The Captain's Seat",
@@ -123,13 +109,6 @@ listing_03 = Listing.create(
     long: "-73.424100", 
     price: 35000.00
 )
-
-listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/iZd9i8nHR78kEihrdfYwk1Kc"), filename: "show_captain.jpg")
-listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek1.jpg"), filename: "trek1.jpg")
-listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek2.jpg"), filename: "trek2.jpg")
-listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek3.jpg"), filename: "trek3.jpg")
-listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek4.jpg"), filename: "trek4.jpg")
-
 
 
 listing_04 = Listing.create(
@@ -145,13 +124,6 @@ listing_04 = Listing.create(
     price: 15000.00
 )
 
-listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/7rtzdTADkXFR8SzETB13ukm9"), filename: "show_got.jpg")
-listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got1.jpg"), filename: "got1.jpg")
-listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got2.jpg"), filename: "got2.jpg")
-listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got3.jpg"), filename: "got3.jpg")
-listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got4.jpg"), filename: "got4.jpg")
-
-
 
 listing_05 = Listing.create(
     name: "Margarita", 
@@ -165,13 +137,6 @@ listing_05 = Listing.create(
     long: "-99.16771", 
     price: 218.00
 )
-
-listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/48poHNhCzc65gwzcQU1HJeBW"), filename: "show_mexico.jpg")
-listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico1.jpg"), filename: "mexico1.jpg")
-listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico2.jpg"), filename: "mexico2.jpg")
-listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico3.jpg"), filename: "mexico3.jpg")
-listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico4.jpg"), filename: "mexico4.jpg")
-
 
 
 listing_06 = Listing.create(
@@ -188,13 +153,6 @@ listing_06 = Listing.create(
     price: 365.00
 )
 
-listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/B9uibZWSsV3A2ytySoG9CWC4"), filename: "show_miami.jpg")
-listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami1.jpg"), filename: "miami1.jpg")
-listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami2.jpg"), filename: "miami2.jpg")
-listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami3.jpg"), filename: "miami3.jpg")
-listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami4.jpg"), filename: "miami4.jpg")
-
-
 
 listing_07 = Listing.create(
     name: "Mai Tai", 
@@ -210,13 +168,6 @@ listing_07 = Listing.create(
     price: 465.00
 )
 
-listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/fY7fzFcgSTCoSPBhNshQXGKd"), filename: "show_hawaii.jpg")
-listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii1.jpg"), filename: "hawaii1.jpg")
-listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii2.jpg"), filename: "hawaii2.jpg")
-listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii3.jpg"), filename: "hawaii3.jpg")
-listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii4.jpg"), filename: "hawaii4.jpg")
-
-
 
 listing_08 = Listing.create(
     name: "Cosmopolitan", 
@@ -229,14 +180,6 @@ listing_08 = Listing.create(
     long: "-73.979166", 
     price: 323.00
 )
-
-listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/YFne7AudH2Mjx3byjZyUZii9"), filename: "show_nyc.jpg")
-listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc1.jpg"), filename: "nyc1.jpg")
-listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc2.jpg"), filename: "nyc2.jpg")
-listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc3.jpg"), filename: "nyc3.jpg")
-listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc4.jpg"), filename: "nyc4.jpg")
-
-
 
 
 listing_09 = Listing.create(
@@ -252,13 +195,6 @@ listing_09 = Listing.create(
     price: 17.00
 )
 
-listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ZjqD74FWQPt9CTVgXFLKUVw2"), filename: "hack1.jpg")
-listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
-listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
-listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
-listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
-
-
 
 listing_10 = Listing.create(
     name: "Normal Chair", 
@@ -272,13 +208,6 @@ listing_10 = Listing.create(
     long: "-73.996961", 
     price: 28.00
 )
-
-listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/8DRoRvZ4gSF6m3g7sxhSXNS4"), filename: "show_aa2.jpg")
-listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
-listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
-listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
-listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
-
 
 
 listing_11 = Listing.create(
@@ -294,13 +223,6 @@ listing_11 = Listing.create(
     price: 18.00
 )
 
-listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/Knc9Wv9fTcy5QxLLjcv86nzS"), filename: "show_aa3.jpg")
-listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
-listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
-listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
-listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
-
-
 
 listing_12 = Listing.create(
     name: "The Best Chair", 
@@ -315,10 +237,77 @@ listing_12 = Listing.create(
     price: 59.00
 )
 
-listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/bNMANdNVHzdwt1NK6fN6rqif"), filename: "show_aa4.jpg")
-listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
-listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
-listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_peter.jpg"), filename: "show_peter.jpg")
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter1.jpg"), filename: "peter1.jpg")
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter2.jpg"), filename: "peter2.jpg")
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter3.jpg"), filename: "peter3.jpg")
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter4.jpg"), filename: "peter4.jpg")
+
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_russia.jpg"), filename: "show_russia.jpg")
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia1.jpg"), filename: "russia1.jpg")
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia2.jpg"), filename: "russia2.jpg")
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia3.jpg"), filename: "russia3.jpg")
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia4.jpeg"), filename: "russia4.jpeg")
+
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_captain.jpg"), filename: "show_captain.jpg")
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek1.jpg"), filename: "trek1.jpg")
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek2.jpg"), filename: "trek2.jpg")
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek3.jpg"), filename: "trek3.jpg")
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek4.jpg"), filename: "trek4.jpg")
+
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_got.jpg"), filename: "show_got.jpg")
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got1.jpg"), filename: "got1.jpg")
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got2.jpg"), filename: "got2.jpg")
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got3.jpg"), filename: "got3.jpg")
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got4.jpg"), filename: "got4.jpg")
+
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_mexico.jpg"), filename: "show_mexico.jpg")
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico1.jpeg"), filename: "mexico1.jpeg")
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico2.jpg"), filename: "mexico2.jpg")
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico3.jpeg"), filename: "mexico3.jpeg")
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico4.jpg"), filename: "mexico4.jpg")
+
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_miami.jpg"), filename: "show_miami.jpg")
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami1.jpg"), filename: "miami1.jpg")
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami2.jpeg"), filename: "miami2.jpeg")
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami3.jpg"), filename: "miami3.jpg")
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami4.jpg"), filename: "miami4.jpg")
+
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_hawaii.jpg"), filename: "show_hawaii.jpg")
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii1.jpg"), filename: "hawaii1.jpg")
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii2.jpg"), filename: "hawaii2.jpg")
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii3.jpg"), filename: "hawaii3.jpg")
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii4.jpg"), filename: "hawaii4.jpg")
+
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_nyc.jpg"), filename: "show_nyc.jpg")
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc1.jpg"), filename: "nyc1.jpg")
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc2.jpg"), filename: "nyc2.jpg")
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc3.jpg"), filename: "nyc3.jpg")
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc4.jpg"), filename: "nyc4.jpg")
+
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa1.jpg"), filename: "show_aa1.jpg")
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
+
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa2.jpg"), filename: "show_aa2.jpg")
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa3.jpg"), filename: "show_aa3.jpg")
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
+
+listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa4.jpg"), filename: "show_aa4.jpg")
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
+listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
+listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
 
 

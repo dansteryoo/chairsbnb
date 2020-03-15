@@ -67,7 +67,7 @@ class ListingShow extends React.Component {
                     Clear dates
                 </div>
         )
-   
+
         return (
     
     <div className='show-main'>

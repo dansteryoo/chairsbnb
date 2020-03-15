@@ -14,7 +14,7 @@ class ListingsIndex extends React.Component {
     render() {
 
         const { listings } = this.props;
-
+        
         return (
             <div className='listings-index-container'>
                     <NavSearchContainer />
