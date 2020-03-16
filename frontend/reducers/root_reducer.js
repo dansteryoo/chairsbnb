@@ -5,6 +5,7 @@ import ModalReducer from './modal_reducer';
 import UsersReducer from './users_reducer';
 import ListingsReducer from './listings_reducer';
 import BookingsReducer from './bookings_reducer';
+import ReviewsReducer from './reviews_reducer';
 
 
 const RootReducer = combineReducers({
@@ -13,7 +14,8 @@ const RootReducer = combineReducers({
     errors: SessionErrorsReducer,
     modal: ModalReducer,
     listings: ListingsReducer,
-    bookings: BookingsReducer
+    bookings: BookingsReducer,
+    reviews: ReviewsReducer,
 });
 
 export default RootReducer;

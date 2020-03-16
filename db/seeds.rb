@@ -13,47 +13,44 @@ User.destroy_all
 Listing.destroy_all
 
 
-# -------------------------------- Host Users
+# -------------------------------- Guests
 
-anna = User.create(email: "abc123@gmail.com", 
+guest_05 = User.create(email: "abc123@gmail.com", 
                     first_name: "Anna", 
                     last_name: "Smith", 
                     password: "tommy123")
 
-bob = User.create(email: "def123@gmail.com", 
+guest_06 = User.create(email: "def123@gmail.com", 
                     first_name: "Bob", 
                     last_name: "Cargo", 
                     password: "tommy123")
 
-chris = User.create(email: "hij123@gmail.com", 
+guest_07 = User.create(email: "hij123@gmail.com", 
                     first_name: "Chris", 
                     last_name: "Yu", 
                     password: "tommy123")
 
-dave = User.create(email: "klm123@gmail.com", 
+guest_08 = User.create(email: "klm123@gmail.com", 
                     first_name: "Dave", 
                     last_name: "Kim", 
                     password: "tommy123")
 
-
-# -------------------------------- Guest Users
-
-eric = User.create(email: "nop123@gmail.com", 
+guest_01 = User.create(email: "nop123@gmail.com", 
                     first_name: "Eric", 
                     last_name: "Choi", 
                     password: "tommy123")
 
-frank = User.create(email: "qrs123@gmail.com", 
+guest_02 = User.create(email: "qrs123@gmail.com", 
                     first_name: "Frank", 
                     last_name: "Lee", 
                     password: "tommy123")
 
-grace = User.create(email: "tuv123@gmail.com", 
+guest_03 = User.create(email: "tuv123@gmail.com", 
                     first_name: "Grace", 
                     last_name: "Park", 
                     password: "tommy123")
 
-harry = User.create(email: "wxyz123@gmail.com", 
+guest_04 = User.create(email: "wxyz123@gmail.com", 
                     first_name: "Harry", 
                     last_name: "Potter", 
                     password: "tommy123")
@@ -243,71 +240,372 @@ listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/pe
 listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter2.jpg"), filename: "peter2.jpg")
 listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter3.jpg"), filename: "peter3.jpg")
 listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/peter4.jpg"), filename: "peter4.jpg")
+listing_01.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_51.png"), filename: "ratings_chart_51.png")
 
 listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_russia.jpg"), filename: "show_russia.jpg")
 listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia1.jpg"), filename: "russia1.jpg")
 listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia2.jpg"), filename: "russia2.jpg")
 listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia3.jpg"), filename: "russia3.jpg")
 listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/russia4.jpeg"), filename: "russia4.jpeg")
+listing_02.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_52.png"), filename: "ratings_chart_52.png")
 
 listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_captain.jpg"), filename: "show_captain.jpg")
 listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek1.jpg"), filename: "trek1.jpg")
 listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek2.jpg"), filename: "trek2.jpg")
 listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek3.jpg"), filename: "trek3.jpg")
 listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/trek4.jpg"), filename: "trek4.jpg")
+listing_03.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_53.png"), filename: "ratings_chart_53.png")
 
 listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_got.jpg"), filename: "show_got.jpg")
 listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got1.jpg"), filename: "got1.jpg")
 listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got2.jpg"), filename: "got2.jpg")
 listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got3.jpg"), filename: "got3.jpg")
 listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/got4.jpg"), filename: "got4.jpg")
+listing_04.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_51.png"), filename: "ratings_chart_51.png")
 
 listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_mexico.jpg"), filename: "show_mexico.jpg")
 listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico1.jpeg"), filename: "mexico1.jpeg")
 listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico2.jpg"), filename: "mexico2.jpg")
 listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico3.jpeg"), filename: "mexico3.jpeg")
 listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/mexico4.jpg"), filename: "mexico4.jpg")
+listing_05.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_41.png"), filename: "ratings_chart_41.png")
 
 listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_miami.jpg"), filename: "show_miami.jpg")
 listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami1.jpg"), filename: "miami1.jpg")
 listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami2.jpeg"), filename: "miami2.jpeg")
 listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami3.jpg"), filename: "miami3.jpg")
 listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/miami4.jpg"), filename: "miami4.jpg")
+listing_06.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_42.png"), filename: "ratings_chart_42.png")
 
 listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_hawaii.jpg"), filename: "show_hawaii.jpg")
 listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii1.jpg"), filename: "hawaii1.jpg")
 listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii2.jpg"), filename: "hawaii2.jpg")
 listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii3.jpg"), filename: "hawaii3.jpg")
 listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hawaii4.jpg"), filename: "hawaii4.jpg")
+listing_07.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_43.png"), filename: "ratings_chart_43.png")
 
 listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_nyc.jpg"), filename: "show_nyc.jpg")
 listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc1.jpg"), filename: "nyc1.jpg")
 listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc2.jpg"), filename: "nyc2.jpg")
 listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc3.jpg"), filename: "nyc3.jpg")
 listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/nyc4.jpg"), filename: "nyc4.jpg")
+listing_08.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_41.png"), filename: "ratings_chart_41.png")
 
 listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa1.jpg"), filename: "show_aa1.jpg")
 listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
 listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
 listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
 listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
+listing_09.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_31.png"), filename: "ratings_chart_31.png")
 
 listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa2.jpg"), filename: "show_aa2.jpg")
 listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
 listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
 listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
 listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
+listing_10.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_32.png"), filename: "ratings_chart_32.png")
 
 listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa3.jpg"), filename: "show_aa3.jpg")
 listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
 listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
 listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
 listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
+listing_11.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_33.png"), filename: "ratings_chart_33.png")
 
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/show_aa4.jpg"), filename: "show_aa4.jpg")
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack4.jpg"), filename: "hack4.jpg")
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack3.jpg"), filename: "hack3.jpg")
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack2.jpg"), filename: "hack2.jpg")
 listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/hack1.jpg"), filename: "hack1.jpg")
+listing_12.images.attach(io: open("https://app-chairsbnb-dev.s3.amazonaws.com/ratings_chart_31.png"), filename: "ratings_chart_31.png")
 
 
+
+
+
+review_0101 = Review.create(
+    body: "This was a great place to be close to Vatican City. It’s a very short walk to the city. Peter was very informative and helpful. He arranged for a driver to pick us up and drop us off at the airport. Although there were small communication issues with the taxi to our departing flight, everything else was wonderful",
+    listing_id: listing_01.id,
+    author_id: guest_01.id,
+    overall_rating: 4.50,
+)
+
+
+review_0102 = Review.create(
+    body: "Super convenient to everything, especially Vatican, and the most accommodating host we've ever met. We've stayed here twice and will be back again.",
+    listing_id: listing_01.id,
+    author_id: guest_04.id,
+    overall_rating: 5.00,
+)
+
+
+review_0103 = Review.create(
+    body: "Peter is literally the greatest host I've ever met. He is a genuine guy who made me feel welcome. His seat is clean, tidy, and has that classic Italiano feel to it with a modern hint. Also, he helped me figure out the best way to see everything I wanted in regards to his place. Next time I'm in Rome, I know where I want to stay.",
+    listing_id: listing_01.id,
+    author_id: guest_05.id,
+    overall_rating: 4.70,
+)
+
+
+review_0201 = Review.create(
+    body: "The seat is very well located, very clean and has an amazing coushin. The metro is about a 5 minute walk and you can always find the place since it is close to a landmark (cathedral of Christ the Savior). The space is a bit limited but very well organized. The host is great but after check-in she can be a bit unresponsive.",
+    listing_id: listing_02.id,
+    author_id: guest_08.id,
+    overall_rating: 4.35,
+)
+
+
+review_0202 = Review.create(
+    body: "This seat is in a great location in Moscow!!! A 15-20 min walk to the Kremlin and Red Square. Perfect place because we slept there in the evening and ventured during the day :) diamond in the rough and the hosts were great!!",
+    listing_id: listing_02.id,
+    author_id: guest_08.id,
+    overall_rating: 4.52,
+)
+
+
+review_0203 = Review.create(
+    body: "Olga's chair was the perfect base for exploring Moscow. It is a neat, tidy seat in a quiet section of a wonderful neighborhood, close to a great supermarket and restaurants and cafes. The seat was soft and everything was sparkling clean. There is nice natural light and it is very secure and there were amenities we could use.",
+    listing_id: listing_02.id,
+    author_id: guest_04.id,
+    overall_rating: 4.97,
+)
+
+
+review_0301 = Review.create(
+    body: "Excellent chair from the Original Star Trek series. Owner has original blueprints, and recreated the set from this. Whole tour is a walk thru of the set, which makes u feel you are on the ship! Some original props are also here. Owner is in process of building a Next Gen tour in a building next door.",
+    listing_id: listing_03.id,
+    author_id: guest_01.id,
+    overall_rating: 4.42,
+)
+
+
+review_0302 = Review.create(
+    body: "If you are a Star Trek original series fan, run don’t walk (or better yet beam yourself there!) to visit the seat. We happened upon it while visiting the Adirondacks this summer. It is a hidden gem, quietly nestled in the tiny town of Ticonderoga NY. My daughter and I were absolutely thrilled when we discovered it! Loved every minute on the chair and want to go back!! A must try for a Trekkie!",
+    listing_id: listing_03.id,
+    author_id: guest_07.id,
+    overall_rating: 4.89,
+)
+
+
+review_0303 = Review.create(
+    body: "If you're at Lake George or in Saratoga Springs (where we stayed) this is a must visit and family friendly. Whether a casual fan or just curious and in the area.. very much worth the trip. An amazing tour through a cultural phenomenon that has made a significant impact on our society. Pictures do not do it justice. Lovingly recreated with a staff that is as committed and friendly as its founder. This is Hollywood history and fandom done right!",
+    listing_id: listing_03.id,
+    author_id: guest_06.id,
+    overall_rating: 4.64,
+)
+
+
+review_0401 = Review.create(
+    body: "The city covers the north shore of the Blackwater Rush and covers three tall hills, named after Aegon and his two sisters, Visenya and Rhaenys. Aegon's High Hill, surmounted by the Red Keep, the royal castle located in the south-eastern corner of the city, overlooks the bay directly, whilst Visenya's Hill to the west is crowned by the marble-walled Great Sept of Baelorand its seven crystal towers. The Hill of Rhaenys in the north is capped by the collapsed ruins of the Dragonpit dome, its bronze doors shut for a century and a half since the last dragon died.",
+    listing_id: listing_04.id,
+    author_id: guest_01.id,
+    overall_rating: 4.77,
+)
+
+
+review_0402 = Review.create(
+    body: "Many assume, wrongly, that the reign of King Aegon I Targaryen began on the day he landed at the mouth of the Blackwater Rush, beneath the three hills where the city of King’s Landing would eventually stand. His Grace ordered the construction of a ring of walls about King’s Landing, as high and strong as those that protected Oldtown and Lannisport. The task of building them was conferred upon Grand Maester Gawen and Ser Osmund Strong, the Hand of the King. To honor the Seven, Aegon decreed that the city would have seven gates, each defended by a massive gatehouse and defensive towers.",
+    listing_id: listing_04.id,
+    author_id: guest_05.id,
+    overall_rating: 4.98,
+)
+
+
+review_0403 = Review.create(
+    body: "No one should end up on the Iron Throne at the end of Game of Thrones. The Iron Throne and the notion of centralized power should be abolished by the time the final credits roll on the show’s last episode. Maybe the scattered survivors of the final war will roam around Westeros as itinerant hunter-gatherers, or the seven kingdoms will shut each other off and become seven separately ruled states. Maybe literally everyone will be dead. All of those sound better than putting another king or queen on that spiky old throne and starting this whole dance over again. It’s high time to end the game, and end the throne.",
+    listing_id: listing_04.id,
+    author_id: guest_06.id,
+    overall_rating: 4.29,
+)
+
+
+review_0501 = Review.create(
+    body: "Beautiful spot in the center of everything. Always felt comfortable in the seat and loved coming home at night to it. The best part, it has a relaxing patio above Roma which has practically a 360 view of the city. You can easily walk or take a quick Uber to all the best areas and restaurants of CDMX, and you’ll also get plenty of good exercise going up all the steps to get to the seat. Trust me, it’s worth it!",
+    listing_id: listing_05.id,
+    author_id: guest_02.id,
+    overall_rating: 4.49,
+)
+
+
+review_0502 = Review.create(
+    body: "We had an amazing stay at Alex’s passive seat. Great views and very private roof terrace. Very inspirational! Also, you’re staying in one of a coolest areas of Mexico City. You can’t go wrong here.",
+    listing_id: listing_05.id,
+    author_id: guest_07.id,
+    overall_rating: 4.59,
+)
+
+
+review_0503 = Review.create(
+    body: "Alex's seat is wonderful! From the very beginning communication was so easy with Alex. He always responded within a day. Any question I had while in Mexico he was also quick to answer and we frequently saw him and his family tending to the seat. The seat is even more beautiful than the pictures. I spent every morning and evening on the terrace and love how light the space was. The location is perfect and very close to great street food and excellent restaurants. When I come back to Mexico we will definitely be staying with Alex again.",
+    listing_id: listing_05.id,
+    author_id: guest_05.id,
+    overall_rating: 4.69,
+)
+
+
+review_0601 = Review.create(
+    body: "Great location by the beach. Not many food choices walking distance. Starbucks and The Tavern closest thing. Need more support from host during busy hours. Very friendly otherwise. Seat was what I expected. Location by far best part of my stay.",
+    listing_id: listing_06.id,
+    author_id: guest_02.id,
+    overall_rating: 4.79,
+)
+
+
+review_0602 = Review.create(
+    body: "You get what you pay for. If you’re looking for something near the beach then that is what you will get. The seat itself is great. Overall feels very good and I would stay here again when I have the budget to stay here!",
+    listing_id: listing_06.id,
+    author_id: guest_04.id,
+    overall_rating: 4.89,
+)
+
+
+review_0603 = Review.create(
+    body: "This seat is very nicely positioned on Miami Beach - very close to the beach, public parking, and lots of restaurants and stores along the main avenue. They provide complimentary towels, which is a nice touch! The only issue we had was that the beach was crowded and it was hard to relax with the noise going at all hours. Other than that, the seat was very clean, the host was welcoming, and it was a great location",
+    listing_id: listing_06.id,
+    author_id: guest_08.id,
+    overall_rating: 4.19,
+)
+
+
+review_0701 = Review.create(
+    body: "Philip’s chair was perfect. Incredibly comfy, phenomenal location, and he included parking which made life so much easier. I took advantage of the lovely lanai, which was very spacious. Check-in and check-out was a breeze. It was emasculate in terms of cleanliness, and the extra beach towels and beach amenities were so convenient. Thanks again for a great stay! I very much hope to stay here again in the future.",
+    listing_id: listing_07.id,
+    author_id: guest_02.id,
+    overall_rating: 4.87,
+)
+
+
+review_0702 = Review.create(
+    body: "Philip’s seat is everything described and more. Full of unlisted amenities, very clean & attention to detail is made to make their guests as comfortable & welcome. Only minutes off of the beach, quick access to shopping & all that Oahu has to offer. Philip is extremely friendly & available on a moments notice for assistance. I was kinda sad to leave.. I will definitely check availability with Philip 1st should I get back to the island.",
+    listing_id: listing_07.id,
+    author_id: guest_07.id,
+    overall_rating: 4.76,
+)
+
+
+review_0703 = Review.create(
+    body: "Philip is quick to respond and easy to work with. The chair is close to shopping and beach. I got a free valet parking that I didn’t expect. His chair is great, he has everything I needed in his place and would love to stay their again.",
+    listing_id: listing_07.id,
+    author_id: guest_08.id,
+    overall_rating: 4.65,
+)
+
+
+review_0801 = Review.create(
+    body: "Graziella responded quickly and check in and check out was very simple. The chair is very clean and is an incredibly good deal. Easy walk to multiple subway lines that get you into Manhattan in ~30 mins. Neighborhood was pretty quiet and felt very safe.",
+    listing_id: listing_08.id,
+    author_id: guest_02.id,
+    overall_rating: 4.54,
+)
+
+
+review_0802 = Review.create(
+    body: "This was a great example of a GREAT HOST. She communicated in a timely manner each and every time I had a question. Which is very rare so her attentiveness and communication skills were definitely appreciated. Oh THAT chair room is BEAUTIFUL!",
+    listing_id: listing_08.id,
+    author_id: guest_06.id,
+    overall_rating: 4.43,
+)
+
+
+review_0803 = Review.create(
+    body: "Great affordable seat to stay if you're visiting New York. 30 min Uber ride from LGA and a 10 min walk to the J train. Graziella was very nice and let us check in earlier in the morning (a neighbor greeted us and handed off the keys). The seat is well furnished and very clean. Highly recommend",
+    listing_id: listing_08.id,
+    author_id: guest_05.id,
+    overall_rating: 4.32,
+)
+
+
+review_0901 = Review.create(
+    body: "Hack Academy's seat is in a fantastic location of NYC. Very easy to get downtown. They were extremely responsive to any of my messages and his check in directions were on point. The seat is just what you need.",
+    listing_id: listing_09.id,
+    author_id: guest_03.id,
+    overall_rating: 4.21,
+)
+
+
+review_0902 = Review.create(
+    body: "Excellent chair - central, clean spacious. Stayed here for 6 months while I was learning how to code. Seat had everything I needed. Thanks for having me",
+    listing_id: listing_09.id,
+    author_id: guest_04.id,
+    overall_rating: 4.11,
+)
+
+
+review_0903 = Review.create(
+    body: "Ask from the Host to send you House Rules before, so you will be aware of all restrictions of using the space. Note you have to check out at 9:00 exactly.",
+    listing_id: listing_09.id,
+    author_id: guest_01.id,
+    overall_rating: 3.45,
+)
+
+
+review_1001 = Review.create(
+    body: "A very great seat to sit in. The area was nice and the chair was super comfortable. A lot of storage space and places to hang your clothes. Great communication and very helpful.",
+    listing_id: listing_10.id,
+    author_id: guest_03.id,
+    overall_rating: 3.59,
+)
+
+
+review_1002 = Review.create(
+    body: "This is a good place to sit in Manhattan. The chair has enough space, common areas are clean, everything is well maintained. It's located close to subway lines. Host was responsive",
+    listing_id: listing_10.id,
+    author_id: guest_01.id,
+    overall_rating: 3.99,
+)
+
+
+review_1003 = Review.create(
+    body: "The checkin and checkout process is really a pain. First, you can only check in at 7pm, but you have to checkout at 9am. That's actually half a day. Second, the host is totally inflexible with leaving luggage before. Third, you have to go to search the keys by yourself somewhere many blocks distant and walking with the luggage through half the city. It cost me one day of sightseeing.",
+    listing_id: listing_10.id,
+    author_id: guest_05.id,
+    overall_rating: 3.25,
+)
+
+
+review_1101 = Review.create(
+    body: "Property manager does not allow owner to Airbnb his apartment. First, I must admit I did stay 37 minutes passed his 9:00 AM checkout. As I was about to open the door to leave, someone knocked on the door. It was the property manager. He asked me who I was and why I was there. Before I could answer, he told me \"this is Airbnb right?\" Then he told me I was there illegally and I needed to get lost immediately. I don't recommend having to deal with that.",
+    listing_id: listing_11.id,
+    author_id: guest_03.id,
+    overall_rating: 3.76,
+)
+
+
+review_1102 = Review.create(
+    body: "The host was not there, so this is not even “hosting” - it’s renting chairs. The bathroom had hair in the sink, hair/dirt in the toilet, hair in the shower. My chair was too hot and the temperature couldn’t be adjusted (either heat is off and it’s cold or heat is on and it’s literally 90’F). Tried opening a window. It was almost impossible to close it without applying your full body’s pressure - I ended up pulling my muscle. Felt like a hostel overall.",
+    listing_id: listing_11.id,
+    author_id: guest_06.id,
+    overall_rating: 3.51,
+)
+
+
+review_1103 = Review.create(
+    body: "Great location. Flat was quite okay but could have been cleaner.",
+    listing_id: listing_11.id,
+    author_id: guest_07.id,
+    overall_rating: 3.88,
+)
+
+
+review_1201 = Review.create(
+    body: "Hack Academy was incredibly gracious to be available at such short notice to check me in! The space was fantastic and had a wonderful city vibe. Nothing negative. Everything was accurate and exceeded expectations. Thank you so much!! Will certainly come again if in the area and available.",
+    listing_id: listing_12.id,
+    author_id: guest_03.id,
+    overall_rating: 3.11,
+)
+
+
+review_1202 = Review.create(
+    body: "Chair is stylish, clean, and neat. Loved the color scheme! Location was great for the value given that it was holidays. Appreciate the host checking in regularly.",
+    listing_id: listing_12.id,
+    author_id: guest_04.id,
+    overall_rating: 3.67,
+)
+
+
+review_1203 = Review.create(
+    body: "Great location within a 5 minute walk to Astor place subway station to take you anywhere you want to go, SO much stuff to do all within a few minutes walk. The chair was clean and cozy. Provided anything I needed promptly and the other guests were so friendly. The area is clean and safe and there’s someone working in the lobby at all times.",
+    listing_id: listing_12.id,
+    author_id: guest_06.id,
+    overall_rating: 4.09,
+)

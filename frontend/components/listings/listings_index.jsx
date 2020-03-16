@@ -1,5 +1,5 @@
 import React from 'react';
-import ListingsIndexItems from '../show/listing_index_items';
+import ListingsIndexItems from './listing_index_items';
 import NavSearchContainer from '../navbar/navsearch_container';
 
 class ListingsIndex extends React.Component {

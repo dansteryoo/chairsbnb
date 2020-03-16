@@ -1,11 +1,12 @@
 import React from 'react';
 import { DateRangePicker, DayPickerRangeController } from 'react-dates';
-import { START_DATE, END_DATE } from 'react-dates/src/constants';
-import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
-import moment from 'moment';
+// import { START_DATE, END_DATE } from 'react-dates/src/constants';
+// import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
+// import moment from 'moment';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
+import ReviewItem from './review_item'
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -15,6 +16,8 @@ class ListingShow extends React.Component {
             startDate: null,
             endDate: null,
             focusedInput: null,
+            startDateId: null,
+            endDateId: null,
             bookingDates: []
             
         };
@@ -27,7 +30,6 @@ class ListingShow extends React.Component {
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
     }
-
 
     onDatesChange({ startDate, endDate }) {
         this.setState({ startDate, endDate });
@@ -54,8 +56,8 @@ class ListingShow extends React.Component {
             return <div></div>
         }
 
-        let { listing } = this.props
-
+        let { listing } = this.props;
+        
         const clearDates = (
                 <div
                     className="clear-dates-btn"
@@ -67,10 +69,11 @@ class ListingShow extends React.Component {
                     Clear dates
                 </div>
         )
+                    // debugger
 
         return (
     
-    <div className='show-main'>
+        <div className='show-main'>
 
                 {/* TOP SHOW IMAGES */}
 
@@ -141,13 +144,44 @@ class ListingShow extends React.Component {
                     </div>         
                 </div>
 
-                        {/* BOTTOM MESSAGE */}
+                        {/* REVIEWS */}
+                <div className='show-reviews'>
+                    <p className='show-review-title'>
+                        Reviews
+                    </p>
 
-                <div className='show-box-bottom-text'>
-                            Bottom
+                    <div className='show-review-title-ratings'>
+                        <div className='ratings-num'>
+                            <img src={window.show_star} />
+                            <span>5.00</span>
+                        </div>
+                        <div className='reviews-separator'/>
+                        <div className='reviews-num'>
+                            <span>239</span>
+                        </div>
+                        <p>reviews</p>
+                    </div>
+
+                    <div className='show-review-ratings-chart'> 
+                        <img src={listing.images[5]}></img>
+                    </div>
+                        <span>
+                            <ul className='review-ul'>
+                                {
+                                    listing.reviews.map(review => (
+                                        <ReviewItem
+                                            review={review}
+                                            key={review.id}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </span>
+                    </div>
+                        <div className='show-bottom-google'>
+                            GOOGLE MAPS? 
+                        </div>
                 </div>
-
-            </div>
 
                     {/* RIGHT SIDE CONTAINER */}
 
@@ -158,10 +192,10 @@ class ListingShow extends React.Component {
                 <div className='show-price-container'>
                     <span>${listing.price}</span> per night
                     <p className='show-price-rating'>
-                    <img className='show-price-rating-star' src={window.show_star} />
+                    <img src={window.show_star} />
                         5.00 
                         <span className='show-price-reviews'>
-                            (396 reviews)
+                            (239 reviews)
                         </span>
                     </p>  
                 </div>
@@ -219,11 +253,10 @@ class ListingShow extends React.Component {
                                     endDate: null,
                                     focusedInput: null
                                 })}> Clear dates</button>
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </div>
+         </div>
         )
     }
 }

@@ -15,7 +15,7 @@ class Listing < ApplicationRecord
 
     has_many :reviews,
         primary_key: :id,
-        foreign_key: :author_id,
+        foreign_key: :listing_id,
         class_name: :Review
 
     has_many_attached :images
