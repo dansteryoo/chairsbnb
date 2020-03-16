@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ListingsIndexItems = ({ listing }) => {
+
+    const overallRating = (listing.reviews
+        .reduce((acc, each) => acc += each.overall_rating, 0) / listing.reviews.length)
+        .toFixed(2)
+
     return (
         <li className='listing-li'>
             <Link to={`/listings/${listing.id}`}>
@@ -12,10 +17,13 @@ const ListingsIndexItems = ({ listing }) => {
             </Link>
             <div className='listing-info'>
                 <div className='listing-address'>
-                    <span>{listing.address}</span>
+                    <span>
+                        {listing.address}
+                    </span>
                         <span className="listing-rating">
                             <img className="rating-star" src={window.rating_star} />
-                        5.00</span>
+                        {overallRating}
+                        </span>
                 </div>
             
                 <div className='listing-name'>

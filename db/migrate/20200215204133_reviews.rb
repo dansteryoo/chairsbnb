@@ -4,7 +4,7 @@ class Reviews < ActiveRecord::Migration[5.2]
       t.text :body, null: false
       t.integer :listing_id, null: false
       t.integer :author_id, null: false
-      t.integer :overall_rating, null: false
+      t.float :overall_rating, null: false
       
       t.timestamps
     end

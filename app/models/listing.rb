@@ -70,18 +70,6 @@ class Listing < ApplicationRecord
 
         result
     end
-
-    def average_rating
-        rating = 0
-        if self.reviews.length > 0
-            self.reviews.inject { 
-                |sum, review| sum + review.average_rating
-                } / self.reviews.count * 1.0
-        end
-
-        rating
-    end
-
    
 end
 

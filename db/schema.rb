@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_153904) do
     t.text "body", null: false
     t.integer "listing_id", null: false
     t.integer "author_id", null: false
-    t.integer "overall_rating", null: false
+    t.float "overall_rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_reviews_on_author_id"

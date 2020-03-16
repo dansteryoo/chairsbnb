@@ -58,18 +58,9 @@ class ListingShow extends React.Component {
 
         let { listing } = this.props;
         
-        const clearDates = (
-                <div
-                    className="clear-dates-btn"
-                    onClick={() => this.setState({
-                        startDate: null,
-                        endDate: null,
-                        focusedInput: null,
-                    })} >
-                    Clear dates
-                </div>
-        )
-                    // debugger
+        const overallRating = (listing.reviews
+            .reduce((acc, each) => acc += each.overall_rating, 0) / listing.reviews.length)
+            .toFixed(2)
 
         return (
     
@@ -153,7 +144,7 @@ class ListingShow extends React.Component {
                     <div className='show-review-title-ratings'>
                         <div className='ratings-num'>
                             <img src={window.show_star} />
-                            <span>5.00</span>
+                            <span>{overallRating}</span>
                         </div>
                         <div className='reviews-separator'/>
                         <div className='reviews-num'>
@@ -193,7 +184,7 @@ class ListingShow extends React.Component {
                     <span>${listing.price}</span> per night
                     <p className='show-price-rating'>
                     <img src={window.show_star} />
-                        5.00 
+                        {overallRating}
                         <span className='show-price-reviews'>
                             (239 reviews)
                         </span>
