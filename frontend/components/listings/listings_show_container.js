@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import { fetchListing } from '../../actions/listing_actions';
-import { fetchBooking, createBooking } from '../../actions/booking_actions';
-import { fetchReviews, fetchReview } from '../../actions/review_actions';
 import ListingShow from './listings_show';
 import { withRouter } from 'react-router-dom';
  
@@ -13,11 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchListing: (listingId) => dispatch(fetchListing(listingId)),
-    createBooking: (booking) => dispatch(createBooking(booking)),
-    fetchBooking: (bookingId) => dispatch(fetchBooking(bookingId)),
-    fetchReviews: () => dispatch(fetchReviews()),
-    fetchReview: (reviewId) => dispatch(fetchReview(reviewId))
+    fetchListing: (listingId) => dispatch(fetchListing(listingId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListingShow));

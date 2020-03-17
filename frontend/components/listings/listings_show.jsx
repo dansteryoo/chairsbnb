@@ -55,12 +55,27 @@ class ListingShow extends React.Component {
         if (this.props.listing === undefined) {
             return <div></div>
         }
-
-        let { listing } = this.props;
         
-        const overallRating = (listing.reviews
-            .reduce((acc, each) => acc += each.overall_rating, 0) / listing.reviews.length)
+        let { listing } = this.props;
+
+        const overallRating = (listing.reviews.map(each => each.review.overall_rating)
+            .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
             .toFixed(2)
+
+        const showReviews = 
+            <span>
+                <ul className='review-ul'>
+                    {
+                        listing.reviews.map(each => (
+                            <ReviewItem
+                                review={each.review}
+                                author={each.author}
+                                key={each.review.id}
+                            />
+                        ))
+                    }
+                </ul>
+            </span>
 
         return (
     
@@ -156,18 +171,7 @@ class ListingShow extends React.Component {
                     <div className='show-review-ratings-chart'> 
                         <img src={listing.images[5]}></img>
                     </div>
-                        <span>
-                            <ul className='review-ul'>
-                                {
-                                    listing.reviews.map(review => (
-                                        <ReviewItem
-                                            review={review}
-                                            key={review.id}
-                                        />
-                                    ))
-                                }
-                            </ul>
-                        </span>
+                        {showReviews}
                     </div>
                         <div className='show-bottom-google'>
                             GOOGLE MAPS? 
@@ -184,7 +188,7 @@ class ListingShow extends React.Component {
                     <span>${listing.price}</span> per night
                     <p className='show-price-rating'>
                     <img src={window.show_star} />
-                        {overallRating}
+                                    {overallRating}
                         <span className='show-price-reviews'>
                             (239 reviews)
                         </span>

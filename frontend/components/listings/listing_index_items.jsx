@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ListingsIndexItems = ({ listing }) => {
+
+const ListingsIndexItems = ({ listing }) => {   
 
     const overallRating = (listing.reviews
         .reduce((acc, each) => acc += each.overall_rating, 0) / listing.reviews.length)

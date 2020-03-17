@@ -1,6 +1,5 @@
 import { RECEIVE_LISTINGS, RECEIVE_LISTING } from '../actions/listing_actions';
 
-
 const listingsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
@@ -11,7 +10,7 @@ const listingsReducer = (oldState = {}, action) => {
 
         case RECEIVE_LISTING:
             newState[action.listing.id] = action.listing
-            return newState
+            return newState;
 
         default:
             return oldState;

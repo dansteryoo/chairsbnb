@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewItem = ({ review }) => {
+const ReviewItem = ({ review, author }) => {
 
     let month = review.created_at.slice(5, 7)
     switch (month) {
@@ -46,10 +46,10 @@ const ReviewItem = ({ review }) => {
         <li className='review-li'>
             <div className='review-info'>
                 <div className="review-profile">
-                    <img src={window.show_star} />
+                    <img src={window.profile_ph} />
                 
                     <div className='review-author'>
-                        <p>{review.author_id}</p>
+                        <p>{author.first_name}</p>
                         <div className='review-date'>
                             <span>{month} </span>
                             <span>{review.created_at.slice(0, 4)}</span>

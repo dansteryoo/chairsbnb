@@ -358,7 +358,7 @@ review_0201 = Review.create(
 review_0202 = Review.create(
     body: "This seat is in a great location in Moscow!!! A 15-20 min walk to the Kremlin and Red Square. Perfect place because we slept there in the evening and ventured during the day :) diamond in the rough and the hosts were great!!",
     listing_id: listing_02.id,
-    author_id: guest_08.id,
+    author_id: guest_01.id,
     overall_rating: 4.52,
 )
 
@@ -374,7 +374,7 @@ review_0203 = Review.create(
 review_0301 = Review.create(
     body: "Excellent chair from the Original Star Trek series. Owner has original blueprints, and recreated the set from this. Whole tour is a walk thru of the set, which makes u feel you are on the ship! Some original props are also here. Owner is in process of building a Next Gen tour in a building next door.",
     listing_id: listing_03.id,
-    author_id: guest_01.id,
+    author_id: guest_08.id,
     overall_rating: 4.42,
 )
 
@@ -413,7 +413,7 @@ review_0402 = Review.create(
 
 review_0403 = Review.create(
     body: "No one should end up on the Iron Throne at the end of Game of Thrones. The Iron Throne and the notion of centralized power should be abolished by the time the final credits roll on the show’s last episode. Maybe the scattered survivors of the final war will roam around Westeros as itinerant hunter-gatherers, or the seven kingdoms will shut each other off and become seven separately ruled states. Maybe literally everyone will be dead. All of those sound better than putting another king or queen on that spiky old throne and starting this whole dance over again. It’s high time to end the game, and end the throne.",
-    listing_id: listing_04.id,
+    listing_id: listing_05.id,
     author_id: guest_06.id,
     overall_rating: 4.29,
 )
@@ -421,7 +421,7 @@ review_0403 = Review.create(
 
 review_0501 = Review.create(
     body: "Beautiful spot in the center of everything. Always felt comfortable in the seat and loved coming home at night to it. The best part, it has a relaxing patio above Roma which has practically a 360 view of the city. You can easily walk or take a quick Uber to all the best areas and restaurants of CDMX, and you’ll also get plenty of good exercise going up all the steps to get to the seat. Trust me, it’s worth it!",
-    listing_id: listing_05.id,
+    listing_id: listing_04.id,
     author_id: guest_02.id,
     overall_rating: 4.49,
 )
