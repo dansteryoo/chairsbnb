@@ -8,7 +8,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
 import NavSearchContainer from '../navbar/navsearch_container';
-// import MapContainer from '../map/map_container'
+import ShowMap from '../map/show_map.js'
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -113,7 +113,7 @@ class ListingShow extends React.Component {
                                 <span>Sitting arrangements</span>
                             </div>
                                 <div className='top-content-info'>
-                                    <i class="fas fa-chair fa-lg"></i>
+                                    <i className="fas fa-chair fa-lg"></i>
                                     <span>Seating 1</span>
                                     <p>1 single chair</p>
                                 </div>
@@ -177,12 +177,17 @@ class ListingShow extends React.Component {
                     </div>
                         <div className='show-bottom-google'>
                             <span>The neighborhood</span>
+                            <p>{address}</p>
                                 {/* 
                                                             {window.googleAPIKey}
                             <MapContainer lat={lat} long={long} address={address} />
 
                                 */}
+
+                            <ShowMap lat={lat} long={long} address={address} />
+                            <p>Exact location information is provided after a booking is confirmed</p>
                         </div>
+
                         <div className='show-bottom-content'>
                             <div className='bottom-content-title'>
                                 <span>Things to keep in mind</span>
