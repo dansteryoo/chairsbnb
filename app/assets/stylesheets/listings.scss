@@ -330,9 +330,6 @@
             line-height: 24px;
         }
     }
-    .show-bottom-google {
-        padding-bottom: 200px;
-    }
 }
 
 
@@ -350,7 +347,6 @@
         padding: 20px 0;
     }
 }
-
 
 //----------------Show Page Left
 
@@ -436,4 +432,117 @@
 
 }
 
-//----------------Date Picker
+//----------------Bottom
+
+.show-bottom-google {
+    border-bottom: 1px solid #D3D3D3;
+    width: 100%;
+    height: 500px;
+    padding-top: 60px;
+
+    span {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+}
+
+.show-top-content {
+    width: 100%; 
+    padding: 20px 0 30px;
+    border-bottom: 1px solid #D3D3D3;
+
+    .bottom-separator {
+        border-top: 1px solid #D3D3D3;
+        margin-top: 5px;
+        height: 12px;
+    }
+
+    .top-content-title {
+        padding-bottom: 20px;
+
+        span {
+            font-weight: 600;
+            line-height: 24px;
+        }
+    }
+    .top-content-info {
+        width: 130px;
+        height: 80px;
+        border: 1px solid #D3D3D3;
+        border-radius: 4px;
+        padding: 28px;
+
+        span {
+            padding-top: 20px;
+            display: flex;
+            font-weight: 500;
+            line-height: 24px;
+        }
+
+        p {
+            font-weight: 300;
+        }
+    }
+}
+
+
+.show-bottom-content {
+    border-bottom: 1px solid #D3D3D3;
+    padding: 60px 0 200px;
+
+    .bottom-content-title {
+        padding-bottom: 20px;
+
+        span {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 24px;
+        }
+    }
+
+    .bottom-content-info {
+        border-bottom: 1px solid #D3D3D3;
+        padding-bottom: 20px;
+
+        span {
+            font-weight: 600;
+            line-height: 24px;
+        }
+        
+        p {
+            display: inline-flex;
+            font-weight: 300;
+        }  
+    }
+    .bottom-rules {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 20px 0;
+
+        span {
+            font-weight: 600;
+            line-height: 24px;
+        }
+        img {
+            margin-top: 20px;
+            display: flex;
+            width: 80%;
+        }
+    }
+    .bottom-cancellation {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 20px 0;
+
+        span {
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        p {
+            padding: 20px 0; 
+            font-weight: 300;
+        }
+    }
+
+}
+

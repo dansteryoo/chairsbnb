@@ -8,6 +8,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
 import NavSearchContainer from '../navbar/navsearch_container';
+// import MapContainer from '../map/map_container'
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -26,19 +27,19 @@ class ListingShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onFocusChange = this.onFocusChange.bind(this)
         this.onDatesChange = this.onDatesChange.bind(this)
-    }
+    };
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
-    }
+    };
 
     onDatesChange({ startDate, endDate }) {
         this.setState({ startDate, endDate });
-    }
+    };
 
     onFocusChange(focusedInput) {
         this.setState({ focusedInput });
-    }
+    };
 
     handleSubmit(e) {
         e.preventDefault();
@@ -49,19 +50,20 @@ class ListingShow extends React.Component {
         // let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
 
         //     this.props.createBooking(newBooking);
-    }
+    };
 
     render() {
 
         if (this.props.listing === undefined) {
             return <div></div>
-        }
+        };
         
-        let { listing } = this.props;
+        const { listing } = this.props;
+        const { lat, long, address } = this.props.listing;
 
         const overallRating = (listing.reviews.map(each => each.review.overall_rating)
             .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
-            .toFixed(2)
+            .toFixed(2);
         
         return (
     
@@ -105,7 +107,18 @@ class ListingShow extends React.Component {
                         <p>Description</p>
                         <span>{listing.description}</span>
                     </div>
-                            
+
+                        <div className='show-top-content'>
+                            <div className='top-content-title'>
+                                <span>Sitting arrangements</span>
+                            </div>
+                                <div className='top-content-info'>
+                                    <i class="fas fa-chair fa-lg"></i>
+                                    <span>Seating 1</span>
+                                    <p>1 single chair</p>
+                                </div>
+                        </div>
+
                 <div className='show-calendar-container'>
                     <div className='show-availability-div'>
                             <span>Availability</span>
@@ -163,9 +176,36 @@ class ListingShow extends React.Component {
                         </span>
                     </div>
                         <div className='show-bottom-google'>
-                            {/*window.googleAPIKey*/}
+                            <span>The neighborhood</span>
+                                {/* 
+                                                            {window.googleAPIKey}
+                            <MapContainer lat={lat} long={long} address={address} />
+
+                                */}
                         </div>
-                </div>
+                        <div className='show-bottom-content'>
+                            <div className='bottom-content-title'>
+                                <span>Things to keep in mind</span>
+                            </div>
+                                <div className='bottom-content-info'>
+                                    <span>Check-in: </span>
+                                        <p>After 12:00 pm</p>
+                                    <br />
+                                    <span>Checkout: </span>
+                                        <p>2:00 PM</p>
+                                </div>
+                                
+                                <div className='bottom-rules'>
+                                    <span>Chair Rules</span>
+                                    <img src={window.chair_rules} />
+                                </div>
+
+                                <div className='bottom-cancellation'>
+                                    <span>Cancellations</span>
+                                    <p>Free cancellation available anytime for this seat.</p>
+                                </div>
+                        </div>
+            </div>
 
                     {/* RIGHT SIDE CONTAINER */}
 

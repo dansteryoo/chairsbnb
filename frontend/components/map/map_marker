@@ -1,0 +1,38 @@
+class MapMarker {
+    constructor(map) {
+        this.map = map;
+        this.markers = {};
+
+    }
+    
+    updateMarkers(listings) {
+        const listingsObj = {};
+        listings.forEach(listing => listingsObj[listing.id] = listing);
+
+        const filtered = listings.filter(listing => !this.markers[listing.id])
+        filtered.forEach(newlisting => this.listingMarker(newlisting))
+
+        const filteredIds = Object.keys(this.markers).filter(listingId => !listingsObj[listingId])
+        filteredIds.forEach(listingId => this.removeMarker(this.markers[listingId]))
+
+    }
+
+    listingMarker(listing) {
+        const position = new google.maps.LatLng(listing.lat, listing.long);
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            listingId: listing.id
+        });
+        return marker;
+
+    }
+
+    removeMarker(marker) {
+        this.markers[marker.listingId].setMap(null);
+        delete this.markers[marker.listingId];
+    }
+    debugger
+}
+
+export default MapMarker;
