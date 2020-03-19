@@ -56,7 +56,7 @@ class ShowMap extends React.Component {
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{ lat: lat, lng: long }}
-                defaultZoom={ 13 }
+                defaultZoom={ 15 }
             >
             </GoogleMap>
         ));
