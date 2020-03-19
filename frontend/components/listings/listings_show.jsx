@@ -7,6 +7,7 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
+import NavSearchContainer from '../navbar/navsearch_container';
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -61,11 +62,11 @@ class ListingShow extends React.Component {
         const overallRating = (listing.reviews.map(each => each.review.overall_rating)
             .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
             .toFixed(2)
-
+        
         return (
     
         <div className='show-main'>
-
+                <NavSearchContainer />
                 {/* TOP SHOW IMAGES */}
 
                 <div className='show-images-container'>
@@ -110,7 +111,6 @@ class ListingShow extends React.Component {
                             <span>Availability</span>
                             <p>Enter your seat dates for accurate pricing and availability</p>
                         <div>
-                        <div>
                             <DayPickerRangeController
                                 startDate={this.state.startDate}
                                 startDateId="mm/dd/yyyy"
@@ -123,14 +123,6 @@ class ListingShow extends React.Component {
                                 hideKeyboardShortcutsPanel={true}
                                 noBorder={true}
                             />
-                        </div>
-                            
-                        <button className='show-clear-button'
-                                onClick={() => this.setState({
-                            startDate: null,
-                            endDate: null,
-                            focusedInput: null
-                            })}> Clear dates</button>
                         </div>
                     </div>         
                 </div>
@@ -171,7 +163,7 @@ class ListingShow extends React.Component {
                         </span>
                     </div>
                         <div className='show-bottom-google'>
-                            GOOGLE MAPS? 
+                            {/*window.googleAPIKey*/}
                         </div>
                 </div>
 

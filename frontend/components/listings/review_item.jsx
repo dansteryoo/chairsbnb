@@ -2,10 +2,6 @@ import React from 'react';
 
 const ReviewItem = ({ review, author }) => {
 
-    if (review === undefined) {
-        return <div></div>
-    }
-
     let month = review.created_at.slice(5, 7)
     switch (month) {
         case '01':

@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 const ListingsIndexItems = ({ listing }) => {   
 
-    const overallRating = (listing.reviews
-        .reduce((acc, each) => acc += each.overall_rating, 0) / listing.reviews.length)
+    const overallRating = (listing.reviews.map(each => each.review.overall_rating)
+        .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
         .toFixed(2)
+
 
     return (
         <li className='listing-li'>
