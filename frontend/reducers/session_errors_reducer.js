@@ -8,7 +8,7 @@ const sessionErrorsReducer = (oldState = [], action) => {
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
             if (action.errors === undefined) {
-                return ['There is already a user with this email address']
+                return ['There is already a user with this email address.']
             } else {
                 return action.errors;
             }

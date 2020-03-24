@@ -34,7 +34,7 @@ class Listing < ApplicationRecord
     end
 
     def search_by_keywords(keywords)
-        match = '%#{keywords}%'
+        match = "%#{keywords}%"
         
         search_result = Listing.where('name ILIKE ?', match)
             .or(Listing.where('address ILIKE ?', match)

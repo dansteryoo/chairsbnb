@@ -14,7 +14,7 @@ export const fetchListing = (listingId) => (
     })
 );
 
-export const fetchSearch = (keywords, startDate, endDate) => (
+export const fetchSearchResult = (keywords, startDate, endDate) => (
     $.ajax({
         type: 'GET',
         url: `/api/search`,

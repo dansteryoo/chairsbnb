@@ -14,12 +14,12 @@ class Api::ListingsController < ApplicationController
     def search
         search_result = Listing.search_by_keywords(params[:keywords])
 
-        if params[:start_date] && params[:end_date] && (params[:start_date] != "") && (params[:end_date] != "")
+        if params[:start_date] && params[:end_date] && (params[:start_date] != '') && (params[:end_date] != '')
             start_date = params[:start_date]
             end_date = params[:end_date]
             @listings = Listing.search_by_dates(search_result, start_date, end_date)
         else
-            @listings = result
+            @listings = search_result
         end
 
         render :index

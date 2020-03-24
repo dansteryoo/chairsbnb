@@ -28,8 +28,8 @@ export const fetchListing = (listingId) => dispatch => (
 );
 
 
-export const fetchSearch = (keywords, startDate, endDate) => dispatch => (
-    ListingsAPIUtil.fetchSearch(keywords, startDate, endDate)
+export const fetchSearchResult = (keywords, startDate, endDate) => dispatch => (
+    ListingsAPIUtil.fetchSearchResult(keywords, startDate, endDate)
         .then(listings => dispatch(receiveListings(listings))
     )
 );
