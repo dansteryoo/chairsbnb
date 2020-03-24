@@ -4,10 +4,18 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import SignUpForm from './signup_form';
 
 
-const mapStateToProps = (state) => ({
-    formType: 'Sign Up',
-    errors: state.errors
-});
+const mapStateToProps = (state) => {
+    let errors;
+    if (state.errors === undefined) {
+        errors = []
+    } else {
+        errors = state.errors 
+    }
+    
+    return {
+        formType: 'Sign Up',
+        errors: errors
+}};
 
 const mapDispatchToProps = (dispatch) => ({
     processForm: (user) => dispatch(signup(user)),
