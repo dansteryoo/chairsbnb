@@ -12,7 +12,7 @@ class ListingsIndex extends React.Component {
     }
 
     render() {
-        debugger
+        
         const { listings } = this.props;
         
         return (
