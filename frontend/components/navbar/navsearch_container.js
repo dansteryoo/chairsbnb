@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { fetchSearchResult } from '../../actions/listing_actions';
 import NavSearch from './navsearch'
 import { withRouter } from 'react-router-dom';
-import { fetchSearchResult } from '../../actions/listing_actions'
 
 const mapStateToProps = (state) => ({
     currentUser: state.users[state.session.id]
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logout()),
-    fetchSearchResult: searchTerm => dispatch(fetchSearchResult(searchTerm))
+    fetchSearchResult: searchKeywords => dispatch(fetchSearchResult(searchKeywords)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavSearch));
