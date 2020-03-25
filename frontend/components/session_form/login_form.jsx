@@ -46,6 +46,8 @@ class LogInForm extends React.Component {
     }
 
     render() {
+
+        
         return (
             <div className='form-container'>
                 <div className='form-closing-x' onClick={() => this.props.closeModal()}>&#10005;</div>

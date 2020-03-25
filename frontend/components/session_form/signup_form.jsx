@@ -7,10 +7,7 @@ class SignUp extends React.Component {
             email: '',
             password: '',
             firstName: '',
-            lastName: '',
-            month: '',
-            day: '',
-            year: ''
+            lastName: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -129,7 +126,7 @@ class SignUp extends React.Component {
                             <br />
                         <div className='birthday-selector'>
                         <div className='bday-month'>
-                                <select className='month-selector' onChange={this.update('month')}>
+                                <select className='month-selector'>
                                     <option disabled value=''>Month</option>
                                 <option value='1'>January</option>
                                 <option value='2'>February</option>
@@ -146,13 +143,13 @@ class SignUp extends React.Component {
                             </select>
                         </div>
                         <div className='bday-day'>
-                                <select className='day-selector' onChange={this.update('day')}>
+                                <select className='day-selector'>
                                     <option disabled value=''>Day</option>
                                 {days}
                             </select>
                         </div>
                         <div className='bday-year'>
-                                <select className='year-selector' onChange={this.update('year')}>
+                                <select className='year-selector'>
                                     <option disabled value=''>Year</option>
                                 {years}
                             </select>
