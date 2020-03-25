@@ -2,6 +2,7 @@ import * as ListingsAPIUtil from '../util/listings_api_util';
 
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
+export const CLEAR_LISTING_STATE = "CLEAR_LISTING_STATE";
 
 
 export const receiveListings = (listings) => ({
@@ -13,6 +14,10 @@ export const receiveListing = (listing) => ({
     type: RECEIVE_LISTING,
     listing
 });
+
+export const clearListingState = () => ({
+    type: CLEAR_LISTING_STATE
+})
 
 
 export const fetchListings = () => dispatch => (

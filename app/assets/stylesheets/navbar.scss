@@ -42,7 +42,7 @@
     border-bottom: 3px solid #ffffff;
 }
 
-//------------------NavSearch
+//------------------NavSearch Splash
 
 .navsearch-container {
     position: fixed;
@@ -82,4 +82,84 @@
     height: 48px;
     border-radius: 1px;
     border-bottom: 3px solid #484848;
+}
+
+
+//------------------NavBarSearch Show
+
+.navsearch-bar-container {
+    display: flex;
+    width: 460px;
+    height: 50px;
+    position: relative;
+    border-radius: 4px;
+    margin: 13px 0 0 13px;
+    animation: scaleXBack 0.5s;
+    transform: scaleX(1);
+    transform-origin: left;
+    margin-left: 25px;
+    align-items: center;
+
+    img {
+        margin: 0 12px;
+    }
+}
+
+.navsearch-bar-container:before {
+    position: absolute;
+    display: flex;
+    width: 450px;
+    height: 50px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 4px;
+    animation: scaleXBack 0.5s;
+    transform: scaleX(1);
+    transform-origin: left;
+    z-index: -1;
+    content: "";
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 200ms ease-in;
+    transition-property: box-shadow 200ms ease-in !important;
+    box-sizing: border-box;
+    overflow: hidden !important;
+}
+
+.navsearch-bar-container-long:before {
+  animation: scaleX 0.5s;
+  transform: scaleX(1.2);
+  transform-origin: left;    
+}
+
+@keyframes scaleX {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes scaleXBack {
+  0% {
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.navsearch-input {
+    background-color: transparent;
+    border: 0px;
+    width: 390px;
+    height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 17px;
+    color: #484848;
+}
+
+.navsearch-input:focus {
+    outline: none;
 }
