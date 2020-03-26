@@ -17,7 +17,7 @@ const App = () => (
                 <AuthRoute exact path='/' component={SplashContainer} />
                 <Route exact path='/listings/search' component={SearchIndexContainer} />
                 <ProtectedRoute exact path='/listings' component={ListingsIndexContainer} />
-                <ProtectedRoute exact path='/listings/:listingId' component={ListingsShowContainer} />
+                <Route exact path='/listings/:listingId' component={ListingsShowContainer} />
             </Switch>
             
         <Footer />

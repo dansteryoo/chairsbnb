@@ -42,6 +42,32 @@
     border-bottom: 3px solid #ffffff;
 }
 
+
+//------------------NavSearch Session Links
+
+.nav-session-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-content: center;
+    padding-top: 30px;
+}
+
+.nav-session-links li {
+    color: #484848;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-session-links-signup-li:hover, .nav-session-links-login-li:hover {
+    height: 48px;
+    border-radius: 1px;
+    border-bottom: 3px solid #484848;
+}
+
+
 //------------------NavSearch Splash
 
 .navsearch-container {

@@ -7,7 +7,8 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
-import NavSearchContainer from '../navbar/navsearch_container';
+import NavSearchSession from '../navbar/navsearch_session';
+import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
 import ShowMap from '../map/show_map.js'
 import { withRouter, Redirect } from 'react-router-dom';
 
@@ -132,17 +133,37 @@ class ListingShow extends React.Component {
             return <Redirect to="/bookings" />
         }
         
-        const { listing } = this.props;
+        const { listing, currentUser, openModal, logout } = this.props;
         const { lat, long, address } = this.props.listing;
 
+        debugger
         const overallRating = (listing.reviews.map(each => each.review.overall_rating)
             .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
             .toFixed(2);
+
+        // const navLinks = () => {
+        //     if (currentUser) {
+        //         return <NavSearchLogout logout={logout}/>
+        //     } else {
+        //         return <NavSearchSession openModal={openModal}/>
+        //     }
+        // }
+
+
+        const navLinks = () => {
+            if (currentUser) {
+                return <NavSearchLogoutContainer logout={logout}/>
+            } else {
+                return <NavSearchSession openModal={openModal}/>
+            }
+        }
         
         return (
     
         <div className='show-main'>
-                <NavSearchContainer />
+
+                { navLinks() }
+
                 {/* TOP SHOW IMAGES */}
 
                 <div className='show-images-container'>

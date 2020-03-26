@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     openModal: (formType) => dispatch(openModal(formType)),
     clearErrors: () => dispatch(clearErrors()),
+    logout: () => dispatch(logout())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListingShow));
