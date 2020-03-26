@@ -1,6 +1,6 @@
 import React from 'react';
-import NavSearchContainer from '../navbar/navsearch_container';
 import ListingsIndexItems from './listing_index_items';
+import NavbarContainer from '../navbar/navbar_container';
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -16,11 +16,15 @@ class SearchIndex extends React.Component {
         let { listings } = this.props;
 
     return (
+        <div className='search-body'>
+            <NavbarContainer />
+            <section className='nav-search-container'>
+            </section>
+
             <div className="listings-search-container">
-            <NavSearchContainer />
 
                 <div className="listings-search-results-leftside">
-                    <h1 className="num-places-to-stay-header">{listings.length} places to stay</h1>
+                    <div className="header-number">{listings.length} places to stay</div>
                 {
                     listings.map(listing => (
                         <ListingsIndexItems
@@ -38,9 +42,10 @@ class SearchIndex extends React.Component {
             />
                 </div>*/}
             </div>
-        );
+        </div>
+        )
     }
 
-}
+};
 
 export default SearchIndex;

@@ -91,8 +91,6 @@ class ListingShow extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-
-        debugger
         let { currentUser } = this.props;
         if (!this.state.startDate || !this.state.endDate) {
             this.setState({ focusedInput: START_DATE });
@@ -125,7 +123,7 @@ class ListingShow extends React.Component {
 
 
     render() {
-        debugger
+        
         if (this.props.listing === undefined) {
             return <div></div>
         };
@@ -271,16 +269,35 @@ class ListingShow extends React.Component {
                             </div>
                                 <div className='bottom-content-info'>
                                     <span>Check-in: </span>
-                                        <p>After 12:00 pm</p>
+                                        <p>After 12:00 PM</p>
                                     <br />
                                     <span>Checkout: </span>
                                         <p>2:00 PM</p>
                                 </div>
                                 
-                                <div className='bottom-rules'>
+                            {/* CHAIR RULES CONTAINER */}
+
+                            <div className='bottom-rules'>
                                     <span>Chair Rules</span>
-                                    <img src={window.chair_rules} />
+                                <div className='chair-rules-content'>
+                                    <div className='chair-rules-top'>
+                                        <div className='chair-rules-top-left'>
+                                            <img className='chair-rules-baby' src={window.baby} />
+                                                <p>Not suitable for infants (under 2 years)</p>
+                                        </div>
+                                        <div className='chair-rules-top-right'>
+                                        <img className='chair-rules-smoking' src={window.smoking} />
+                                            <p>No smoking</p>
+                                        </div>
+                                    </div>   
+                                    <div className='chair-rules-bottom'>
+                                        <img className='chair-rules-pets' src={window.pets} />
+                                            <p>No pets</p>
+                                        <img className='chair-rules-party' src={window.party} />
+                                            <p>No parties or events</p>
+                                    </div>
                                 </div>
+                            </div>
 
                                 <div className='bottom-cancellation'>
                                     <span>Cancellations</span>

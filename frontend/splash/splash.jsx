@@ -4,8 +4,7 @@ import SplashFormContainer from './splash_form_container';
 
 const Splash = () => (
     <div className='splash-main'>
-        <NavBarContainer />
-
+        <NavBarContainer/>
         <SplashFormContainer />
     </div>
 );

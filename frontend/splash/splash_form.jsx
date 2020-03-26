@@ -11,8 +11,8 @@ class SplashForm extends React.Component {
         this.state = {
             startDate: '',
             endDate: '',
-            guest: false,
-            searchKeywords: false,
+            guest: '',
+            searchKeywords: '',
             renderSearchIndex: false,
             focusedInput: null,
         }
