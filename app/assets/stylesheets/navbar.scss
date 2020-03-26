@@ -130,24 +130,6 @@
   transform-origin: left;    
 }
 
-@keyframes scaleX {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(1.2);
-  }
-}
-
-@keyframes scaleXBack {
-  0% {
-    transform: scaleX(1.2);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-
 .navsearch-input {
     background-color: transparent;
     border: 0px;

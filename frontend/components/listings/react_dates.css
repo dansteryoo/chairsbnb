@@ -26,13 +26,13 @@
   display: block;
 }
 
-.DateInput_input__selected {
+/* .DateInput_input__selected {
     background-color: #CCEEEB;
-}
+} */
  
-.DateInput_input__focused {
+/* .DateInput_input__focused {
     background: #99EDE7;
-}
+} */
 
 .DateRangePickerInput_arrow_svg {
     padding-left: 40px;

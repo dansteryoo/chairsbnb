@@ -1,4 +1,4 @@
-import { RECEIVE_LISTINGS, RECEIVE_LISTING, CLEAR_LISTING_STATE} from '../actions/listing_actions';
+import { RECEIVE_LISTINGS, RECEIVE_LISTING, CLEAR_LISTING_STATE, UPDATE_BOUNDS } from '../actions/listing_actions';
 
 const listingsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -14,6 +14,9 @@ const listingsReducer = (oldState = {}, action) => {
 
         case CLEAR_LISTING_STATE:
             return {};
+
+        case UPDATE_BOUNDS:
+            return action.bounds;
 
         default:
             return oldState;

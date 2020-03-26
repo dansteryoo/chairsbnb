@@ -1,14 +1,15 @@
 import React from 'react';
 import { DateRangePicker, DayPickerRangeController } from 'react-dates';
-// import { START_DATE, END_DATE } from 'react-dates/src/constants';
-// import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
-// import moment from 'moment';
+import { START_DATE, END_DATE } from 'react-dates/src/constants';
+import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
+import moment from 'moment';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
 import NavSearchContainer from '../navbar/navsearch_container';
 import ShowMap from '../map/show_map.js'
+import { withRouter, Redirect } from 'react-router-dom';
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -20,43 +21,118 @@ class ListingShow extends React.Component {
             focusedInput: null,
             startDateId: null,
             endDateId: null,
-            bookingDates: []
+            bookingDates: [],
+            renderBookings: false
             
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onFocusChange = this.onFocusChange.bind(this)
-        this.onDatesChange = this.onDatesChange.bind(this)
+        this.dayIsBlocked = this.dayIsBlocked.bind(this)
     };
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
     };
 
-    onDatesChange({ startDate, endDate }) {
-        this.setState({ startDate, endDate });
-    };
-
     onFocusChange(focusedInput) {
         this.setState({ focusedInput });
     };
 
+    dayIsBlocked(day) {
+        const { bookings, listing } = this.props;
+
+        for (let i = 0; i < bookings.length; i++) {
+            if (bookings[i].listing_id === listing.id) {
+                if (this.state.startDate
+                    && this.state.startDate.isBefore(bookings[i].start_date, 'day')) {
+                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', "[]")) {
+                        return true;
+                    } else if (day.isAfter(bookings[i].end_date, 'day')) {
+                        return true;
+                    } else if (day.isSame(bookings[i].end_date, 'day')) {
+                        return true;
+                    };
+                } else {
+                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', "[]")) {
+                        return true;
+                    };
+                };
+            }
+        }
+        return false;
+    };
+    
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     debugger
+    //     const { currentUser } = this.props;
+    //     debugger
+
+    //     if (!this.state.startDate || !this.state.endDate) {
+    //         this.setState({ focusedInput: START_DATE });
+    //     } else {
+    //         if (!currentUser.id) {
+    //             return this.props.openModal('Log In');
+    //         } else {
+
+    //         let listingId = this.props.match.params.listingId;
+    //         let start_date = startDate.format('yyyy/mm/dd');
+    //         let end_date = endDate.format('yyyy/mm/dd');
+    //         let createBooking = { listingId, guest_id: currentUser.id, start_date, end_date };
+    //             debugger
+    //             this.props.createBooking(createBooking);
+    //             this.setState({ renderBookings: true });
+    //         }
+    //     }
+    // };
+
     handleSubmit(e) {
         e.preventDefault();
-        // let { currentUser } = this.props;
-        //     booking.start_date = booking.startDate
-        //     booking.end_date = booking.endDate
 
-        // let newBooking = { listingId, guest_id: currentUser.id, startDate, endDate };
 
-        //     this.props.createBooking(newBooking);
-    };
+        debugger
+        let { currentUser } = this.props;
+        if (!this.state.startDate || !this.state.endDate) {
+            this.setState({ focusedInput: START_DATE });
+        } else {
+            if (!currentUser.id) {
+                let message = (
+                    <div>
+                        <div id="sign-up-to-book">Sign up to book</div>
+                        <div id="moments-away-from-booking">You're moments away from booking your stay.</div>
+                    </div>
+                );
+                this.props.openModal('Sign Up', message)
+            } else {
+                // If all fields are filled out and user is logged in, send the booking request
+                let listing_id = this.props.match.params.listingId;
+                let start_date = this.state.startDate.format('YYYY/MM/DD');
+                let end_date = this.state.endDate.format('YYYY/MM/DD');
+                let newBooking = {
+                    guest_id: currentUser.id,
+                    listing_id,
+                    start_date,
+                    end_date
+                };
+                this.props.createBooking(newBooking);
+                this.setState({ redirectToTrips: true });
+            };
+        };
+    }
+
+
 
     render() {
-
+        debugger
         if (this.props.listing === undefined) {
             return <div></div>
         };
+
+        if (this.state.renderBookings) {
+            return <Redirect to="/bookings" />
+        }
         
         const { listing } = this.props;
         const { lat, long, address } = this.props.listing;
@@ -124,15 +200,15 @@ class ListingShow extends React.Component {
                             <span>Availability</span>
                             <p>Enter your seat dates for accurate pricing and availability</p>
                         <div>
-                            <DayPickerRangeController
+                        <DayPickerRangeController
                                 startDate={this.state.startDate}
-                                startDateId="mm/dd/yyyy"
                                 endDate={this.state.endDate}
-                                endDateId="mm/dd/yyyy"
-                                focusedInput={this.state.focusedInput}
-                                onDatesChange={this.onDatesChange}
-                                onFocusChange={this.onFocusChange}
+                                focusedInput={this.state.focusedInputStart}
+                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                                onFocusChange={focusedInput => this.setState({ focusedInput })}
                                 numberOfMonths={2}
+                                isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}
+                                isDayBlocked={day => this.dayIsBlocked(day)}
                                 hideKeyboardShortcutsPanel={true}
                                 noBorder={true}
                             />
@@ -141,6 +217,7 @@ class ListingShow extends React.Component {
                 </div>
 
                         {/* REVIEWS */}
+
                 <div className='show-reviews'>
                     <p className='show-review-title'>
                         Reviews
@@ -231,7 +308,7 @@ class ListingShow extends React.Component {
 
                             {/* RIGHT SIDE CHECKIN-CHECKOUT DATES */}
 
-                            <form className='show-form'>
+                            <form onSubmit={this.handleSubmit} className='show-form'>
 
                                 <div className='show-form-container'>
                                     <p className='show-form-label'>
@@ -247,12 +324,13 @@ class ListingShow extends React.Component {
                                         endDate={this.state.endDate}
                                         endDateId="mm/dd/yyyy"
                                         focusedInput={this.state.focusedInput}
-                                        onDatesChange={this.onDatesChange}
-                                        onFocusChange={this.onFocusChange}
+                                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+                                        onFocusChange={focusedInput => this.setState({ focusedInput })}
                                         numberOfMonths={1}
                                         hideKeyboardShortcutsPanel={true}
                                         startDatePlaceholderText="Check-in"
                                         endDatePlaceholderText="Checkout"
+                                        isDayBlocked={day => this.dayIsBlocked(day)}
                                     />
                                 </div>
                                 <label className='show-form-label'>Guest

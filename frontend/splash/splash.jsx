@@ -1,12 +1,12 @@
 import React from 'react';
 import NavBarContainer from '../components/navbar/navbar_container';
-import SplashForm from './splash_form';
+import SplashFormContainer from './splash_form_container';
 
 const Splash = () => (
     <div className='splash-main'>
         <NavBarContainer />
 
-        <SplashForm />
+        <SplashFormContainer />
     </div>
 );
 
