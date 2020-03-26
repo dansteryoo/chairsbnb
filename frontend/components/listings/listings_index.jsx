@@ -19,7 +19,7 @@ class ListingsIndex extends React.Component {
             <div className='listings-index-container'>
                 <NavSearchLogoutContainer />
                     <div className='listings-index-ph-title'>
-                        <span>Travel the world with ChairsBnB LISTINGS INDEX</span>
+                        <span>Travel the world with ChairsBnB</span>
                     </div>
                         <div className='listings-index-ph'>
                             <img src={window.listings_index_ph} />
