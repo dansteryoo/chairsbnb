@@ -15,7 +15,7 @@ class SignUp extends React.Component {
 
     componentWillUnmount() {
         this.props.clearErrors();
-    }
+    };
 
     handleSubmit(e) {
         e.preventDefault();
@@ -31,8 +31,8 @@ class SignUp extends React.Component {
     update(f) {
         return e => this.setState({
             [f]: e.target.value
-        });
-    }
+        })
+    };
 
     renderErrors() {
         if (this.props.errors === undefined) {

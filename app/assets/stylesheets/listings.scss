@@ -516,22 +516,88 @@
         p {
             display: inline-flex;
             font-weight: 300;
+            letter-spacing: .03em;
         }  
     }
+
+
     .bottom-rules {
         border-bottom: 1px solid #D3D3D3;
         padding: 20px 0;
-
+    
         span {
             font-weight: 600;
             line-height: 24px;
         }
-        img {
-            margin-top: 20px;
-            display: flex;
-            width: 80%;
+
+        .chair-rules-content {
+            margin-top: 16px;
+   
+
+            .chair-rules-top {
+
+                .chair-rules-top-left {
+                    display: inline-flex;
+                    align-content: center;
+
+                    p {
+                        font-weight: 300;
+                        letter-spacing: .03em;
+                        width: 233px;
+                        line-height: 1.5em;
+
+                    }
+                    
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 12px;
+                    }
+
+                }
+
+                .chair-rules-top-right {
+                    display: inline-flex;
+                    align-content: center;
+
+                    p {
+                        font-weight: 300;
+                        letter-spacing: .03em;
+                        padding-top: 4px;
+                    }
+
+                    img {
+                        width: 25px;
+                        margin: 0 11px 0 42px;
+                    }
+
+                }
+            }
+            
+            .chair-rules-bottom {
+                margin-top: 14px; 
+                display: inline-flex;
+                align-content: center;
+
+                p {
+                    font-weight: 300;
+                    letter-spacing: .03em;
+                    padding-top: 4px;
+                }
+                
+                img {
+                    width: 25px;
+                    margin-right: 12px;
+                }
+
+                img.chair-rules-party{
+                    margin-left: 218px;
+                }
+            }
         }
+
     }
+
     .bottom-cancellation {
         border-bottom: 1px solid #D3D3D3;
         padding: 20px 0;
@@ -544,6 +610,7 @@
         p {
             padding: 20px 0; 
             font-weight: 300;
+            letter-spacing: .03em;
         }
     }
 

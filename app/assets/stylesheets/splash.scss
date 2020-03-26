@@ -35,7 +35,7 @@
     color: #484848;
     line-height: 1.43;
     z-index: 1;
-    border-radius: 4px;
+    border-radius: 2px;
     height: 435px;
 }
 
@@ -63,7 +63,7 @@
 
 .splash-form-input {
     display: flex;
-    border-radius: 6px;
+    border-radius: 4px;
     color: #484848;
     font-size: 16px;
     height: 25px;
@@ -88,7 +88,7 @@
 }
 
 .splash-form-input-date {
-    border-radius: 6px;
+    border-radius: 4px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 16px;
     height: 25px;
@@ -130,7 +130,7 @@
     height: 50px;
     margin-top: 24px;
     margin-bottom: 10px;
-    border-radius: 6px;
+    border-radius: 4px;
     background-color: #FF5A5F;
     text-align: center;
     color: #ffffff;
@@ -156,9 +156,33 @@
 }
 
 select {
-    border-radius: 6px;
+    border-radius: 2px;
     color: #939393;;
     font-size: 16px;
     height: 45px;
     border: 1px solid #D3D3D3;
+}
+
+.DateRangePicker {
+    display: inline-flex;
+    justify-content: space-between;
+
+}
+
+.DateInput_input:focus {
+    background-color: transparent;
+    outline: none ;
+    box-shadow: 0 0 0 1px #008489;
+    border-radius: 2px;
+}
+
+.DateInput_input {
+    width: 154px !important;
+}
+
+
+.DateRangePickerInput_arrow_svg {
+    padding: 0 !important;
+    margin: 0 23px 0 0 !important;
+    opacity: 0;
 }

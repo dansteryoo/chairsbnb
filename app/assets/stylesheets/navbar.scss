@@ -42,6 +42,32 @@
     border-bottom: 3px solid #ffffff;
 }
 
+
+//------------------NavSearch Session Links
+
+.nav-session-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-content: center;
+    padding-top: 30px;
+}
+
+.nav-session-links li {
+    color: #484848;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-session-links-signup-li:hover, .nav-session-links-login-li:hover {
+    height: 48px;
+    border-radius: 1px;
+    border-bottom: 3px solid #484848;
+}
+
+
 //------------------NavSearch Splash
 
 .navsearch-container {
@@ -128,24 +154,6 @@
   animation: scaleX 0.5s;
   transform: scaleX(1.2);
   transform-origin: left;    
-}
-
-@keyframes scaleX {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(1.2);
-  }
-}
-
-@keyframes scaleXBack {
-  0% {
-    transform: scaleX(1.2);
-  }
-  100% {
-    transform: scaleX(1);
-  }
 }
 
 .navsearch-input {

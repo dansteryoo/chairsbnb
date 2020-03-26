@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 
-class NavSearch extends React.Component {
+class NavSearchLogout extends React.Component {
      constructor(props) {
          super(props);
 
@@ -35,6 +35,8 @@ class NavSearch extends React.Component {
 
     render(){
         const { logout } = this.props
+
+        debugger
         
     return (
         <nav className='navsearch-container' >
@@ -67,6 +69,6 @@ class NavSearch extends React.Component {
     }
 }
 
-export default NavSearch;
+export default withRouter(NavSearchLogout);
 
 

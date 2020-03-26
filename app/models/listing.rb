@@ -32,21 +32,23 @@ class Listing < ApplicationRecord
 
         return false
     end
+   
 
-    def search_by_keywords(keywords)
-        match = "%#{keywords}%"
-        
-        search_result = Listing.where('name ILIKE ?', match)
-            .or(Listing.where('address ILIKE ?', match)
-            .or(Listing.where('description ILIKE ?', match))).includes(:bookings)
+    def self.search_by_keywords(keywords)
+        keyword = `%#{keywords}%`
 
+        search_result = Listing.where("name LIKE ?", keyword)
+            .or(Listing.where("description LIKE ?", keyword))
+            .or(Listing.where("address LIKE ?", keyword))
+            .includes(:bookings)
+            
         search_result
     end
 
-    def search_by_dates(search_result, start_date, end_date)
-        start_date = Date.parse(start_date)
-        end_date = Date.parse(end_date)
-        search_dates = (start_date..end_date).to_a
+    def self.search_by_dates(search_result, start_date, end_date)
+        search_start = Date.parse(start_date)
+        search_end = Date.parse(end_date)
+        search_dates = (search_start..search_end).to_a
 
         result = []
         
@@ -56,20 +58,19 @@ class Listing < ApplicationRecord
                 booked_dates += booking.dates
             end
 
-            available_dates = true
+            inclusion_flag = true
             search_dates.each do |date|
                 if booked_dates.include?(date)
-                    available_dates = false
+                    inclusion_flag = false
                 end
             end
-
-            if available_dates
+            if inclusion_flag
                 result << listing
             end
         end
 
         result
     end
-   
+
 end
 

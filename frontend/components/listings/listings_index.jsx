@@ -1,6 +1,6 @@
 import React from 'react';
 import ListingsIndexItems from './listing_index_items';
-import NavSearchContainer from '../navbar/navsearch_container';
+import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
 
 class ListingsIndex extends React.Component {
     constructor(props) {
@@ -17,9 +17,9 @@ class ListingsIndex extends React.Component {
         
         return (
             <div className='listings-index-container'>
-                    <NavSearchContainer />
+                <NavSearchLogoutContainer />
                     <div className='listings-index-ph-title'>
-                        <span>Travel the world with ChairsBnB</span>
+                        <span>Travel the world with ChairsBnB LISTINGS INDEX</span>
                     </div>
                         <div className='listings-index-ph'>
                             <img src={window.listings_index_ph} />
