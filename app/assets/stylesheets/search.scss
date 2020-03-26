@@ -1,22 +1,146 @@
-
 .search-body {
-    padding: 0;
+    padding-bottom: 120px;
     margin: 0;
 }
 
 .nav-search-container {
-    border-bottom: 1px solid black;
-    background-color: blue;
+    margin: 0 24px;
+    display: grid;
+    grid-template-columns: 840px auto;
+    min-width: 840px;
+    color: #484848;
+    padding-top: 20px;
+    justify-items: left;
 }
 
-.listings-search-container {
-    margin: 100px 20px 200px;
-}
 
-.listings-search-results-leftside {
+//----------------Search Left Side
+
+.listings-search-leftside {
+    grid-column-start: 1;
+    margin-top: 90px;
+    width: 100%;
 
     .header-number {
-
+        font-size: 22px;
+        font-weight: 500;
+        border-bottom: 1px solid #D3D3D3;
+        padding-bottom: 30px;
     }
 
+    .listings-search-result-boxes {
+        
+        .search-li {
+            box-sizing: border-box;
+            display: inline-flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 250px;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 25px 0 25px 0;
+            border-bottom: 1px solid #D3D3D3;
+        }
+
+        .search-info {
+            width: 64%;
+            padding-left: 15px;
+        }
+
+        .search-address {
+            width: 100%;
+
+            .search-rating {
+                justify-content: flex-end;
+                color: #000000;
+                float: right;
+
+                img {
+                    width: 12px; 
+                    margin-right: 4px;
+                    margin-bottom: -1px;
+                }
+            }
+        }
+
+        .search-address span {
+            color: #767676; 
+            letter-spacing: .03em;
+        }
+
+        .search-name {
+            margin-top: 11px;
+
+            span {    
+                font-size: 18px;
+                font-weight: 300;
+                letter-spacing: .03em;
+                color: #222222;
+            }
+        }
+
+        .search-description {
+            margin: 14px 0;
+            color: #767676;
+        }
+        .search-description-bottom {
+            width: 25px;
+            border-bottom: 1px solid #D3D3D3;
+        }
+
+        .search-cancellation {
+            color: #767676;
+            letter-spacing: .03em;
+            margin-top: 14px;
+        }
+
+        .search-price {
+            float: right;
+            padding-top: 57px;
+            font-size: 18px;
+            color: #222222;
+            letter-spacing: .03em;
+
+            span {
+                font-weight: 600;
+                font-size: 18px;
+                color: #222222;
+                letter-spacing: .03em;
+            }
+        }
+
+        .search-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 4px;
+            justify-content: center;
+        }
+
+        .search-image img{
+            width: 100%;
+            min-height: 200px;
+            max-width: 300px;
+            border-radius: 4px;
+        }
+
+    }
+}
+
+
+//----------------Search Right Side
+
+.nav-search-google-maps {
+    margin-top: 90px;
+    grid-column-start: 2;
+    width: 100%;
+    border-color: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    p {
+        font-size: 50px;
+        color: blue;
+        font-weight: 600;
+    }
 }
