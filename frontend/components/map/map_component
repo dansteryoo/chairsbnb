@@ -97,7 +97,7 @@ class SearchMap extends React.Component {
     }
 
     render() {
-        debugger
+
         return (
             <div className="search-map-container">
                 <div className="search-map" ref={map => this.mapNode = map} >

@@ -32,7 +32,7 @@ class MapMarker {
         this.markers[marker.listingId].setMap(null);
         delete this.markers[marker.listingId];
     }
-    debugger
+
 }
 
 export default MapMarker;
