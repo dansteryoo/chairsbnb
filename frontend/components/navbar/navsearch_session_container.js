@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { fetchSearchResult } from '../../actions/listing_actions';
+import { openModal } from '../../actions/modal_actions';
 import NavSearchSession from './navsearch_session'
 import { withRouter } from 'react-router-dom';
 

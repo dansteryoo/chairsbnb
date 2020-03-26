@@ -7,10 +7,10 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
-import NavSearchSession from '../navbar/navsearch_session';
+import NavSearchSessionContainer from '../navbar/navsearch_session';
 import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
 import ShowMap from '../map/show_map.js'
-import { withRouter, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -141,20 +141,11 @@ class ListingShow extends React.Component {
             .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
             .toFixed(2);
 
-        // const navLinks = () => {
-        //     if (currentUser) {
-        //         return <NavSearchLogout logout={logout}/>
-        //     } else {
-        //         return <NavSearchSession openModal={openModal}/>
-        //     }
-        // }
-
-
         const navLinks = () => {
             if (currentUser) {
                 return <NavSearchLogoutContainer logout={logout}/>
             } else {
-                return <NavSearchSession openModal={openModal}/>
+                return <NavSearchSessionContainer openModal={openModal}/>
             }
         }
         

@@ -1,6 +1,6 @@
 import React from 'react';
 import ListingsIndexItems from './listing_index_items';
-import NavbarContainer from '../navbar/navbar_container';
+import NavSearchSessionContainer from '../navbar/navsearch_session_container';
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -13,11 +13,13 @@ class SearchIndex extends React.Component {
 
     render() {
 
-        let { listings } = this.props;
+        let { listings, openModal } = this.props;
 
     return (
         <div className='search-body'>
-            <NavbarContainer />
+
+            <NavSearchSessionContainer openModal={openModal} />
+
             <section className='nav-search-container'>
             </section>
 
