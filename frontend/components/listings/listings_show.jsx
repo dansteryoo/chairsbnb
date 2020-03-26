@@ -67,9 +67,9 @@ class ListingShow extends React.Component {
 
     // handleSubmit(e) {
     //     e.preventDefault();
-    //     debugger
+    //     
     //     const { currentUser } = this.props;
-    //     debugger
+    //     
 
     //     if (!this.state.startDate || !this.state.endDate) {
     //         this.setState({ focusedInput: START_DATE });
@@ -82,7 +82,7 @@ class ListingShow extends React.Component {
     //         let start_date = startDate.format('yyyy/mm/dd');
     //         let end_date = endDate.format('yyyy/mm/dd');
     //         let createBooking = { listingId, guest_id: currentUser.id, start_date, end_date };
-    //             debugger
+    //             
     //             this.props.createBooking(createBooking);
     //             this.setState({ renderBookings: true });
     //         }
@@ -136,7 +136,7 @@ class ListingShow extends React.Component {
         const { listing, currentUser, openModal, logout } = this.props;
         const { lat, long, address } = this.props.listing;
 
-        debugger
+        
         const overallRating = (listing.reviews.map(each => each.review.overall_rating)
             .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
             .toFixed(2);

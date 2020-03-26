@@ -35,8 +35,6 @@ class NavSearchLogout extends React.Component {
 
     render(){
         const { logout } = this.props
-
-        debugger
         
     return (
         <nav className='navsearch-container' >

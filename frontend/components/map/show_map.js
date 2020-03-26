@@ -28,7 +28,7 @@
 
 //     render() {
 //         const { address } = this.props;
-//         debugger
+//         
 //         return (
 //                 <div id='map-container' ref={map => this.mapNode = map} >
 
