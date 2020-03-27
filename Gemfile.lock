@@ -232,7 +232,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   aws-sdk-s3
-  bcrypt
+  bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)

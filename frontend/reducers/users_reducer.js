@@ -10,7 +10,7 @@ const usersReducer = (oldState = {}, action) => {
             return Object.assign({}, newState, { [action.currentUser.id]: action.currentUser });
 
         default:
-            return oldState;
+            return newState;
     }
 };
 

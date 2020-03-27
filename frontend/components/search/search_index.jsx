@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchIndexItems from '../search/search_index_items';
 import NavSearchSessionContainer from '../navbar/navsearch_session_container';
+import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -13,12 +14,20 @@ class SearchIndex extends React.Component {
 
     render() {
 
-        let { listings, openModal } = this.props;
+        let { listings, openModal, currentUser, logout, fetchListings } = this.props;
+        
+        const navLinks = () => {
+            if (currentUser) {
+                return <NavSearchLogoutContainer logout={logout} />
+            } else {
+                return <NavSearchSessionContainer openModal={openModal} />
+            }
+        };
 
     return (
         <div className='search-body'>
 
-            <NavSearchSessionContainer openModal={openModal} />
+            {navLinks()}
 
             <div className='nav-search-container'>
     
@@ -32,6 +41,7 @@ class SearchIndex extends React.Component {
                                 <SearchIndexItems
                                     listing={listing}
                                     key={listing.id}
+                                    fetchListings={fetchListings}
                                 />
                             ))
                         }

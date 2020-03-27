@@ -1,22 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SearchIndexItems = ({ listing }) => {
+class SearchIndexItems extends React.Component {
+        constructor(props) {
+            super(props)
+        }
 
-    const overallRating = (listing.reviews.map(each => each.review.overall_rating)
-        .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
-        .toFixed(2)
+    componentDidMount() {
+        this.props.fetchListings();
+    };
 
+    render() {
+
+        const { listing } = this.props;
+
+        const overallRating = (listing.reviews.map(each => each.review.overall_rating)
+            .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
+            .toFixed(2);
 
     return (
         <li className='search-li'>
-        <div>
-            <Link to={`/listings/${listing.id}`}>
-                <div className='search-image'>
-                    <img src={listing.images[0]} />
-                </div>
-            </Link>
-        </div>
+            <div>
+                <Link to={`/listings/${listing.id}`}>
+                    <div className='search-image'>
+                        <img src={listing.images[0]} />
+                    </div>
+                </Link>
+            </div>
             <div className='search-info'>
                 <div className='search-address'>
                     <span>
@@ -47,7 +57,8 @@ const SearchIndexItems = ({ listing }) => {
                 </div>
             </div>
         </li>
-    )
+        )
+    }
 }
 
 export default SearchIndexItems;

@@ -26,6 +26,7 @@
         font-weight: 500;
         border-bottom: 1px solid #D3D3D3;
         padding-bottom: 30px;
+        color: #222222;
     }
 
     .listings-search-result-boxes {
@@ -59,6 +60,9 @@
                     width: 12px; 
                     margin-right: 4px;
                     margin-bottom: -1px;
+                }
+                span {
+                    margin-left: 2px;
                 }
             }
         }

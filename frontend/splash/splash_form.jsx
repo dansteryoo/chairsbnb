@@ -11,7 +11,7 @@ class SplashForm extends React.Component {
         this.state = {
             startDate: '',
             endDate: '',
-            guest: '',
+            guest: 1,
             searchKeywords: '',
             renderSearchIndex: false,
             focusedInput: null,
@@ -20,17 +20,12 @@ class SplashForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    componentDidMount(){
-        
-        // this.props.clearErrors()
-    }
-
 
     update(f) {
         return e => this.setState({
             [f]: e.target.value
         });
-    }
+    };
 
     handleSubmit(e) {
         e.preventDefault();
@@ -45,21 +40,11 @@ class SplashForm extends React.Component {
         this.setState({ renderSearchIndex: true });
     };
 
-    // renderErrors() {
-    //     return (
-    //         <ul className='splash-form-errors'>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`splash-error-${i}`}>{error}</li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
-
     render() {
-        console.log(this.state.renderSearchIndex)
+
         if (this.state.renderSearchIndex) {
             return <Redirect to="/listings/search" />
-        }
+        };
         
         return (
             <div className='splash-form-container'>

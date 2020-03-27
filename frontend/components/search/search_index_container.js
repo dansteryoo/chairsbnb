@@ -5,9 +5,12 @@ import SearchIndex from './search_index';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = (state) => ({
-    listings: Object.values(state.listings)
-});
+const mapStateToProps = (state) => {
+    return {
+        listings: Object.values(state.listings),
+        currentUser: state.users[state.session.id]
+    }
+};
 
 
 const mapDispatchToProps = (dispatch) => ({

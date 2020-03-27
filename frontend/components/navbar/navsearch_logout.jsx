@@ -7,12 +7,13 @@ class NavSearchLogout extends React.Component {
 
         this.state = { 
             searchKeywords: '',
-            searchInputLength: ['navsearch-bar-container']
+            searchInputLength: ['navsearch-bar-container'],
+            renderSearchIndex: false
         }
 
          this.handleSearch = this.handleSearch.bind(this);
          this.toggleSearchLength = this.toggleSearchLength.bind(this);
-    }
+    };
 
     toggleSearchLength() {
         if (!this.state.searchInputLength[1]) {
@@ -20,21 +21,27 @@ class NavSearchLogout extends React.Component {
         } else {
             this.setState({ searchInputLength: ['navsearch-bar-container']});
         }
-    }
+    };
 
     handleSearch(e) {
         e.preventDefault();
         this.props.fetchSearchResult(this.state.searchKeywords);
-    }
-
+        this.setState({ renderSearchIndex: true });
+    };
+    
     update(f) {
         return e => this.setState({
             [f]: e.target.value
         });
-    }
+    };
 
-    render(){
-        const { logout } = this.props
+    render() {
+        
+        if (this.state.renderSearchIndex) {
+            return <Redirect to='/listings/search' />
+        };
+        
+        const { logout } = this.props;
         
     return (
         <nav className='navsearch-container' >
@@ -43,11 +50,11 @@ class NavSearchLogout extends React.Component {
             </Link>
                 <div className={this.state.searchInputLength.join(' ')}>
                     <img className='navsearch-icon' src={window.search_icon} height='20' />
-                    <form className="navbar-search-form" onSubmit={this.handleSearchSubmit}>
-                        <div className="navbar-search-input-container">
+                    <form className='navbar-search-form' onSubmit={this.handleSearch}>
+                        <div className='navbar-search-input-container'>
                             <input
                                 className='navsearch-input'
-                                type="text"
+                                type='text'
                                 placeholder='Search by city, address, or landmark'
                                 value={this.state.keyword}
                                 onChange={this.update('searchKeywords')}
@@ -65,8 +72,8 @@ class NavSearchLogout extends React.Component {
         </nav>
         )
     }
-}
+};
 
-export default withRouter(NavSearchLogout);
+export default NavSearchLogout;
 
 

@@ -15,11 +15,14 @@ const App = () => (
         
             <Switch>
                 <AuthRoute exact path='/' component={SplashContainer} />
-                <Route exact path='/listings/search' component={SearchIndexContainer} />
                 <ProtectedRoute exact path='/listings' component={ListingsIndexContainer} />
                 <Route exact path='/listings/:listingId' component={ListingsShowContainer} />
             </Switch>
-            
+
+            <Switch>
+                <Route exact path='/listings/search' component={SearchIndexContainer} />
+            </Switch>
+
         <Footer />
     </div>
 );

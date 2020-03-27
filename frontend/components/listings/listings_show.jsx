@@ -1,6 +1,6 @@
 import React from 'react';
 import { DateRangePicker, DayPickerRangeController } from 'react-dates';
-import { START_DATE, END_DATE } from 'react-dates/src/constants';
+import { START_DATE } from 'react-dates/src/constants';
 import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
 import moment from 'moment';
 import 'react-dates/initialize';
@@ -63,65 +63,34 @@ class ListingShow extends React.Component {
         }
         return false;
     };
-    
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     
-    //     const { currentUser } = this.props;
-    //     
-
-    //     if (!this.state.startDate || !this.state.endDate) {
-    //         this.setState({ focusedInput: START_DATE });
-    //     } else {
-    //         if (!currentUser.id) {
-    //             return this.props.openModal('Log In');
-    //         } else {
-
-    //         let listingId = this.props.match.params.listingId;
-    //         let start_date = startDate.format('yyyy/mm/dd');
-    //         let end_date = endDate.format('yyyy/mm/dd');
-    //         let createBooking = { listingId, guest_id: currentUser.id, start_date, end_date };
-    //             
-    //             this.props.createBooking(createBooking);
-    //             this.setState({ renderBookings: true });
-    //         }
-    //     }
-    // };
+    update(f) {
+        return e => this.setState({
+            [f]: e.target.value
+        });
+    };
 
     handleSubmit(e) {
         e.preventDefault();
 
-        let { currentUser } = this.props;
-        if (!this.state.startDate || !this.state.endDate) {
+        const { startDate, endDate } = this.state;
+        if (!startDate || !endDate) {
             this.setState({ focusedInput: START_DATE });
         } else {
-            if (!currentUser.id) {
-                let message = (
-                    <div>
-                        <div id="sign-up-to-book">Sign up to book</div>
-                        <div id="moments-away-from-booking">You're moments away from booking your stay.</div>
-                    </div>
-                );
-                this.props.openModal('Sign Up', message)
+            if (this.props.currentUser === undefined) {
+                this.props.openModal('Sign Up');
             } else {
-                // If all fields are filled out and user is logged in, send the booking request
                 let listing_id = this.props.match.params.listingId;
-                let start_date = this.state.startDate.format('YYYY/MM/DD');
-                let end_date = this.state.endDate.format('YYYY/MM/DD');
-                let newBooking = {
-                    guest_id: currentUser.id,
-                    listing_id,
-                    start_date,
-                    end_date
-                };
+                let start_date = startDate.format('yyyy/mm/dd');
+                let end_date = endDate.format('yyyy/mm/dd');
+                let guest_id = this.props.currentUser.id;
+                let newBooking = (listing_id, start_date, end_date, guest_id);
+
                 this.props.createBooking(newBooking);
-                this.setState({ redirectToTrips: true });
-            };
-        };
-    }
-
-
+                this.setState({ renderBookings: true });
+            }
+        }
+    };
 
     render() {
         
@@ -131,7 +100,7 @@ class ListingShow extends React.Component {
 
         if (this.state.renderBookings) {
             return <Redirect to="/bookings" />
-        }
+        };
         
         const { listing, currentUser, openModal, logout } = this.props;
         const { lat, long, address } = this.props.listing;
@@ -147,7 +116,7 @@ class ListingShow extends React.Component {
             } else {
                 return <NavSearchSessionContainer openModal={openModal}/>
             }
-        }
+        };
         
         return (
     
@@ -365,11 +334,11 @@ class ListingShow extends React.Component {
                                 <label className='show-form-label'>Guest
                                 </label>
                                     <div className='show-form-dropdown'>
-                                    <select className='show-form-guest-selector'>
-                                        <option value disabled>Guest</option>
-                                        <option value='1'>1 guest</option>
-                                    </select>
-                                </div>
+                                        <select className='show-form-guest-selector' onChange={this.update('guest')}>
+                                            <option>Guest</option>
+                                            <option value='1'>1</option>
+                                        </select>
+                                    </div>
                                 <button
                                     className='show-form-btn'
                                     type='submit'
