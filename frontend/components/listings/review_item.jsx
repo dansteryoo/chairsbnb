@@ -2,7 +2,8 @@ import React from 'react';
 
 const ReviewItem = ({ review, author }) => {
 
-    let month = review.created_at.slice(5, 7)
+    let month = review.created_at.slice(5, 7);
+
     switch (month) {
         case '01':
             month = 'January'
@@ -40,7 +41,7 @@ const ReviewItem = ({ review, author }) => {
         case '12':
             month = 'December'
             break;
-        }
+        };
 
     return (
         <li className='review-li'>
