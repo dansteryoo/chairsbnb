@@ -1,3 +1,47 @@
+.CalendarDay__selected_span {
+  border: none;
+}
+
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+  border: none;
+}
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  border: none;
+}
+
+.CalendarDay__hovered_span,
+.CalendarDay__hovered_span:hover {
+  border: none;
+}
+
+.CalendarDay__hovered_span:active {
+  border: none;
+}
+
+.CalendarDay__blocked_calendar,
+.CalendarDay__blocked_calendar:active,
+.CalendarDay__blocked_calendar:hover {
+  border: none;
+}
+
+.CalendarDay__blocked_out_of_range,
+.CalendarDay__blocked_out_of_range:active,
+.CalendarDay__blocked_out_of_range:hover {
+  border: none;
+}
+
+.CalendarDay__hovered_start_first_possible_end {
+  border: none;
+}
+
+.CalendarDay__hovered_start_blocked_min_nights {
+  border: none;
+}
+
 .CalendarDay__selected,
 .CalendarDay__selected_span {
   background: #008489 !important;
@@ -15,6 +59,14 @@
     border-radius: 7px;
 } 
 
+.CalendarDay__default {
+  border: none;
+}
+
+.CalendarDay__default:hover {
+  border: none;
+}
+
 .DateInput_input {
     font-size: 16px;
     font-weight: 300;
@@ -26,13 +78,15 @@
   display: block;
 }
 
+
 /* .DateInput_input__selected {
     background-color: #CCEEEB;
 } */
  
-/* .DateInput_input__focused {
-    background: #99EDE7;
-} */
+.DateInput_input__focused {
+    background: transparent;
+    border-bottom: none;
+}
 
 .DateRangePickerInput_arrow_svg {
     padding-left: 40px;
@@ -51,3 +105,6 @@
   font-weight: 400;;
   color: #008489;
 }
+
+
+/* ---------- DEFAULT CSS ---------- */

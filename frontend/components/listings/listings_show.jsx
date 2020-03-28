@@ -3,7 +3,6 @@ import { DateRangePicker, DayPickerRangeController } from 'react-dates';
 import { START_DATE } from 'react-dates/src/constants';
 import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
 import moment from 'moment';
-import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'

@@ -281,7 +281,7 @@
 
 .show-container {
     display: grid;
-    grid-template-columns: auto 620px 460px auto;
+    grid-template-columns: auto 620px 420px auto;
     grid-template-rows: auto;
     min-width: 1280px;
     border-top: 1px solid #484848;
@@ -364,7 +364,7 @@
   padding-top: 10px;
 
     .show-booking-box {
-        width: 400px;
+        width: 355px;
         padding: 24px;
         border: solid 1px #D3D3D3;
     }
