@@ -81,8 +81,8 @@ class ListingShow extends React.Component {
                 this.props.openModal('Sign Up');
             } else {
                 let listing_id = this.props.match.params.listingId;
-                let start_date = startDate.format('YYYY/MM/DD');
-                let end_date = endDate.format('YYYY/MM/DD');
+                let start_date = startDate.format('YYYY-MM-DD');
+                let end_date = endDate.format('YYYY-MM-DD');
                 let guest_id = this.props.currentUser.id;
                 let newBooking = (listing_id, start_date, end_date, guest_id);
 
@@ -318,9 +318,9 @@ class ListingShow extends React.Component {
                                 <div className='date-range-picker'>
                                     <DateRangePicker
                                         startDate={this.state.startDate}
-                                        startDateId='MM/DD/YYYY'
+                                        startDateId='mm/dd/yyyy'
                                         endDate={this.state.endDate}
-                                        endDateId='MM/DD/YYYY'
+                                        endDateId='mm/dd/yyyy'
                                         focusedInput={this.state.focusedInput}
                                         onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                                         onFocusChange={focusedInput => this.setState({ focusedInput })}
