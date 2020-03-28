@@ -32,8 +32,8 @@ class SplashForm extends React.Component {
         let { startDate, endDate, searchKeywords, guest } = this.state;
 
         if (startDate && endDate) {
-            startDate = startDate.format('yyyy/mm/dd');
-            endDate = endDate.format('yyyy/mm/dd');
+            startDate = startDate.format('YYYY/MM/DD');
+            endDate = endDate.format('YYYY/MM/DD');
         }
         
         this.props.fetchSearchResult(searchKeywords, startDate, endDate);
@@ -43,7 +43,7 @@ class SplashForm extends React.Component {
     render() {
 
         if (this.state.renderSearchIndex) {
-            return <Redirect to="/listings/search" />
+            return <Redirect to='/listings/search' />
         };
         
         return (
@@ -74,12 +74,12 @@ class SplashForm extends React.Component {
                             </label>
                     </div>
 
-                        <div className="splash-form-datepicker">
+                        <div className='splash-form-datepicker'>
                             <DateRangePicker
                                 startDate={this.state.startDate}
-                                startDateId="mm/dd/yyyy"
+                                startDateId='MM/DD/YYYY'
                                 endDate={this.state.endDate}
-                                endDateId="mm/dd/yyyy"
+                                endDateId='MM/DD/YYYY'
                                 onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                                 focusedInput={this.state.focusedInput}
                                 onFocusChange={focusedInput => this.setState({ focusedInput })}

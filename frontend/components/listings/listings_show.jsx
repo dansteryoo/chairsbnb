@@ -47,7 +47,7 @@ class ListingShow extends React.Component {
             if (bookings[i].listing_id === listing.id) {
                 if (this.state.startDate
                     && this.state.startDate.isBefore(bookings[i].start_date, 'day')) {
-                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', "[]")) {
+                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', '[]')) {
                         return true;
                     } else if (day.isAfter(bookings[i].end_date, 'day')) {
                         return true;
@@ -55,7 +55,7 @@ class ListingShow extends React.Component {
                         return true;
                     };
                 } else {
-                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', "[]")) {
+                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', '[]')) {
                         return true;
                     };
                 };
@@ -81,8 +81,8 @@ class ListingShow extends React.Component {
                 this.props.openModal('Sign Up');
             } else {
                 let listing_id = this.props.match.params.listingId;
-                let start_date = startDate.format('yyyy/mm/dd');
-                let end_date = endDate.format('yyyy/mm/dd');
+                let start_date = startDate.format('YYYY/MM/DD');
+                let end_date = endDate.format('YYYY/MM/DD');
                 let guest_id = this.props.currentUser.id;
                 let newBooking = (listing_id, start_date, end_date, guest_id);
 
@@ -99,7 +99,7 @@ class ListingShow extends React.Component {
         };
 
         if (this.state.renderBookings) {
-            return <Redirect to="/bookings" />
+            return <Redirect to='/bookings' />
         };
         
         const { listing, currentUser, openModal, logout } = this.props;
@@ -168,7 +168,7 @@ class ListingShow extends React.Component {
                                 <span>Sitting arrangements</span>
                             </div>
                                 <div className='top-content-info'>
-                                    <i className="fas fa-chair fa-lg"></i>
+                                    <i className='fas fa-chair fa-lg'></i>
                                     <span>Seating 1</span>
                                     <p>1 single chair</p>
                                 </div>
@@ -318,16 +318,16 @@ class ListingShow extends React.Component {
                                 <div className='date-range-picker'>
                                     <DateRangePicker
                                         startDate={this.state.startDate}
-                                        startDateId="mm/dd/yyyy"
+                                        startDateId='MM/DD/YYYY'
                                         endDate={this.state.endDate}
-                                        endDateId="mm/dd/yyyy"
+                                        endDateId='MM/DD/YYYY'
                                         focusedInput={this.state.focusedInput}
                                         onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                                         onFocusChange={focusedInput => this.setState({ focusedInput })}
                                         numberOfMonths={1}
                                         hideKeyboardShortcutsPanel={true}
-                                        startDatePlaceholderText="Check-in"
-                                        endDatePlaceholderText="Checkout"
+                                        startDatePlaceholderText='Check-in'
+                                        endDatePlaceholderText='Checkout'
                                         isDayBlocked={day => this.dayIsBlocked(day)}
                                     />
                                 </div>
