@@ -81,8 +81,8 @@ class ListingShow extends React.Component {
                 this.props.openModal('Sign Up');
             } else {
                 let listing_id = this.props.match.params.listingId;
-                let start_date = startDate.format('YYYY-MM-DD');
-                let end_date = endDate.format('YYYY-MM-DD');
+                let start_date = startDate.format('YYYY/MM/DD');
+                let end_date = endDate.format('YYYY/MM/DD');
                 let guest_id = this.props.currentUser.id;
                 let newBooking = (listing_id, start_date, end_date, guest_id);
 

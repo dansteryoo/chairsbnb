@@ -32,8 +32,8 @@ class SplashForm extends React.Component {
         let { startDate, endDate, searchKeywords, guest } = this.state;
 
         if (startDate && endDate) {
-            startDate = startDate.format('YYYY-MM-DD');
-            endDate = endDate.format('YYYY-MM-DD');
+            startDate = startDate.format('YYYY/MM/DD');
+            endDate = endDate.format('YYYY/MM/DD');
         }
         
         this.props.fetchSearchResult(searchKeywords, startDate, endDate);
