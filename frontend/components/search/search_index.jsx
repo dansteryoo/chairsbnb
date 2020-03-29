@@ -10,21 +10,18 @@ class SearchIndex extends React.Component {
     };
 
     componentDidMount() {
+        debugger
         this.props.fetchListings();
     };
 
-    componentDidUpdate() {
-        // debugger
-    };
-
     componentWillUnmount() {
-        // debugger
+        debugger
     };
 
     render() {
-
+        debugger
         let { listings, openModal, currentUser, logout } = this.props;
-        // debugger
+
         const navLinks = () => {
             if (currentUser) {
                 return <NavSearchLogoutContainer logout={logout} />
@@ -33,10 +30,9 @@ class SearchIndex extends React.Component {
             }
         };
 
-        // debugger
-        if (this.props.listings === undefined) {
-            return window.location.reload(true);
-        };
+        // if (this.props.listings === undefined) {
+        //     return window.location.reload(true);
+        // };
 
     return (
         <div className='search-body'>
