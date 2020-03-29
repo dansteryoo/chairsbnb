@@ -6,13 +6,15 @@ import NavSearchLogout from './navsearch_logout'
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
+    listings: Object.values(state.listings),
     currentUser: state.users[state.session.id]
 });
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logout()),
     openModal: (formType) => dispatch(openModal(formType)),
-    fetchSearchResult: searchKeywords => dispatch(fetchSearchResult(searchKeywords)),
+    fetchSearchResult: (searchKeywords) => dispatch(fetchSearchResult(searchKeywords)),
 });
+
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavSearchLogout));

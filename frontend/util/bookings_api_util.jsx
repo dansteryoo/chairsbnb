@@ -22,14 +22,6 @@ export const createBooking = (booking) => (
     })
 );
 
-export const updateBooking = (booking) => (
-    $.ajax({
-        url: `api/bookings/${booking.id}`,
-        method: 'PATCH',
-        data: { booking }
-    })
-);
-
 export const deleteBooking = (bookingId) => (
     $.ajax({
         url: `api/bookings/${bookingId}`,

@@ -3,12 +3,12 @@ class Api::BookingsController < ApplicationController
     before_action :require_logged_in!
 
     def index
-        @bookings = Booking.where(guest_id: current_user.id)
+        @bookings = Booking.all
         render :index
     end
 
     def show
-        @booking = Booking.find(params[:id])
+        @booking = Booking.where(guest_id: current_user.id)
         render :show
     end
     
@@ -16,7 +16,7 @@ class Api::BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
         @booking.guest_id = current_user.id
 
-        if @booking.save
+        if @booking.available_booking? && @booking.save
             render :show
         else
             render json: @booking.errors.full_messages, status: 422
@@ -29,16 +29,6 @@ class Api::BookingsController < ApplicationController
         
         if @booking.destroy
             render :show
-        end
-    end
-
-    def update
-        @booking = Booking.update(booking_params)
-
-        if @booking
-            render :show
-        else
-            render json: @booking.errors.full_messages, status: 422
         end
     end
 

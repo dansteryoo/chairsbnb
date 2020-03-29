@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class NavSearchLogout extends React.Component {
      constructor(props) {
@@ -25,7 +25,7 @@ class NavSearchLogout extends React.Component {
 
     handleSearch(e) {
         e.preventDefault();
-        this.props.fetchSearchResult(this.state.searchKeywords);
+        // this.props.fetchSearchResult(this.state.searchKeywords);
         this.setState({ renderSearchIndex: true });
     };
     
@@ -65,6 +65,9 @@ class NavSearchLogout extends React.Component {
                     </form>
                 </div>
             <ul className='navsearch-links'>
+                <Link to='/bookings' className='navsearch-bookings-btn'>
+                    <span>Bookings</span>
+                </Link>
                 <li className='navsearch-logout-btn' onClick={() => logout()}>
                     Log Out
                 </li>            

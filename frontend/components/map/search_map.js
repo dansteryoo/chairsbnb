@@ -1,31 +1,35 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
-class ShowMap extends React.Component {
+class SearchMap extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            lat: 40.737685,
+            long: -73.996961, 
+        }
     }
 
     render() {
-        
-        const { lat, long } = this.props;
+
+        const { lat, long } = this.state;
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{ lat: lat, lng: long }}
                 defaultZoom={ 15 }
             >
-                {props.isMarkerShown && <Marker position={{ lat: lat, lng: long }} />}
+            {props.isMarkerShown && <Marker position={{ lat: lat, lng: long }} />}
             </GoogleMap>
         ));
 
         return (
             <div>
                 <GoogleMapExample isMarkerShown
-                    containerElement={<div style={{ height: `350px`, width: '620px' }} />}
+                    containerElement={<div style={{ height: `100%`, width: `46vw` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
             </div>
         );
     }
 };
-export default ShowMap;
+export default SearchMap;

@@ -1,23 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SearchIndexItems extends React.Component {
-        constructor(props) {
-            super(props)
-        }
+const SearchIndexItems = ({ listing }) => {
 
-    componentDidMount() {
-        this.props.fetchListings();
-    };
-
-    render() {
-
-        const { listing } = this.props;
-
-        const overallRating = (listing.reviews.map(each => each.review.overall_rating)
-            .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
-            .toFixed(2);
-
+    const overallRating = (listing.reviews.map(each => each.review.overall_rating)
+        .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
+        .toFixed(2);
+        
+    debugger
     return (
         <li className='search-li'>
             <div>
@@ -57,8 +47,7 @@ class SearchIndexItems extends React.Component {
                 </div>
             </div>
         </li>
-        )
-    }
+    )
 }
 
 export default SearchIndexItems;

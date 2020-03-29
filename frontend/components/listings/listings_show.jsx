@@ -3,6 +3,7 @@ import { DateRangePicker, DayPickerRangeController } from 'react-dates';
 import { START_DATE } from 'react-dates/src/constants';
 import isInclusivelyAfterDay from 'react-dates/src/utils/isInclusivelyAfterDay';
 import moment from 'moment';
+import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './react_dates.css';
 import ReviewItem from './review_item'
@@ -233,11 +234,8 @@ class ListingShow extends React.Component {
                         <div className='show-bottom-google'>
                             <span>The neighborhood</span>
                             <p>{address}</p>
-                                {/* 
-                                                            {window.googleAPIKey}
-                            <MapContainer lat={lat} long={long} address={address} />
 
-                                */}
+                            {/* GOOGLE MAPS */}
 
                             <ShowMap lat={lat} long={long} address={address} />
                             <p>Exact location information is provided after a booking is confirmed</p>

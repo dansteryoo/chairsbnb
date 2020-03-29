@@ -134,13 +134,12 @@
 //----------------Search Right Side
 
 .nav-search-google-maps {
-    margin-top: 90px;
     grid-column-start: 2;
     width: 100%;
-    border-color: 5px solid red;
     display: flex;
     justify-content: center;
     align-content: center;
+    padding-left: 20px;
 
     p {
         font-size: 50px;

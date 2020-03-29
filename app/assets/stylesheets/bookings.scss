@@ -1,5 +1,128 @@
-// Place all the styles related to the listings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+.bookings-index-container {
+    color: #222222;
+    width: 100%;
+    min-width: 1280px;
+    max-width: 100vw;
+    height: 100%;
+}
 
+.bookings-body {
+    padding: 0 80px;
+}
+
+.bookings-index-ph-title {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 110px 0 14px;
+}
+
+.bookings-index-header {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #D3D3D3;
+    width: 100%;
+    letter-spacing: 0.03em;
+
+        span {
+            padding-bottom: 18px;
+            border-bottom: 2px solid #222222;
+        }
+}
+
+.bookings-index-ph {
+    font-size: 22px;
+    font-weight: 500;
+
+    img {
+    width: 100%;
+    margin: 30px 0 10px;
+    }
+}
+
+.nav-search-google-maps {
+    height: 100vh;
+    position: sticky !important;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.bookings-ul {
+    height: auto;
+    min-width: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 24px 80px 150px;
+}
+
+.booking-li {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    min-width: 320px;
+    height: 306px;
+    font-size: 14px;
+    font-weight: 300;
+    justify-content: flex-start;
+    padding: 20px 0 20px 0;
+}
+
+.booking-info {
+    width: 100%;
+}
+
+.booking-address {
+    width: 100%;
+    max-width: 299px;
+    margin-top: 16px;
+
+    .booking-rating {
+        justify-content: flex-end;
+        color: #000000;
+        float: right;
+        img {
+            width: 12px; 
+            margin-right: 4px;
+            margin-bottom: -1px;
+        }
+    }
+}
+
+.booking-name {    
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.booking-price {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.booking-address span {
+    color: #767676; 
+}
+
+.booking-price span {
+    font-weight: 600;
+}
+
+.booking-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.booking-image img{
+    width: 100%;
+    min-height: 200px;
+    max-width: 300px;
+    border-radius: 4px;
+}

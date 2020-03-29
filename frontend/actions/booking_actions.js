@@ -39,12 +39,6 @@ export const createBooking = (booking) => dispatch => (
     )
 );
 
-export const updateBooking = (booking) => dispatch => (
-    BookingsAPIUtil.updateBooking(booking)
-        .then(booking => dispatch(receiveBooking(booking))
-    )
-);
-
 export const deleteBooking = (bookingId) => dispatch => (
     BookingsAPIUtil.deleteBooking(bookingId)
         .then(() => dispatch(removeBooking(bookingId))

@@ -104,6 +104,14 @@
     cursor: pointer;
 }
 
+.navsearch-bookings-btn {
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navsearch-bookings-btn:hover,
 .navsearch-logout-btn:hover {
     height: 48px;
     border-radius: 1px;

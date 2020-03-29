@@ -25,7 +25,7 @@ class NavSearchSession extends React.Component {
 
     handleSearch(e) {
         e.preventDefault();
-        this.props.fetchSearchResult(this.state.searchKeywords);
+        // this.props.fetchSearchResult(this.state.searchKeywords);
         this.setState({ renderSearchIndex: true });
     };
 
@@ -40,7 +40,7 @@ class NavSearchSession extends React.Component {
         if (this.state.renderSearchIndex) {
             return <Redirect to='/listings/search' />
         };
-
+        
         const { openModal } = this.props;
         
     return (
