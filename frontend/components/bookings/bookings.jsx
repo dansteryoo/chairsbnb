@@ -8,63 +8,33 @@ class Bookings extends React.Component {
         super(props)
 
         this.state = {
-    
+            success: this.props.success,
+            successMessageClasses: ['reservation-successful-msg-visible']
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    componentDidMount() {
-        this.props.fetchBookings();
-    };
-
-    handleSubmit(e) {
-        e.preventDefault();
-        
-        let booking = Object.assign({}, this.state);
-        debugger
-        this.props.createBooking(booking)
-    };
-
-    update(f) {
-        return e => this.setState({
-            [f]: e.target.value
-        })
-    };
-
-    renderErrors() {
-        if (this.props.errors === undefined) {
-            this.props.errors = []
-        }
-        return (
-            <ul className='form-errors'>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>{error}</li>
-                ))}
-            </ul>
-        );
-    }
+    // componentDidMount() {
+    //     this.props.fetchBookings();
+    // };
 
     render() {
 
-        const { bookings, deleteBooking } = this.props;
+        // const { bookings, deleteBooking } = this.props;
 
-        let renderBookingReservations;
-        if (bookings === undefined) {
-            renderBookingReservations = <div className='bookings-index-ph'>
-                <img src={window.bookings_ph} />
-            </div>
-        } else {
-            renderBookingReservations = <ul className='bookings-ul'>
-                    bookings.map(booking => (
-                        <BookingsItems
-                            booking={booking}
-                            deleteBookning={deleteBooking}
-                            key={booking.id}
-                        />
-                    ))
-            </ul>
-        }
+        // let renderBookingReservations;
+        // if (bookings === undefined) {
+        //     renderBookingReservations = 
+        // } else {
+            // renderBookingReservations = <ul className='bookings-ul'>
+            //         bookings.map(booking => (
+            //             <BookingsItems
+            //                 booking={booking}
+            //                 deleteBookning={deleteBooking}
+            //                 key={booking.id}
+            //             />
+            //         ))
+            // </ul>
+        // }
 
         return (
             <div className='bookings-index-container'>
@@ -77,7 +47,9 @@ class Bookings extends React.Component {
                         <span>Upcoming</span>
                     </div>
 
-                        {renderBookingReservations}
+                    <div className='bookings-index-ph'>
+                        <img src={window.bookings_ph} />
+                    </div>
                         
                 </div>
             </div>
