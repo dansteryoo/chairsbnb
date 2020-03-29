@@ -7,7 +7,6 @@ const SearchIndexItems = ({ listing }) => {
         .reduce((acc, each) => acc += each, 0) / listing.reviews.length)
         .toFixed(2);
         
-    debugger
     return (
         <li className='search-li'>
             <div>

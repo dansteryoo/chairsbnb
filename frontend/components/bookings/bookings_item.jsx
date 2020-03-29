@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const BookingsItems = ({ booking }) => {
 
-    // debugger
-
     return (
         <li className='booking-li'>
             <Link to={`/bookings/${booking.id}`}>

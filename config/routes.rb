@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :create]
     resource :session, only: [:create, :destroy]
     resources :listings, only: [:index, :show]
-    resources :bookings, only: [:index, :show, :create, :update, :destroy]
-    resources :reviews, only: [:index, :show, :create, :update, :destroy]
+    resources :bookings, only: [:index, :show, :create, :destroy]
+    resources :reviews, only: [:index, :show, :create, :destroy]
     get '/search', to: 'listings#search'
   end
 

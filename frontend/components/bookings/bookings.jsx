@@ -1,24 +1,52 @@
 import React from 'react';
 import BookingsItems from './bookings_item';
 import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Bookings extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            success: this.props.success,
-            successMessageClasses: ['reservation-successful-msg-visible']
+    
         }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     componentDidMount() {
         this.props.fetchBookings();
     };
 
+    handleSubmit(e) {
+        e.preventDefault();
+        
+        let booking = Object.assign({}, this.state);
+        debugger
+        this.props.createBooking(booking)
+    };
+
+    update(f) {
+        return e => this.setState({
+            [f]: e.target.value
+        })
+    };
+
+    renderErrors() {
+        if (this.props.errors === undefined) {
+            this.props.errors = []
+        }
+        return (
+            <ul className='form-errors'>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>{error}</li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
-        // debugger
+
         const { bookings, deleteBooking } = this.props;
 
         let renderBookingReservations;
