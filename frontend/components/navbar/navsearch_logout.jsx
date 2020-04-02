@@ -25,7 +25,7 @@ class NavSearchLogout extends React.Component {
     handleSearch(e) {
         e.preventDefault();
         // this.props.fetchSearchResult(this.state.searchKeywords);
-        this.props.history.push('/listings');
+        this.props.history.push('/listings/search');
     };
     
     update(f) {
