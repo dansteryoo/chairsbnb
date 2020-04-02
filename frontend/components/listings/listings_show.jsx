@@ -97,7 +97,7 @@ class ListingShow extends React.Component {
             return <div></div>
         };
         
-        const { listing, currentUser, openModal, logout } = this.props;
+        const { listing, currentUser, openModal, logout, history } = this.props;
         const { lat, long, address } = this.props.listing;
 
         
@@ -109,7 +109,7 @@ class ListingShow extends React.Component {
             if (currentUser) {
                 return <NavSearchLogoutContainer logout={logout}/>
             } else {
-                return <NavSearchSessionContainer openModal={openModal}/>
+                return <NavSearchSessionContainer openModal={openModal} history={history}/>
             }
         };
         
