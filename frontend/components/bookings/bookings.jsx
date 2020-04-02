@@ -14,33 +14,29 @@ class Bookings extends React.Component {
     };
 
     componentDidMount() {
-        // debugger
+        debugger
         this.props.fetchBookings();
     };
 
     render() {
-        // debugger
-        // if (this.props.bookings === undefined) {
-        //     return <div></div>
-        // };
+        debugger
+        var { bookings, deleteBooking } = this.props;
 
-        // var { bookings, deleteBooking } = this.props;
-
-        // let renderBookingReservations;
-        // if (bookings === undefined) {
-        //     renderBookingReservations = <img src={window.bookings_ph} />
-        // }
-        // } else {
-        //     renderBookingReservations = <ul className='bookings-ul'>
-        //             bookings.map(booking => (
-        //                 <BookingsItems
-        //                     booking={booking}
-        //                     deleteBookning={deleteBooking}
-        //                     key={booking.id}
-        //                 />
-        //             ))
-        //     </ul>
-        // };
+        let renderBookingReservations;
+        if (bookings === undefined) {
+            renderBookingReservations = <img src={window.bookings_ph} />
+        } else {
+            renderBookingReservations = <ul className='bookings-ul'>
+                    {   bookings.map(booking => (
+                            <BookingsItems
+                                booking={booking}
+                                deleteBookning={deleteBooking}
+                                key={booking.id}
+                            />
+                        ))
+                    }
+            </ul>
+        };
 
         return (
             <div className='bookings-index-container'>
@@ -55,7 +51,7 @@ class Bookings extends React.Component {
 
                     <div className='bookings-index-ph'>
 
-                        <img src={window.bookings_ph} />
+                        {renderBookingReservations}
 
                     </div>
                         
