@@ -10,7 +10,6 @@ import ReviewItem from './review_item'
 import NavSearchSessionContainer from '../navbar/navsearch_session';
 import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
 import ShowMap from '../map/show_map.js'
-import { Redirect } from 'react-router-dom';
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -22,9 +21,7 @@ class ListingShow extends React.Component {
             focusedInput: null,
             startDateId: null,
             endDateId: null,
-            bookingDates: [],
-            renderBookings: false
-            
+            bookingDates: [],           
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -86,8 +83,8 @@ class ListingShow extends React.Component {
                 let guest_id = this.props.currentUser.id;
                 let newBooking = (listing_id, start_date, end_date, guest_id);
 
-                this.props.createBooking(newBooking);
-                this.setState({ renderBookings: true });
+                this.props.createBooking(newBooking)
+                    .then(this.props.history.push('/bookings'));
             }
         }
     };
@@ -96,10 +93,6 @@ class ListingShow extends React.Component {
         
         if (this.props.listing === undefined) {
             return <div></div>
-        };
-
-        if (this.state.renderBookings) {
-            return <Redirect to='/bookings' />
         };
         
         const { listing, currentUser, openModal, logout } = this.props;

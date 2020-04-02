@@ -3,7 +3,7 @@ class Api::BookingsController < ApplicationController
     before_action :require_logged_in!
 
     def index
-        @bookings = Booking.all
+        @bookings = current_user.bookings
         render :index
     end
 
@@ -15,8 +15,9 @@ class Api::BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
         @booking.guest_id = current_user.id
-        # debugger
+        
         if @booking.save
+            render json: ['Booking was successful'], status: 200
             render :show
         else
             render json: @booking.errors.full_messages, status: 422
@@ -28,6 +29,7 @@ class Api::BookingsController < ApplicationController
         @booking.destroy
         
         if @booking.destroy
+            render json: ['Booking has been cancelled'], status: 200
             render :show
         end
     end

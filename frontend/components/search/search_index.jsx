@@ -10,16 +10,11 @@ class SearchIndex extends React.Component {
     };
 
     componentDidMount() {
-        debugger
         this.props.fetchListings();
     };
 
-    componentWillUnmount() {
-        debugger
-    };
-
     render() {
-        debugger
+        
         let { listings, openModal, currentUser, logout } = this.props;
 
         const navLinks = () => {
@@ -30,21 +25,14 @@ class SearchIndex extends React.Component {
             }
         };
 
-        // if (this.props.listings === undefined) {
-        //     return window.location.reload(true);
-        // };
-
     return (
         <div className='search-body'>
 
             {navLinks()}
 
             <div className='nav-search-container'>
-    
-
                 <div className='listings-search-leftside'>
                     <div className='header-number'>{listings.length} places to stay</div>
-
                         <div className='listings-search-result-boxes'>
                         {
                             listings.map(listing => (
@@ -56,7 +44,6 @@ class SearchIndex extends React.Component {
                         }
                         </div>
                 </div>
-
                 <div className='nav-search-google-maps'>
                     <SearchMap />
                 </div> 
@@ -65,7 +52,6 @@ class SearchIndex extends React.Component {
         </div>
         )
     }
-
 };
 
 export default SearchIndex;

@@ -1,2 +1,5 @@
 json.partial! "/api/bookings/booking", booking: @booking
-    json.bookingIds @user.bookings.map { |booking| booking.id }
+    json.dates @booking.dates
+    json.location @booking.listing.address
+    json.images @booking.listing.images[0]
+    

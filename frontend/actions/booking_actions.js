@@ -21,11 +21,12 @@ export const removeBooking = (bookingId) => ({
 });
 
 
-export const fetchBookings = () => dispatch => (
-    BookingsAPIUtil.fetchBookings()
+export const fetchBookings = () => dispatch => {
+    // debugger
+    return BookingsAPIUtil.fetchBookings()
         .then(bookings => dispatch(receiveBookings(bookings))
     )
-);
+};
 
 export const fetchBooking = (bookingId) => dispatch => (
     BookingsAPIUtil.fetchBooking(bookingId)

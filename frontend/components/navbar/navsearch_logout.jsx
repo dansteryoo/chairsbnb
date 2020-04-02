@@ -7,8 +7,7 @@ class NavSearchLogout extends React.Component {
 
         this.state = { 
             searchKeywords: '',
-            searchInputLength: ['navsearch-bar-container'],
-            renderSearchIndex: false
+            searchInputLength: ['navsearch-bar-container']
         }
 
          this.handleSearch = this.handleSearch.bind(this);
@@ -26,7 +25,7 @@ class NavSearchLogout extends React.Component {
     handleSearch(e) {
         e.preventDefault();
         // this.props.fetchSearchResult(this.state.searchKeywords);
-        this.setState({ renderSearchIndex: true });
+        this.props.history.push('/listings/search');
     };
     
     update(f) {
@@ -36,10 +35,6 @@ class NavSearchLogout extends React.Component {
     };
 
     render() {
-        
-        if (this.state.renderSearchIndex) {
-            return <Redirect to='/listings/search' />
-        };
         
         const { logout } = this.props;
         
