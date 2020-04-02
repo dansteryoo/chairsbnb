@@ -36,15 +36,11 @@ class SplashForm extends React.Component {
             endDate = endDate.format('YYYY/MM/DD');
         }
         
-        this.props.fetchSearchResult(searchKeywords, startDate, endDate);
-        this.setState({ renderSearchIndex: true });
+        this.props.fetchSearchResult(searchKeywords, startDate, endDate)
+            .then(this.props.history.push('/listings/search'))
     };
 
     render() {
-
-        if (this.state.renderSearchIndex) {
-            return <Redirect to='/listings/search' />
-        };
         
         return (
             <div className='splash-form-container'>
