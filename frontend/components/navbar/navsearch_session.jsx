@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class NavSearchSession extends React.Component {
      constructor(props) {

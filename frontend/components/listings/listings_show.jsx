@@ -29,8 +29,10 @@ class ListingShow extends React.Component {
         this.dayIsBlocked = this.dayIsBlocked.bind(this)
     };
 
+
     componentDidMount() {
-        this.props.fetchListing(this.props.match.params.listingId)
+        this.props.fetchListing(this.props.match.params.listingId);
+        window.scrollTo(0, 0);
     };
 
     onFocusChange(focusedInput) {

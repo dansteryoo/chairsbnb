@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class NavSearchLogout extends React.Component {
      constructor(props) {
@@ -25,7 +25,7 @@ class NavSearchLogout extends React.Component {
     handleSearch(e) {
         e.preventDefault();
         // this.props.fetchSearchResult(this.state.searchKeywords);
-        this.props.history.push('/listings/search');
+        this.props.history.push('/listings');
     };
     
     update(f) {

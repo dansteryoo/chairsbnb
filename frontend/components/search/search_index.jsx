@@ -28,7 +28,7 @@ class SearchIndex extends React.Component {
     return (
         <div className='search-body'>
 
-            {navLinks()}
+            { navLinks() }
 
             <div className='nav-search-container'>
                 <div className='listings-search-leftside'>
