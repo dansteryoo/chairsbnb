@@ -57,7 +57,7 @@ class ListingShow extends React.Component {
             let end_date = endDate.format('YYYY/MM/DD');
             let guest_id = this.props.currentUser.id;
             let newBooking = { listing_id, start_date, end_date, guest_id };
-                debugger
+
             this.props.createBooking(newBooking)
                 .then(this.props.history.push('/bookings'));
         }
