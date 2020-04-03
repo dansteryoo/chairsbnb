@@ -1,29 +1,26 @@
 import React from 'react';
 import BookingsItems from './bookings_item';
 import NavSearchLogoutContainer from '../navbar/navsearch_logout_container';
-// import { Link } from 'react-router-dom';
 
 class Bookings extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            success: this.props.success,
-            successMessageClasses: ['reservation-successful-msg-visible']
+            success: 'Booking has been successful'
         }
     };
 
     componentDidMount() {
-        debugger
         this.props.fetchBookings();
     };
 
     render() {
-        debugger
-        var { bookings, deleteBooking } = this.props;
+
+        var { bookings, deleteBooking, openModal } = this.props;
 
         let renderBookingReservations;
-        if (bookings === undefined) {
+        if (bookings.length === 0 || bookings === undefined) {
             renderBookingReservations = <img src={window.bookings_ph} />
         } else {
             renderBookingReservations = <ul className='bookings-ul'>
@@ -31,6 +28,7 @@ class Bookings extends React.Component {
                             <BookingsItems
                                 booking={booking}
                                 deleteBookning={deleteBooking}
+                                openModal={openModal}
                                 key={booking.id}
                             />
                         ))

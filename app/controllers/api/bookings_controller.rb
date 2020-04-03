@@ -17,7 +17,6 @@ class Api::BookingsController < ApplicationController
         @booking.guest_id = current_user.id
         
         if @booking.save
-            render json: ['Booking was successful'], status: 200
             render :show
         else
             render json: @booking.errors.full_messages, status: 422
@@ -29,7 +28,6 @@ class Api::BookingsController < ApplicationController
         @booking.destroy
         
         if @booking.destroy
-            render json: ['Booking has been cancelled'], status: 200
             render :show
         end
     end

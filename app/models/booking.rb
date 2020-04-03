@@ -24,7 +24,6 @@ class Booking < ApplicationRecord
     end
 
     def does_not_overlap
-        
         if !overlapping_request
             return true 
         end

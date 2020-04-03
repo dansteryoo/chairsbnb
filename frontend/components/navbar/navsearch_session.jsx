@@ -25,7 +25,6 @@ class NavSearchSession extends React.Component {
     handleSearch(e) {
         e.preventDefault();
         // this.props.fetchSearchResult(this.state.searchKeywords);
-        debugger
         this.props.history.push('/listings/search');
     };
 
