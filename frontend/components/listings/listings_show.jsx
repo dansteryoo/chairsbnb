@@ -26,7 +26,6 @@ class ListingShow extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onFocusChange = this.onFocusChange.bind(this)
-        this.dayIsBlocked = this.dayIsBlocked.bind(this)
     };
 
 
@@ -39,30 +38,6 @@ class ListingShow extends React.Component {
         this.setState({ focusedInput });
     };
 
-    dayIsBlocked(day) {
-        const { bookings, listing } = this.props;
-
-        for (let i = 0; i < bookings.length; i++) {
-            if (bookings[i].listing_id === listing.id) {
-                if (this.state.startDate
-                    && this.state.startDate.isBefore(bookings[i].start_date, 'day')) {
-                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', '[]')) {
-                        return true;
-                    } else if (day.isAfter(bookings[i].end_date, 'day')) {
-                        return true;
-                    } else if (day.isSame(bookings[i].end_date, 'day')) {
-                        return true;
-                    };
-                } else {
-                    if (day.isBetween(bookings[i].start_date, bookings[i].end_date, 'day', '[]')) {
-                        return true;
-                    };
-                };
-            }
-        }
-        return false;
-    };
-
     update(f) {
         return e => this.setState({
             [f]: e.target.value
@@ -73,21 +48,18 @@ class ListingShow extends React.Component {
         e.preventDefault();
 
         const { startDate, endDate } = this.state;
-        if (!startDate || !endDate) {
-            this.setState({ focusedInput: START_DATE });
-        } else {
-            if (this.props.currentUser === undefined) {
-                this.props.openModal('Sign Up');
-            } else {
-                let listing_id = this.props.match.params.listingId;
-                let start_date = startDate.format('YYYY/MM/DD');
-                let end_date = endDate.format('YYYY/MM/DD');
-                let guest_id = this.props.currentUser.id;
-                let newBooking = (listing_id, start_date, end_date, guest_id);
 
-                this.props.createBooking(newBooking)
-                    .then(this.props.history.push('/bookings'));
-            }
+        if (this.props.currentUser === undefined) {
+            this.props.openModal('Sign Up');
+        } else {
+            let listing_id = this.props.listing.id;
+            let start_date = startDate.format('YYYY/MM/DD');
+            let end_date = endDate.format('YYYY/MM/DD');
+            let guest_id = this.props.currentUser.id;
+            let newBooking = { listing_id, start_date, end_date, guest_id };
+                debugger
+            this.props.createBooking(newBooking)
+                .then(this.props.history.push('/bookings'));
         }
     };
 
@@ -182,7 +154,6 @@ class ListingShow extends React.Component {
                                 onFocusChange={focusedInput => this.setState({ focusedInput })}
                                 numberOfMonths={2}
                                 isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}
-                                isDayBlocked={day => this.dayIsBlocked(day)}
                                 hideKeyboardShortcutsPanel={true}
                                 noBorder={true}
                             />
@@ -320,7 +291,6 @@ class ListingShow extends React.Component {
                                         hideKeyboardShortcutsPanel={true}
                                         startDatePlaceholderText='Check-in'
                                         endDatePlaceholderText='Checkout'
-                                        isDayBlocked={day => this.dayIsBlocked(day)}
                                     />
                                 </div>
                                 <label className='show-form-label'>Guest
