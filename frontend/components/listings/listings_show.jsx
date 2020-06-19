@@ -31,7 +31,7 @@ class ListingShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId);
-        window.scrollTo(0, 0);
+        return window.scrollTo(0, 0);
     };
 
     onFocusChange(focusedInput) {
