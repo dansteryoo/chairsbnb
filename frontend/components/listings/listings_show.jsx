@@ -31,8 +31,18 @@ class ListingShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId);
+        console.log('MOUNT')
         return window.scrollTo(0, 0);
     };
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.listing !== this.props.listing) {
+            return window.scrollTo(0, 0);
+        }
+        console.log(prevProps.listing, this.props.listing)
+        console.log('UPDATE')
+        console.log(prevProps.listing !== this.props.listing)
+    }
 
     onFocusChange(focusedInput) {
         this.setState({ focusedInput });
