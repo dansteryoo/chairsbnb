@@ -2,14 +2,12 @@
 <html>
   <head>
     <title>ChairsBnB</title>
-    <meta property="og:title" content="ChairsBnB" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="A website for solo travelers who can rent single chairs around the world inspired by Airbnb." />
-    <meta property="og:image" content="<%= image_url("chairsbnb.png") %>" />
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="title" property="og:title" content="ChairsBnB" />
+    <meta property="og:type" content="website" />
+    <meta name="description" property="og:description" content="A website for solo travelers who can rent single chairs around the world inspired by Airbnb."/>
+    <meta name="image" property="og:image" content="<%= image_url("chairsbnb.png") %>" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag image_url('chairsbnb_logo.jpg') %>
